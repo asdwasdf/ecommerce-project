@@ -4,7 +4,7 @@ import LinesEllipsis from "react-lines-ellipsis";
 import styles from "@style/common/ProductCard.module.css";
 import ProductGroupButton from "./ProductGroupButton";
 import Button from "@/components/common/Button";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AddToCartModal from "./AddToCartModal";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCountUser, addToCartUser } from "@/features/cartSlice";
@@ -101,9 +101,9 @@ const ProductCard = ({
           {className === "List" ? (
             <div className={styles["product-name"]}>{name}</div>
           ) : (
-            <div className={styles["product-name"]} onClick={handleClick}>
+            <Link className={styles["product-name"]} onClick={handleClick}>
               <LinesEllipsis text={name} maxLine="2" ellipsis="..." trimRight basedOn="letters" />
-            </div>
+            </Link>
           )}
           <div className={styles["product-stars"]}>
             <StarRatings rating={starrate} starRatedColor="#ffd700" numberOfStars={5} />
