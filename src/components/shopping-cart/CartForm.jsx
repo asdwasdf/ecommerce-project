@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"; // Import hook useTranslation
 import CartItem from "./CartItem";
 import styles from "@style/shopping-cart/ShoppingCart.module.css";
+import { TailSpin } from "react-loader-spinner";
 
 const CartForm = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation(); // Sử dụng useTranslation hook
   const cartItems = useSelector((state) => state.cart.items);
+
+  const { loading } = useSelector((state) => state.cart);
 
   const [items, setItems] = useState([]);
 
@@ -48,6 +51,18 @@ const CartForm = () => {
           </tr>
         </thead>
         <tbody>
+          {loading && (
+            <div className="spinner-overlay">
+              <TailSpin
+                visible={true}
+                height="80"
+                width="80"
+                color="#fff"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+              />
+            </div>
+          )}
           {items.map((item) => (
             <CartItem key={item.id} item={item} updateItemCount={handleUpdateItemCount} />
           ))}

@@ -45,6 +45,10 @@ table thead {
   max-width: 100%;
 }
 
+table.shop-table tbody {
+  position: relative;
+}
+
 .shop-table tr {
   display: flex;
   justify-content: space-between;

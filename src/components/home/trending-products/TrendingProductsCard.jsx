@@ -14,6 +14,7 @@ import { updateCountUser, addToCartUser } from "@/features/cartSlice";
 
 import { findIndex } from "@/utils/function";
 import { useTranslation } from "react-i18next";
+import { TailSpin } from "react-loader-spinner";
 
 const TrendingProductsCard = ({
   id,
@@ -29,38 +30,37 @@ const TrendingProductsCard = ({
   const { t } = useTranslation();
 
   const [openAddCart, setOpenAddCart] = useState(false);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
-  let userId;
-  userId = useSelector((state) => state.auth.userId);
+  const userId = useSelector((state) => state.auth.userId);
 
   const item = { id, name, img: images_url, original_price, discounted_price, count: 1 };
 
   const handleOpenAddCart = () => {
+    setLoading(true);
     if (findIndex(cartItems, id) < 0) {
       dispatch(addToCartUser(userId, item));
     } else {
-      dispatch(updateCountUser(userId, item.id));
+      dispatch(updateCountUser(userId, id));
     }
-    setOpenAddCart(true);
+    setTimeout(() => {
+      setOpenAddCart(true);
+      setLoading(false);
+    }, 1000);
   };
 
   const handleCloseAddCart = () => setOpenAddCart(false);
   const navigate = useNavigate();
 
-  const handleClick = (id) => {
-    navigate(`shop/${id}`, { replace: -1 });
+  const handleClick = () => {
+    navigate(`/shop/${id}`);
   };
 
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
 
   return (
     <>
@@ -69,8 +69,8 @@ const TrendingProductsCard = ({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
         <div className={styles["thumbnail-wrapper"]}>
-          <div className={`${styles["box-img"]} `}>
-            <img src={`${images_url}-400x400.jpg`} />
+          <div className={styles["box-img"]}>
+            <img src={`${images_url}-400x400.jpg`} alt={name} />
           </div>
           <ProductGroupButton
             isHovered={isHovered}
@@ -82,7 +82,7 @@ const TrendingProductsCard = ({
             img={images_url}
           />
           <div className={styles["product-label"]}>
-            {discount !== "0%" && discount !== "SOLD OUT" && (
+            {discount && discount !== "0%" && discount !== "SOLD OUT" && (
               <div className={styles["onsale"]}>
                 <span>-{discount}</span>
               </div>
@@ -103,7 +103,7 @@ const TrendingProductsCard = ({
           <div className={styles["product-categories"]}>
             <p>{category}</p>
           </div>
-          <div className={styles["product-name"]} onClick={() => handleClick(id)}>
+          <div className={styles["product-name"]} onClick={handleClick}>
             <LinesEllipsis text={name} maxLine="2" ellipsis="..." trimRight basedOn="letters" />
           </div>
           <div className={styles["product-stars"]}>
@@ -111,10 +111,27 @@ const TrendingProductsCard = ({
           </div>
           <div className={styles["product-price"]}>
             <span>${discounted_price}</span>
-            {original_price > 0 && <span>${original_price}</span>}
+            {original_price > discounted_price && <span>${original_price}</span>}
           </div>
           <div className={styles.button}>
-            <Button onClick={() => handleOpenAddCart()}>{t("productCard.addToCart")}</Button>
+            <Button onClick={handleOpenAddCart}>
+              {loading ? (
+                <div className="spinner-container">
+                  <TailSpin
+                    visible={true}
+                    height="20"
+                    width="20"
+                    color="#000"
+                    ariaLabel="tail-spin-loading"
+                    radius="1"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                  />
+                </div>
+              ) : (
+                t("productCard.addToCart")
+              )}
+            </Button>
           </div>
         </div>
       </div>

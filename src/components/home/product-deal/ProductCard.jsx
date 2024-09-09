@@ -15,6 +15,7 @@ import { updateCountUser, addToCartUser } from "@/features/cartSlice";
 
 import { findIndex } from "@/utils/function";
 import { useTranslation } from "react-i18next";
+import { TailSpin } from "react-loader-spinner";
 
 const products = [
   {
@@ -74,126 +75,134 @@ const products = [
 
 const ProductCard = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const cartItems = useSelector((state) => state.cart.items);
+  const userId = useSelector((state) => state.auth.userId);
 
   const [openAddCart, setOpenAddCart] = useState(false);
-  const dispatch = useDispatch();
-  let productIndex;
-  const cartItems = useSelector((state) => state.cart.items);
+  const [loading, setLoading] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-  let userId;
-  userId = useSelector((state) => state.auth.userId);
+  const handleOpenAddCart = (item) => {
+    setSelectedItem(item);
+    setLoading(true);
 
-  const item = {
-    id: products.at(productIndex).id,
-    name: products.at(productIndex).name,
-    img: products.at(productIndex).images_url[0],
-    original_price: products.at(productIndex).original_price,
-    discounted_price: products.at(productIndex).discounted_price,
-    count: 1
-  };
-
-  const handleOpenAddCart = () => {
     if (findIndex(cartItems, item.id) < 0) {
       dispatch(addToCartUser(userId, item));
     } else {
       dispatch(updateCountUser(userId, item.id));
     }
-    setOpenAddCart(true);
+
+    setTimeout(() => {
+      setOpenAddCart(true);
+      setLoading(false);
+    }, 1000);
   };
 
   const handleCloseAddCart = () => setOpenAddCart(false);
 
-  const navigate = useNavigate();
-  const [isHovered, setIsHovered] = useState(false);
-
   const handleClick = (id) => {
-    navigate(`shop/${id}`, { replace: -1 });
+    navigate(`/shop/${id}`);
   };
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
 
   return (
     <>
       <div className={styles.content}>
         <Swiper
           slidesPerView={1}
-          pagination={{
-            clickable: true
-          }}
+          pagination={{ clickable: true }}
           modules={[Pagination]}
           className="mySwiper product">
           {products.map((item, index) => (
             <SwiperSlide key={index}>
-              <>
-                <div
-                  className={styles["product-wrapper"]}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}>
-                  <Thumbnail
-                    imgs={item.images_url}
-                    id={item.id}
-                    name={item.name}
-                    original_price={item.original_price}
-                    discounted_price={item.discounted_price}
-                    discount={item.discount}
-                    isHovered={isHovered}
-                  />
-                  <div className={styles["meta-wrapper"]}>
-                    <div className={styles["product-label"]}>
+              <div
+                className={styles["product-wrapper"]}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}>
+                <Thumbnail
+                  imgs={item.images_url}
+                  id={item.id}
+                  name={item.name}
+                  original_price={item.original_price}
+                  discounted_price={item.discounted_price}
+                  discount={item.discount}
+                  isHovered={isHovered}
+                />
+                <div className={styles["meta-wrapper"]}>
+                  <div className={styles["product-label"]}>
+                    {item.discount && (
                       <div className={styles["onsale"]}>
                         <span>-{item.discount}</span>
                       </div>
-                      {item.hot && (
-                        <div className={styles["featured"]}>
-                          <span>HOT</span>
-                        </div>
-                      )}
-                    </div>
-                    <div className={styles["product-categories"]}>
-                      <p>{item.category}</p>
-                    </div>
-                    <h3 className={styles["product-name"]} onClick={() => handleClick(item.id)}>
-                      {item.name}
-                    </h3>
-                    <div className={styles["product-stars"]}>
-                      <StarRatings
-                        rating={item.starrate}
-                        starRatedColor="#ffd700"
-                        numberOfStars={5}
-                      />
-                    </div>
-                    <div className={styles["product-price"]}>
-                      <span>${item.discounted_price}</span>
+                    )}
+                    {item.hot && (
+                      <div className={styles["featured"]}>
+                        <span>HOT</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className={styles["product-categories"]}>
+                    <p>{item.category}</p>
+                  </div>
+                  <h3 className={styles["product-name"]} onClick={() => handleClick(item.id)}>
+                    {item.name}
+                  </h3>
+                  <div className={styles["product-stars"]}>
+                    <StarRatings
+                      rating={item.starrate}
+                      starRatedColor="#ffd700"
+                      numberOfStars={5}
+                    />
+                  </div>
+                  <div className={styles["product-price"]}>
+                    <span>${item.discounted_price}</span>
+                    {item.original_price > item.discounted_price && (
                       <span>${item.original_price}</span>
-                    </div>
-                    <p className={styles["short-description"]}>{item.description}</p>
-                    <div className={styles["button"]}>
-                      <Button onClick={() => handleOpenAddCart(item.id)}>
-                        {t("productCard.addToCart")}
-                      </Button>
-                    </div>
+                    )}
+                  </div>
+                  <p className={styles["short-description"]}>{item.description}</p>
+                  <div className={styles["button"]}>
+                    <Button onClick={() => handleOpenAddCart(item)}>
+                      {loading && selectedItem === item ? (
+                        <div className="spinner-container">
+                          <TailSpin
+                            visible={true}
+                            height="20"
+                            width="20"
+                            color="#000"
+                            ariaLabel="tail-spin-loading"
+                            radius="1"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                          />
+                        </div>
+                      ) : (
+                        t("productCard.addToCart")
+                      )}
+                    </Button>
                   </div>
                 </div>
-              </>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-      <AddToCartModal
-        id={products.at(productIndex).id}
-        name={products.at(productIndex).name}
-        img={products.at(productIndex).images_url[0]}
-        original_price={products.at(productIndex).original_price}
-        discounted_price={products.at(productIndex).discounted_price}
-        open={openAddCart}
-        handleClose={handleCloseAddCart}
-      />
+      {selectedItem && (
+        <AddToCartModal
+          id={selectedItem.id}
+          name={selectedItem.name}
+          img={selectedItem.images_url[0]}
+          original_price={selectedItem.original_price}
+          discounted_price={selectedItem.discounted_price}
+          open={openAddCart}
+          handleClose={handleCloseAddCart}
+        />
+      )}
     </>
   );
 };

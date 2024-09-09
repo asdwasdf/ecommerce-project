@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateCountUser, addToCartUser } from "@/features/cartSlice";
 import { findIndex } from "@/utils/function";
 import { useTranslation } from "react-i18next";
+import { TailSpin } from "react-loader-spinner";
 
 const ProductCard = ({
   id,
@@ -27,6 +28,7 @@ const ProductCard = ({
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
   const [openAddCart, setOpenAddCart] = useState(false);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const userId = useSelector((state) => state.auth.userId);
@@ -34,12 +36,18 @@ const ProductCard = ({
   const item = { id, name, img: images_url[0], original_price, discounted_price, count: 1 };
 
   const handleOpenAddCart = () => {
+    setLoading(true);
+
     if (findIndex(cartItems, id) < 0) {
       dispatch(addToCartUser(userId, item));
     } else {
       dispatch(updateCountUser(userId, item.id));
     }
-    setOpenAddCart(true);
+
+    setTimeout(() => {
+      setOpenAddCart(true);
+      setLoading(false);
+    }, 1000);
   };
 
   const handleCloseAddCart = () => setOpenAddCart(false);
@@ -110,7 +118,24 @@ const ProductCard = ({
           </div>
           <div className={styles.button}>
             {discount !== "SOLD OUT" ? (
-              <Button onClick={() => handleOpenAddCart()}>{t("productCard.addToCart")}</Button>
+              <Button onClick={handleOpenAddCart}>
+                {loading ? (
+                  <div className="spinner-container">
+                    <TailSpin
+                      visible={true}
+                      height="20"
+                      width="20"
+                      color="#000"
+                      ariaLabel="tail-spin-loading"
+                      radius="1"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                    />
+                  </div>
+                ) : (
+                  t("productCard.addToCart")
+                )}
+              </Button>
             ) : (
               <Button onClick={() => navigate(`/shop/${id}`)}>{t("productCard.readMore")}</Button>
             )}
