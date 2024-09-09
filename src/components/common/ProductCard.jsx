@@ -101,7 +101,7 @@ const ProductCard = ({
           {className === "List" ? (
             <div className={styles["product-name"]}>{name}</div>
           ) : (
-            <Link className={styles["product-name"]} onClick={handleClick}>
+            <Link to={`/shop/${id}`} className={styles["product-name"]}>
               <LinesEllipsis text={name} maxLine="2" ellipsis="..." trimRight basedOn="letters" />
             </Link>
           )}
