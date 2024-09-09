@@ -8,7 +8,7 @@
   border-style: solid;
   border-color: transparent;
   border-bottom: none;
-  border-radius: 0.6rem;
+  border-radius: 0.6rem !important;
   border-radius: var(--ts-product-radius);
   background: var(--ts-product-bg-color);
   height: 100%;
