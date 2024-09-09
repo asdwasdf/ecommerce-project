@@ -52,10 +52,6 @@ const ProductCard = ({
     setIsHovered(false);
   };
 
-  const handleClick = () => {
-    navigate(`/shop/${id}`, { replace: -1 });
-  };
-
   return (
     <>
       <div
