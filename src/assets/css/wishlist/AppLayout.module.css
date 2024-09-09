@@ -1,0 +1,67 @@
+.box {
+  padding-top: 30px;
+  min-height: 400px;
+}
+
+.wishlist-title-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.wishlist-title-container h2 {
+  padding: 0;
+  font-size: 30px;
+}
+
+.box > div > div {
+  margin-bottom: 80px;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  margin: 0;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: var(--ts-border);
+  padding-top: 30px;
+}
+
+.share ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -2px;
+}
+
+.share h4 {
+  margin: 0 10px 0 0;
+  font-size: 100%;
+  text-transform: uppercase;
+}
+
+.share-button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  border-radius: 100%;
+  padding: 0;
+  min-width: 30px;
+  min-height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.share-button a svg {
+  color: #fff;
+  font-size: 16px;
+}
+
+.share-button:hover a {
+  background: #595a5a !important;
+  background-color: #595a5a !important  ;
+}

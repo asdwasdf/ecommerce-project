@@ -1,0 +1,47 @@
+.grid {
+  --ts-columns: 4;
+}
+
+.products {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(var(--ts-columns), minmax(0, 1fr));
+  clear: both;
+  gap: 20px 20px;
+}
+
+.list .products {
+  --ts-columns: 1;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  gap: 0;
+}
+
+@media only screen and (max-width: 1279px) {
+  .products {
+    gap: 10px 10px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .grid {
+    --ts-columns: 3;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .grid {
+    --ts-columns: 3;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .grid {
+    --ts-columns: 2;
+  }
+
+  .products {
+    gap: 6px 6px;
+  }
+}

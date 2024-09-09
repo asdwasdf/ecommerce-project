@@ -1,0 +1,131 @@
+.box {
+  margin-top: 50px;
+}
+
+.box > span {
+  display: block;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
+
+.box form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.comment-notes {
+  margin-top: -5px;
+  margin-bottom: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.box form label {
+  margin-right: 15px;
+  font-weight: 600;
+}
+
+.comment-form-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.comment-form-comment {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.comment-form-comment textarea {
+  -moz-appearance: none;
+  appearance: none;
+  transition: 200ms ease;
+  margin: 0;
+  outline: 0;
+  border-color: #f4f4f4;
+  border-radius: 10px;
+  background: #f4f4f4;
+  padding: 17px 12px;
+  width: 100%;
+  height: 206px;
+}
+
+.comment-form-comment textarea:focus {
+  border-color: var(--ts-primary-color);
+}
+
+.comment-form {
+  margin-bottom: 30px;
+  width: calc(50% - 15px);
+}
+
+.comment-form input {
+  vertical-align: bottom;
+  -moz-appearance: none;
+  appearance: none;
+  filter: none !important;
+  transition: 200ms ease;
+  margin: 0;
+  outline: 0;
+  box-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f4f4f4;
+  border-radius: 6px;
+  background: #f4f4f4;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding: 12px 26px;
+  width: 100%;
+  color: var(--ts-input-color);
+  font-size: var(--ts-body-font-size);
+  line-height: 24px;
+}
+
+.comment-form input:focus {
+  border-color: var(--ts-primary-color);
+}
+
+.button {
+  vertical-align: top;
+  -moz-appearance: none;
+  appearance: none;
+  transition: all 200ms ease;
+  cursor: pointer;
+  outline: 0;
+  border-color: #000000;
+  border-radius: 1rem;
+  background: #000000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-width: 254px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.button:hover {
+  border-color: var(--ts-primary-color);
+  background: var(--ts-primary-color);
+  color: var(--ts-text-in-primary-color);
+}
+
+@media only screen and (max-width: 480px) {
+  .comment-form-comment {
+    margin-bottom: 0;
+  }
+
+  .comment-form {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .box form {
+    justify-content: center;
+    /* gap: 10px; */
+  }
+}

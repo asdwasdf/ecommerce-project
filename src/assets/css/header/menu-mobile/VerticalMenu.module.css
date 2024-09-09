@@ -1,0 +1,27 @@
+.menu > li {
+  display: flex;
+  position: static;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: var(--ts-border);
+  padding: 14px 20px;
+  width: 100%;
+  min-height: calc(1.7em + 29px);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.icon-right {
+  z-index: 3;
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-left {
+  width: 25px;
+  height: 25px;
+}

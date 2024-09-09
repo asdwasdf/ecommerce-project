@@ -1,0 +1,73 @@
+.product-group-button {
+  display: flex;
+  position: absolute;
+  top: 2rem;
+  top: 1.4rem;
+  right: 1.4rem;
+  flex-direction: column;
+  gap: 1rem;
+  visibility: hidden;
+  opacity: 0;
+  animation: fadeIn 500ms ease forwards;
+}
+
+.button-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  border: 1px solid var(--ts-border);
+  border-radius: 100%;
+  background-color: #fff;
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+.icon {
+  font-size: 1.8rem;
+}
+
+.button-in:hover {
+  border-color: var(--ts-btn-thumbnail-hover-border);
+  background-color: var(--ts-btn-thumbnail-hover-bg);
+  color: var(--ts-btn-thumbnail-hover-color);
+}
+
+.product-group-button.mobile {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(3rem);
+  }
+  to {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .mobile .button-in {
+    opacity: 1;
+    border-color: var(--ts-btn-thumbnail-hover-border);
+    background-color: var(--ts-btn-thumbnail-hover-bg);
+    width: 28px;
+    height: 28px;
+    color: var(--ts-btn-thumbnail-hover-color);
+  }
+
+  .product-group-button {
+    display: none;
+    visibility: hidden;
+  }
+
+  .product-group-button.mobile {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+  }
+}

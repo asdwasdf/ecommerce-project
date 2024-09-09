@@ -1,0 +1,239 @@
+:root {
+  --ts-logo-width: 16rem;
+  --ts-img-gap: 0.5rem;
+  --ts-meta-gap: 0.2rem;
+  --ts-pr-font-family: Mulish;
+  --ts-pr-font-style: normal;
+  --ts-pr-font-weight: 500;
+  --ts-pr-line-height: 1.6em;
+  --ts-pr-letter-spacing: 0.025em;
+  --ts-body-font-size: 1.5rem;
+  --ts-heading-font-family: Mulish;
+  --ts-heading-font-style: normal;
+  --ts-heading-font-weight: 700;
+  --ts-heading-line-height: 1.2em;
+  --ts-heading-letter-spacing: 0.025em;
+  --ts-btn-font-family: Mulish;
+  --ts-btn-font-style: normal;
+  --ts-btn-font-weight: 800;
+  --ts-btn-line-height: 1em;
+  --ts-btn-letter-spacing: 0.05em;
+  --ts-btn-font-size: 1.4rem;
+  --ts-menu-font-family: Mulish;
+  --ts-menu-font-weight: 800;
+  --ts-menu-font-size: 1.5rem;
+  --ts-menu-letter-spacing: 0.05em;
+  --ts-v-menu-font-family: Mulish;
+  --ts-v-menu-font-weight: 700;
+  --ts-v-menu-font-size: 1.5rem;
+  --ts-v-menu-letter-spacing: 0.05em;
+  --ts-btn-ipad-font-size: 1.3rem;
+  --ts-primary-color: rgba(0, 104, 200, 1);
+  --ts-text-in-primary-color: rgba(255, 255, 255, 1);
+  --ts-primary-opacity: rgba(0, 104, 200, 0.1);
+  --ts-primary-loading-color: rgba(0, 104, 200, 0.5);
+  --ts-main-bg: rgba(255, 255, 255, 1);
+  --ts-text-color: rgba(0, 0, 0, 1);
+  --ts-heading-color: rgba(0, 0, 0, 1);
+  --ts-gray-color: rgba(132, 132, 132, 1);
+  --ts-hightlight: rgba(252, 201, 4, 1);
+  --ts-dropdown-bg: rgba(255, 255, 255, 1);
+  --ts-dropdown-color: rgba(0, 0, 0, 1);
+  --ts-link-color: rgba(0, 104, 200, 1);
+  --ts-link-hover-color: rgba(0, 104, 200, 1);
+  --ts-border: rgba(235, 235, 235, 1);
+  --ts-tag-color: rgba(132, 132, 132, 1);
+  --ts-tag-bg: rgba(255, 255, 255, 0);
+  --ts-tag-border: rgba(235, 235, 235, 1);
+  --ts-blockquote-bg-color: rgba(232, 243, 254, 1);
+  --ts-blockquote-icon-color: rgba(0, 0, 0, 1);
+  --ts-blockquote-text-color: rgba(0, 0, 0, 1);
+  --ts-input-color: rgba(0, 0, 0, 1);
+  --ts-input-background-color: rgba(255, 255, 255, 1);
+  --ts-input-border: rgba(235, 235, 235, 1);
+  --ts-btn-color: rgba(255, 255, 255, 1);
+  --ts-btn-bg: rgba(0, 104, 200, 1);
+  --ts-btn-border: rgba(0, 104, 200, 1);
+  --ts-btn-hover-color: rgba(0, 104, 200, 1);
+  --ts-btn-hover-bg: rgba(255, 255, 255, 0);
+  --ts-btn-hover-border: rgba(0, 104, 200, 1);
+  --ts-button-loading-color: rgba(255, 255, 255, 0.5);
+  --ts-button-loading-hover-color: rgba(0, 104, 200, 0.5);
+  --ts-btn-special-color: rgba(0, 0, 0, 1);
+  --ts-btn-special-bg: rgba(228, 242, 255, 1);
+  --ts-btn-special-border: rgba(228, 242, 255, 1);
+  --ts-btn-special-hover-color: rgba(0, 0, 0, 1);
+  --ts-btn-special-hover-bg: rgba(255, 255, 255, 0);
+  --ts-btn-special-hover-border: rgba(0, 104, 200, 1);
+  --ts-button-loading-color: rgba(0, 0, 0, 0.5);
+  --ts-button-loading-hover-color: rgba(0, 0, 0, 0.5);
+  --ts-spe-btn-bg: rgba(228, 242, 255, 0.15);
+  --ts-btn-thumbnail-color: rgba(0, 0, 0, 1);
+  --ts-btn-thumbnail-bg: rgba(255, 255, 255, 1);
+  --ts-btn-thumbnail-border: rgba(235, 235, 235, 1);
+  --ts-btn-thumbnail-hover-color: rgba(0, 0, 0, 1);
+  --ts-btn-thumbnail-hover-bg: rgba(232, 243, 254, 1);
+  --ts-btn-thumbnail-hover-border: rgba(232, 243, 254, 1);
+  --ts-button-loading-color: rgba(0, 0, 0, 0.5);
+  --ts-button-loading-hover-color: rgba(0, 0, 0, 0.5);
+  --ts-product-bg-color: rgba(255, 255, 255, 1);
+  --ts-brand-bg: rgba(244, 244, 244, 1);
+  --ts-rating-color: rgba(195, 195, 195, 1);
+  --ts-rated-color: rgba(253, 201, 4, 1);
+  --ts-product-price-color: rgba(221, 40, 49, 1);
+  --ts-product-sale-price-color: rgba(132, 132, 132, 1);
+  --ts-sale-label-color: rgba(255, 255, 255, 1);
+  --ts-sale-label-bg: rgba(0, 104, 200, 1);
+  --ts-new-label-color: rgba(255, 255, 255, 1);
+  --ts-new-label-bg: rgba(0, 0, 0, 1);
+  --ts-hot-label-color: rgba(255, 255, 255, 1);
+  --ts-hot-label-bg: rgba(221, 40, 49, 1);
+  --ts-soldout-label-color: rgba(255, 255, 255, 1);
+  --ts-soldout-label-bg: rgba(145, 145, 145, 1);
+  --ts-breadcrumb-bg: rgba(244, 244, 244, 1);
+  --ts-breadcrumb-color: rgba(0, 0, 0, 1);
+  --ts-breadcrumb-link-color: rgba(132, 132, 132, 1);
+  --ts-breadcrumb-v3-color: rgba(255, 255, 255, 1);
+  --ts-breadcrumb-v3-link-color: rgba(255, 255, 255, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+label,
+body,
+input,
+textarea,
+keygen,
+select,
+button,
+html body {
+  color: var(--ts-text-color);
+  font-style: var(--ts-pr-font-style);
+  font-weight: var(--ts-pr-font-weight);
+  line-height: var(--ts-pr-line-height);
+  font-family: var(--ts-pr-font-family);
+  letter-spacing: var(--ts-pr-letter-spacing);
+}
+
+label,
+body,
+input,
+textarea,
+keygen,
+select,
+button,
+body {
+  font-size: 15px;
+}
+.ts-header {
+  --ts-hd-top-bg: #1b1b1b;
+  --ts-hd-top-color: #fff;
+  --ts-hd-top-border: #1b1b1b;
+  --ts-hd-middle-bg: #fff;
+  --ts-hd-middle-color: #000;
+  --ts-hd-middle-border: #ebebeb;
+  --ts-hd-bottom-bg: #fff;
+  --ts-hd-bottom-color: #000;
+  --ts-hd-bottom-border: #ebebeb;
+  --ts-cart-count-bg: #0068c8;
+  --ts-cart-count-color: #fff;
+  --ts-hd-top-link-hover: #0068c8;
+  --ts-hd-middle-link-hover: #0068c8;
+  --ts-hd-bottom-link-hover: #0068c8;
+  --ts-hd-gap: 1.5rem;
+  --ts-hd-icon-size: 3.2rem;
+  --ts-input-background: #f8f8f8;
+}
+
+select::-webkit-scrollbar {
+  width: 8px; /* Chiều rộng của thanh cuộn */
+}
+
+select::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Màu nền của thanh cuộn */
+}
+
+select::-webkit-scrollbar-thumb {
+  border: 2px solid #f1f1f1; /* Đường viền của phần kéo */
+  border-radius: 10px; /* Bo tròn các góc */
+  background-color: #888; /* Màu của phần kéo */
+}
+
+select::-webkit-scrollbar-thumb:hover {
+  background-color: #dddddd; /* Màu khi hover phần kéo */
+}
+
+/* Tùy chỉnh cho các trình duyệt khác */
+select {
+  scrollbar-color: #888 #f1f1f1; /* Màu của phần kéo và nền */
+  scrollbar-width: thin; /* Chiều rộng của thanh cuộn */
+}
+
+select {
+  -webkit-appearance: none; /* Safari and Chrome */
+  -moz-appearance: none; /* Firefox */
+  appearance: none; /* Standard */
+  background: none; /* Remove default background */
+}
+ul {
+  list-style: none;
+}
+
+a {
+  transition: 150ms ease 0s;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 59% !important;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  html {
+    font-size: 56% !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  html {
+    font-size: 60% !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 57% !important;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  html {
+    font-size: 55% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 50% !important;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  /* html {
+    font-size: 48% !important;
+  } */
+}

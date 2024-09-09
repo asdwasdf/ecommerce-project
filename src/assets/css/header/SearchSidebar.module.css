@@ -1,0 +1,35 @@
+.content {
+  width: 420px;
+  max-width: 100%;
+}
+
+.close svg {
+  width: 40px;
+  height: 40px;
+}
+
+.close {
+  display: inline-flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  border-left: 1px solid #fff;
+  background: #efefef;
+  padding: 0;
+  width: 61px;
+  height: 61px;
+}
+
+.content form {
+  border: 0;
+  background: transparent;
+}
+
+@media only screen and (max-width: 420px) {
+  .content {
+    width: 100vw;
+  }
+}

@@ -1,0 +1,16 @@
+.box {
+  margin-bottom: 8rem;
+  padding-top: 5rem;
+}
+
+.box > div {
+  align-items: start;
+}
+
+@media only screen and (max-width: 992px) {
+  .box > div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

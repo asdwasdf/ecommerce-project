@@ -1,0 +1,145 @@
+.content {
+  grid-column: 2/4;
+}
+
+.product-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid var(--ts-border);
+  border-radius: 1rem;
+}
+
+.meta-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 4.5rem 3rem;
+}
+
+.product-label {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.onsale,
+.featured {
+  display: inline-block;
+  border-radius: 0 0.6rem 0.6rem 0.6rem;
+  background: var(--ts-sale-label-bg);
+  padding: 0.4rem 0.8rem;
+  color: var(--ts-sale-label-color);
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1 !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.featured {
+  background-color: red;
+}
+
+.product-categories {
+  cursor: pointer;
+  color: #848484;
+}
+
+.product-categories:hover,
+.product-name:hover {
+  color: var(--ts-primary-color);
+}
+
+.product-name {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.65rem;
+  line-height: 1.4;
+}
+
+.product-stars {
+  display: flex;
+}
+
+.product-price {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.product-price span:first-child {
+  color: var(--ts-product-price-color);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.product-price span:nth-child(2) {
+  color: #848484;
+  font-weight: normal;
+  font-size: 1.6rem;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.short-description {
+  margin-top: 0.3rem;
+  color: #848484;
+}
+
+.button {
+  margin-top: 1.2rem;
+  width: 21rem;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(3rem);
+  }
+  to {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .meta-wrapper {
+    padding: 1.5rem 3rem;
+  }
+
+  .short-description {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .content {
+    grid-column: 1/-1;
+  }
+
+  .meta-wrapper {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  .meta-wrapper {
+    grid-column: 1/-1;
+  }
+
+  .product-name {
+    font-size: 2rem;
+  }
+
+  .product-price span:first-child {
+    font-size: 18px;
+  }
+
+  .product-price span:nth-child(2) {
+    font-size: 15px;
+  }
+
+  .onsale,
+  .featured {
+    font-size: 1.4rem;
+  }
+}

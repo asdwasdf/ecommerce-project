@@ -1,0 +1,48 @@
+.wrapper {
+  padding: 7.6rem 0;
+  width: 100%;
+}
+
+.box-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.box-img:hover {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 1279px) {
+  .wrapper {
+    padding: 5.6rem;
+  }
+
+  .box-img img {
+    width: 14rem;
+    height: 3.2rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    padding: 5rem 0;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .box-img img {
+    width: 18rem;
+    height: 4rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .box-img img {
+    width: 15rem;
+    height: 3rem;
+  }
+}

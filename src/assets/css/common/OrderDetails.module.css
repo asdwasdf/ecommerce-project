@@ -1,0 +1,151 @@
+.order-details {
+  margin-bottom: 50px;
+}
+
+.order-details h2 {
+  margin-bottom: 35px;
+  color: var(--ts-heading-color);
+  font-style: var(--ts-heading-font-style);
+  font-weight: var(--ts-heading-font-weight);
+  font-size: 30px;
+  line-height: var(--ts-heading-line-height);
+  font-family: var(--ts-heading-font-family);
+  letter-spacing: var(--ts-heading-letter-spacing);
+}
+
+.shop_table {
+  margin: 0;
+  margin-top: 30px;
+  border: 0;
+  border-collapse: separate;
+  padding: 0;
+  width: 100%;
+  font-size: 16px !important;
+  text-align: left;
+}
+
+table.shop_table tbody,
+table.shop_table tfood,
+table.shop_table thead {
+  max-width: 100%;
+}
+
+table.shop_table tr:not(.shipping) th {
+  vertical-align: middle;
+}
+
+table.shop_table thead th {
+  padding-top: 0;
+}
+
+table.shop_table th {
+  border-width: 0;
+  border-radius: 0 !important;
+  padding: 23px 0;
+}
+
+table.shop_table thead th {
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  line-height: 1.5em;
+}
+
+.shop_table tr td {
+  padding: 20px 0;
+}
+
+.shop_table tbody tr td.product-name {
+  padding-right: 0 !important;
+}
+
+.shop_table tbody tr td,
+.shop_table thead tr th {
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: var(--ts-border) !important;
+  font-weight: 600;
+}
+
+.product-total {
+  font-weight: 700 !important;
+}
+
+.shop_table th:first-child {
+  width: 60%;
+}
+
+.product-name > a:hover {
+  color: var(--ts-primary-color);
+}
+
+.shop_table tfoot th {
+  padding-top: 20px !important;
+  padding-bottom: 0;
+}
+
+.shop_table tfoot tr td {
+  border-width: 0;
+  padding-bottom: 0;
+  font-weight: 700 !important;
+}
+
+.customer-details > div:first-child {
+  float: left;
+  width: 48%;
+}
+
+.customer-details > div:last-child {
+  float: right;
+  width: 48%;
+}
+
+.billing-address h2 {
+  float: left;
+  margin-bottom: 15px;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+}
+
+.billing-address address {
+  display: block;
+  clear: both;
+  margin-bottom: 0;
+  margin: 0 0 20px;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  font-style: normal;
+  line-height: 2;
+  text-align: left;
+}
+
+.customer-details {
+  display: block;
+  position: relative;
+  padding: 0;
+}
+
+.customer-details svg {
+  display: inline-block;
+  position: static;
+  vertical-align: -3px;
+  margin: 0 10px 0 0;
+  padding: 0;
+  font-size: 1.3em;
+}
+
+@media only screen and (max-width: 767px) {
+  .customer-details > div:first-child {
+    float: left;
+    width: 100%;
+  }
+
+  .customer-details > div:last-child {
+    float: right;
+    width: 100%;
+  }
+}

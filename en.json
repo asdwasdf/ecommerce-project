@@ -1,0 +1,692 @@
+{
+  "free_shipping": "Free Shipping On All Orders Over $100",
+  "shopCategories": "Shop Categories",
+  "flash_sale": "Flash Sale",
+  "track_order": "Track Order",
+  "about": "About",
+  "contact": "Contact",
+  "blog": "Blog",
+  "shop_categories": "Shop Categories",
+  "todays_deal": "Today's Deal",
+  "hot": "Hot",
+  "wishlist": "My Wishlist",
+  "menu_home": "Home",
+  "menu_laptops": "Laptops",
+  "menu_smartphone": "Smartphone",
+  "menu_headphone": "Headphone",
+  "menu_camera": "Camera",
+  "menu_headphones": "Headphones",
+  "menu_pc_gaming": "PC Gaming",
+  "menu_tablets": "Tablets",
+  "menu_smartwatches": "Smartwatches",
+  "menu_speakers": "Speakers",
+  "menu_kid_electronic": "Kid Electronic",
+  "menu_tech_gift": "Tech Gift",
+  "allCategories": "All Categories",
+  "camera": "Camera",
+  "cameraAccessories": "Accessories",
+  "cameraLenses": "Camera & Lenses",
+  "drones": "Drones",
+  "securityCameras": "Security Cameras",
+  "games": "Games",
+  "gameAccessories": "Accessories",
+  "playstation4": "Playstation 4",
+  "playstation5": "Playstation 5",
+  "xboxSeries": "Xbox Series",
+  "headphones": "Headphones",
+  "airpods": "AirPods",
+  "gamingHeadsets": "Gaming Headsets",
+  "kidsHeadphones": "Kids' Headphones",
+  "wirelessEarbuds": "Wireless Earbuds",
+  "iwatch": "Iwatch",
+  "laptopsDesktops": "Laptops & Desktops",
+  "laptopAccessories": "Accessories",
+  "laptops": "Laptops",
+  "monitors": "Monitors",
+  "smartHome": "Smart Home",
+  "smartphone": "Smartphone",
+  "iphone": "iPhone",
+  "prepaidPhones": "Prepaid Phones",
+  "samsungGalaxy": "Samsung Galaxy",
+  "unlockedPhones": "Unlocked Phones",
+  "speakers": "Speakers",
+  "bluetoothSpeakers": "Bluetooth Speakers",
+  "portableSpeakers": "Portable Speakers",
+  "professionalSpeakers": "Professional Speakers",
+  "waterproofSpeakers": "Waterproof Speakers",
+  "tablets": "Tablets",
+  "television": "Television",
+  "55Tvs": "55\" TVs",
+  "65Tvs": "65\" TVs",
+  "oledTvs": "OLED TVs",
+  "qledTvs": "QLED TVs",
+  "need_help": "Need Help?",
+  "search_placeholder": "Search",
+  "check_payments": "Check payments",
+  "please_accept_terms": "Please read and accept the terms and conditions to proceed with your order.",
+  "order_created_successfully": "Order created successfully",
+  "checkout": "Checkout",
+
+  "loginHeader": {
+    "my_account": "My Account",
+    "login": "Login",
+    "my_orders": "My Orders",
+    "change_password": "Change Password",
+    "logout": "Log Out",
+    "username_or_email": "Username or email address",
+    "password": "Password",
+    "remember_me": "Remember Me",
+    "sign_in": "Sign in",
+    "new_client": "I'm a new client.",
+    "create_account": "Create an account",
+    "username_error": "The username is not registered on this site.",
+    "password_error": "The password is incorrect."
+  },
+  "searchInput": {
+    "placeholder": "Search for products",
+    "search_button": "Search"
+  },
+  "shoppingCart": {
+    "myCart": "My Cart",
+    "emptyCart": "Your cart is currently empty",
+    "subtotal": "Subtotal",
+    "viewCart": "View Cart",
+    "checkout": "Check out"
+  },
+  "headerBottom": {
+    "home": "Home",
+    "laptops": "Laptops",
+    "smartphone": "Smartphone",
+    "headphone": "Headphone",
+    "camera": "Camera",
+    "todaysDeal": "Today's Deal",
+    "hotLabel": "Hot"
+  },
+  "headphonesMenuDrop": {
+    "categories": {
+      "computersTablets": "Computers & Tablets",
+      "cellPhone": "Cell Phone",
+      "audio": "Audio",
+      "videoGames": "Video Games"
+    },
+    "links": {
+      "laptopsDesktops": "Laptops & Desktops",
+      "tablets": "Tablets",
+      "monitors": "Monitors",
+      "laptops": "Laptops",
+      "accessories": "Accessories",
+      "macbook": "Macbook",
+      "smartphone": "Smartphone",
+      "att": "AT&T",
+      "iphone": "iPhone",
+      "prepaidPhones": "Prepaid Phones",
+      "samsungGalaxy": "Samsung Galaxy",
+      "unlockedPhones": "Unlocked Phones",
+      "bluetoothSpeakers": "Bluetooth Speakers",
+      "portableSpeakers": "Portable Speakers",
+      "professionalSpeakers": "Professional Speakers",
+      "waterproofSpeakers": "Waterproof Speakers",
+      "headphones": "Headphones",
+      "speakers": "Speakers",
+      "xboxSeries": "Xbox Series",
+      "ps4": "Playstation 4",
+      "ps5": "Playstation 5",
+      "gamingHeadsets": "Gaming Headsets",
+      "pcGaming": "PC Gaming"
+    },
+    "banners": {
+      "computers": "Computers",
+      "cellPhone": "Cell Phone",
+      "audio": "Audio",
+      "videoGames": "Video Games",
+      "products": "products"
+    }
+  },
+  "homeMenuDrop": {
+    "homepage": "Homepage",
+    "shopLayouts": "Shop Layouts",
+    "productLayouts": "Product Layouts",
+    "others": "Others",
+    "links": {
+      "home01": "Home 01",
+      "home02": "Home 02",
+      "home03": "Home 03",
+      "home04": "Home 04",
+      "home05": "Home 05",
+      "home06": "Home 06",
+      "shopTopCategories": "Shop Top Categories",
+      "shopTopBrands": "Shop Top Brands",
+      "shopList": "Shop List",
+      "shopScrollSidebar": "Shop Scroll Sidebar",
+      "shopTopFilter": "Shop Top Filter",
+      "shopLoadMoreButton": "Shop Load More Button",
+      "shopInfinityScroll": "Shop Infinity Scroll",
+      "shopAjaxPagination": "Shop Ajax Pagination",
+      "horizontalThumbnails": "Horizontal Thumbnails",
+      "verticalThumbnails": "Vertical Thumbnails",
+      "gridThumbnails": "Grid Thumbnails",
+      "variationThumbnails": "Variation Thumbnails",
+      "variationDropdown": "Variation Dropdown",
+      "productDeal": "Product Deal",
+      "groupProducts": "Group Products",
+      "productVideo": "Product Video",
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us",
+      "blog": "Blog",
+      "blogDetail": "Blog Detail",
+      "trackOrder": "Track Order",
+      "flashSale": "Flash Sale",
+      "comingSoon": "Coming Soon",
+      "404": "404"
+    }
+  },
+  "laptopsLi": {
+    "laptopsAndDesktops": "Laptops & Desktops",
+    "accessories": "Accessories",
+    "chromebook": "Chromebook",
+    "computerComponent": "Computer Component",
+    "desktops": "Desktops",
+    "imac": "iMac",
+    "laptops": "Laptops",
+    "macbook": "Macbook",
+    "monitors": "Monitors",
+    "pcGaming": "PC Gaming",
+    "printersAndInk": "Printers & Ink",
+    "restoredComputers": "Restored Computers",
+    "windowsLaptops": "Windows Laptops"
+  },
+  "laptopsMenuDrop": {
+    "computersAndTablets": "Computers & Tablets",
+    "cellPhone": "Cell Phone",
+    "audio": "Audio",
+    "videoGames": "Video Games",
+    "camera": "Camera",
+    "tvAndHomeTheater": "TV & Home Theater",
+    "laptopsAndDesktops": "Laptops & Desktops",
+    "tablets": "Tablets",
+    "monitors": "Monitors",
+    "accessories": "Accessories",
+    "smartphone": "Smartphone",
+    "att": "AT&T",
+    "iphone": "iPhone",
+    "prepaidPhones": "Prepaid Phones",
+    "samsungGalaxy": "Samsung Galaxy",
+    "unlockedPhones": "Unlocked Phones",
+    "bluetoothSpeakers": "Bluetooth Speakers",
+    "portableSpeakers": "Portable Speakers",
+    "professionalSpeakers": "Professional Speakers",
+    "waterproofSpeakers": "Waterproof Speakers",
+    "headphones": "Headphones",
+    "speakers": "Speakers",
+    "xboxSeries": "Xbox Series",
+    "playstation4": "Playstation 4",
+    "playstation5": "Playstation 5",
+    "gamingHeadsets": "Gaming Headsets",
+    "cameras": "Cameras",
+    "cameraAndLenses": "Camera & Lenses",
+    "drones": "Drones",
+    "television": "Television",
+    "55InchTvs": "55\" TVs",
+    "65InchTvs": "65\" TVs",
+    "oledTvs": "OLED TVs",
+    "qledTvs": "QLED TVs",
+    "smartHome": "Smart Home",
+    "securityCameras": "Security Cameras",
+    "kidsHeadphones": "Kids' Headphones",
+    "wirelessEarbuds": "Wireless Earbuds"
+  },
+  "smartPhoneLi": {
+    "computersAndTablets": "Computers & Tablets",
+    "cellPhone": "Cell Phone",
+    "camera": "Camera",
+    "tvAndHomeTheater": "TV & Home Theater",
+    "laptopsAndDesktops": "Laptops & Desktops",
+    "tablets": "Tablets",
+    "monitors": "Monitors",
+    "accessories": "Accessories",
+    "drones": "Drones",
+    "smartphone": "Smartphone",
+    "att": "AT&T",
+    "iphone": "iPhone",
+    "prepaidPhones": "Prepaid Phones",
+    "samsungGalaxy": "Samsung Galaxy",
+    "unlockedPhones": "Unlocked Phones",
+    "55InchTvs": "55\" TVs",
+    "65InchTvs": "65\" TVs",
+    "oledTvs": "OLED TVs",
+    "topBrands": "TOP BRANDS",
+    "saleOff": "Sale Off 30% Flycam"
+  },
+  "smartphoneMenuDrop": {
+    "computersAndTablets": "Computers & Tablets",
+    "laptopsAndDesktops": "Laptops & Desktops",
+    "tablets": "Tablets",
+    "monitors": "Monitors",
+    "accessories": "Accessories",
+    "computerComponent": "Computer Component",
+    "pcGaming": "PC Gaming",
+    "cellPhone": "Cell Phone",
+    "smartphone": "Smartphone",
+    "att": "AT&T",
+    "iphone": "iPhone",
+    "prepaidPhones": "Prepaid Phones",
+    "samsungGalaxy": "Samsung Galaxy",
+    "unlockedPhones": "Unlocked Phones",
+    "verizon": "Verizon",
+    "appleWatchDeals": "Apple Watch Deals This Week",
+    "upToOff": "UP TO $70 OFF"
+  },
+  "footer": {
+    "findLocation": "Find a location nearest you",
+    "ourStores": "Our Stores",
+    "supportEmail": "Support: Support1234@Ecomall.com",
+    "phone": "+08 9229 8228",
+    "aboutUs": "About Us",
+    "newsAndBlog": "News & Blog",
+    "brands": "Brands",
+    "pressCenter": "Press Center",
+    "advertising": "Advertising",
+    "investors": "Investors",
+    "supportCenter": "Support Center",
+    "manage": "Manage",
+    "service": "Service",
+    "haulAway": "Haul Away",
+    "securityCenter": "Security Center",
+    "contact": "Contact",
+    "checkOrder": "Check Order",
+    "deliveryAndPickup": "Delivery & Pickup",
+    "returns": "Returns",
+    "exchanges": "Exchanges",
+    "developers": "Developers",
+    "giftCards": "Gift Cards",
+    "trendingTags": "Trending Tags",
+    "accessories": "Accessories",
+    "appleIphone": "Apple iPhone",
+    "cameraVideo": "Camera & Video",
+    "cellphone": "Cellphone",
+    "desktopComputers": "Desktop Computers",
+    "electronic": "Electronic",
+    "game": "Game",
+    "gamingHeadsets": "Gaming Headsets",
+    "headphone": "Headphone",
+    "iwatch": "iWatch",
+    "kidsElectronics": "Kids' Electronics",
+    "laptop": "Laptop",
+    "mobileTablet": "Mobile & Tablet",
+    "panasonic": "Panasonic",
+    "pcGaming": "PC Gaming",
+    "smartwatches": "Smartwatches",
+    "speaker": "Speaker",
+    "techAccessories": "Tech Accessories",
+    "television": "Television",
+    "copyright": "© Ecomall. All Rights Reserved."
+  },
+  "addToCartModal": {
+    "productAdded": "Product is added to cart",
+    "viewCart": "View Cart",
+    "checkOut": "Check out"
+  },
+  "inputField": {
+    "required": "is required",
+    "emailPattern": "Email isn't formatted correctly."
+  },
+  "orderDetails": {
+    "orderDetails": "Order Details",
+    "product": "Product",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "freeShipping": "Free shipping",
+    "localPickup": "Local pickup",
+    "flatRate": "Flat rate",
+    "paymentMethod": "Payment method",
+    "note": "Note",
+    "billingAddress": "Billing address"
+  },
+  "productCard": {
+    "addToCart": "Add to cart",
+    "readMore": "Read More",
+    "ram": "RAM",
+    "hardDrive": "Hard Drive",
+    "screenSize": "Screen Size"
+  },
+  "searchResult": {
+    "viewAll": "View all {{count}} results",
+    "noProductsFound": "No products were found"
+  },
+  "shipping": {
+    "freeShipping": "Free shipping",
+    "localPickup": "Local pickup: ${{cost}}",
+    "flatRate": "Flat rate: ${{cost}}"
+  },
+  "categories": {
+    "camera": "Camera",
+    "headphones": "Headphones",
+    "gamers": "Gamers",
+    "tablets": "Tablets",
+    "speakers": "Speakers"
+  },
+  "newsletter": {
+    "title": "Sign Up For Newsletter & Get 20% Off",
+    "placeholder": "Your e-mail address",
+    "subscribe": "Subscribe"
+  },
+  "services": {
+    "free_delivery": {
+      "title": "Free Delivery",
+      "description": "Free shipping on all orders"
+    },
+    "returns": {
+      "title": "Returns",
+      "description": "Back guarantee under 7 days"
+    },
+    "support_24_7": {
+      "title": "Support 24/7",
+      "description": "Support online 24 hours a day"
+    },
+    "payments": {
+      "title": "Payments",
+      "description": "100% payment security"
+    }
+  },
+  "promotion": {
+    "only_for_today": "ONLY FOR TODAY",
+    "deal_of_the_day": "Deal Of The Day",
+    "deal_description": "Deal of the Day for deals on consumer electronics. Watch for many other great daily offers.",
+    "hours": "hours",
+    "mins": "mins",
+    "secs": "secs"
+  },
+  "buttons": {
+    "add_to_cart": "Add to Cart"
+  },
+
+  "ordersDetail": {
+    "billing_details": "Billing details",
+    "fields": {
+      "first_name": {
+        "label": "First name",
+        "placeholder": ""
+      },
+      "last_name": {
+        "label": "Last name",
+        "placeholder": ""
+      },
+      "company": {
+        "label": "Company name (optional)",
+        "placeholder": ""
+      },
+      "address_1": {
+        "label": "Street address",
+        "placeholder": "House number and street name"
+      },
+      "address_2": {
+        "label": "Apartment, suite, unit, etc. (optional)",
+        "placeholder": "Apartment, suite, unit, etc. (optional)"
+      },
+      "postcode": {
+        "label": "Postcode / ZIP",
+        "placeholder": ""
+      },
+      "city": {
+        "label": "Town / City",
+        "placeholder": "House number and street name"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": ""
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": ""
+      },
+      "country": {
+        "label": "Country / Region",
+        "placeholder": "Select a country..."
+      },
+      "order_comments": {
+        "label": "Notes about your order (optional)",
+        "placeholder": "Notes about your order, e.g. special notes for delivery."
+      }
+    }
+  },
+  "orderReceived": {
+    "breadcrumb": {
+      "home": "Home",
+      "checkout": "Checkout"
+    },
+    "thankYouMessage": "Thank you. Your order has been received.",
+    "orderNumber": "Order number",
+    "date": "Date",
+    "email": "Email",
+    "total": "Total",
+    "paymentMethod": "Payment method"
+  },
+  "orderReview": {
+    "heading": "Your order",
+    "productName": "Product",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total"
+  },
+  "payment": {
+    "checkPayments": "Check payments",
+    "cashOnDelivery": "Cash on delivery",
+    "paypal": "PayPal",
+    "paypalInfo": "What is PayPal?",
+    "checkPaymentsDescription": "Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.",
+    "cashOnDeliveryDescription": "Pay with cash upon delivery.",
+    "paypalDescription": "Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.",
+    "agreeTerms": "I agree with the terms and conditions",
+    "placeOrder": "PLACE ORDER"
+  },
+  "compareProduct": {
+    "title": "Compare products",
+    "noProducts": "No products added in the compare table.",
+    "description": "Description",
+    "sku": "Sku",
+    "availability": "Availability",
+    "weight": "Weight",
+    "dimensions": "Dimensions",
+    "color": "Color",
+    "addToCart": "Add to cart"
+  },
+  "loginForm": {
+    "title": "Login",
+    "usernameLabel": "Username or email address",
+    "passwordLabel": "Password",
+    "rememberMe": "Remember Me",
+    "successMessage": "You have successfully logged in.",
+    "signIn": "Sign in",
+    "lostPassword": "Lost your password?",
+    "errors": {
+      "username": "The username is not registered on this site.",
+      "password": "The password is incorrect."
+    }
+  },
+  "registerForm": {
+    "title": "Register",
+    "username": "Username",
+    "email": "Email address",
+    "password": "Password",
+    "signUp": "Sign up",
+    "successMessage": "Registration successful",
+    "emailExists": "An account is already registered with your email address."
+  },
+  "passwordStrength": {
+    "veryWeak": "Very weak - Please enter a stronger password.",
+    "weak": "Weak - Please enter a stronger password.",
+    "medium": "Medium",
+    "strong": "Strong",
+    "hint": "Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! \" ? $ % ^ &amp; )."
+  },
+  "orders": {
+    "myOrders": "My Orders",
+    "order": "Order",
+    "date": "Date",
+    "status": "Status",
+    "total": "Total",
+    "actions": "Actions",
+    "onHold": "On hold",
+    "for": "for",
+    "item": "item",
+    "view": "View"
+  },
+  "orderDetail": {
+    "orderNumber": "Order #",
+    "wasPlacedOn": "was placed on",
+    "andIsCurrently": "and is currently",
+    "onHold": "On hold"
+  },
+  "pageNotFound": {
+    "notFoundTitle": "The page you're looking for doesn't exist or probably moved somewhere...",
+    "notFoundDescription": "Please back to homepage or check our offer",
+    "backToHomepage": "Back to homepage"
+  },
+  "category": {
+    "camera": "Camera",
+    "headphones": "Headphones",
+    "games": "Games",
+    "tablets": "Tablets",
+    "speakers": "Speakers",
+    "smartphone": "Smart phone",
+    "laptops": "Laptops & Desktops",
+    "iwatch": "Iwatch"
+  },
+  "filter": {
+    "brands": "Brands",
+    "screenSize": "Screen Size",
+    "hardDriveSize": "Hard Drive Size",
+    "ram": "RAM",
+    "operatingSystem": "Operating System",
+    "laptopComputerType": "Laptop Computer Type",
+    "storageCapacity": "Storage Capacity",
+    "color": "Color",
+    "condition": "Condition"
+  },
+  "noProductsFound": "No products were found matching your selection.",
+  "checkSpellingOrTryDifferentWords": "Check the spelling or use a different word or phrase.",
+  "searchPlaceholder": "Search for products...",
+  "shop": {
+    "home": "Home",
+    "shop": "Shop",
+    "searchResults": "Search results for “{{query}}”",
+    "shopTitle": "Shop",
+    "activeFilters": "Active filters:",
+    "minPrice": "Min",
+    "maxPrice": "Max",
+    "filterSaleItems": "Show only products on sale"
+  },
+  "sortOptions": {
+    "sortBy": "Sort By",
+    "latest": "Latest",
+    "bestSelling": "Best Selling",
+    "rating": "Rating",
+    "priceLow": "Price Low",
+    "priceHigh": "Price High"
+  },
+  "productToolbar": {
+    "filter": "Filter"
+  },
+  "showOptions": {
+    "show": "Show"
+  },
+  "addReview": {
+    "addReview": "Add a review",
+    "firstReview": "Be the first to review “{{name}}”",
+    "emailNotPublished": "Your email address will not be published.",
+    "requiredFields": "Required fields are marked",
+    "yourRating": "Your rating",
+    "yourReview": "Your review *",
+    "name": "Name *",
+    "email": "Email *",
+    "submit": "SUBMIT"
+  },
+  "productDetail": {
+    "breadcrumbs": {
+      "home": "Home",
+      "shop": "Shop"
+    },
+    "relatedProducts": {
+      "mayAlsoLike": "You may also like…",
+      "relatedProducts": "Related products"
+    },
+    "tabs": {
+      "productDetails": "Product details",
+      "reviews": "Review ({{count}})"
+    },
+    "reviews": {
+      "title": "Customers Reviews",
+      "ratingCount": "{{count}}",
+      "commentText": "Superb conditioned refurbished Mac, well packaged, out of the box as new, great purchase!",
+      "date": "{{date}}",
+      "noReviews": "There are no reviews yet."
+    },
+    "addToCartSuccess": "Item added to cart successfully",
+    "addToCompareSuccess": "Item added to compare successfully",
+    "addToCart": "Add to cart",
+    "browseWishlist": "Browse to wishlist",
+    "addToWishlist": "Add to wishlist",
+    "added": "Added",
+    "compare": "Compare",
+    "skuLabel": "SKU:",
+    "tagsLabel": "Tags:",
+    "shareLabel": "Share:",
+    "inStock": "In stock",
+    "outOfStock": "Out of stock",
+    "specifications": {
+      "ram": "RAM: 16GB",
+      "hardDrive": "Hard Drive: 256GB SSD",
+      "screenSize": "Screen Size: 13.3 inches"
+    },
+    "additionalInfo": {
+      "deliveryTime": "Estimated delivery time 14-30 days",
+      "warranty": "18 months warranty at Genuine Warranty Center.",
+      "contents": "Whats in the box: 30W Power Adapter and Block"
+    }
+  },
+  "shopping": {
+    "home": "Home",
+    "shoppingCart": "Shopping Cart",
+    "title": "Shopping Cart",
+    "emptyMessage": "Your cart is currently empty.",
+    "returnToShop": "Return To Shop",
+    "relatedProductsTitle": "You may be interested in…"
+  },
+  "CartCollaterals": {
+    "cartTotals": "Cart totals",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingInfo": "Shipping options will be updated during checkout.",
+    "calculateShipping": "Calculate shipping",
+    "total": "Total",
+    "proceedToCheckout": "Proceed to checkout"
+  },
+  "cartForm": {
+    "removeItem": "Remove item",
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Quantity",
+    "subtotal": "Subtotal",
+    "couponLabel": "Coupon:",
+    "couponPlaceholder": "Coupon code",
+    "applyCoupon": "Apply coupon",
+    "updateCart": "Update cart",
+    "emptyCart": "Empty cart"
+  },
+  "wishlist": {
+    "breadcrumbHome": "Home",
+    "breadcrumbWishlist": "Wishlist",
+    "wishlistTitle": "Wishlist",
+    "shareTitle": "Share on:",
+    "productName": "Product name",
+    "unitPrice": "Unit price",
+    "stockStatus": "Stock status",
+    "noProducts": "No products added to the wishlist",
+    "removeProduct": "Remove this product",
+    "inStock": "In stock",
+    "outStock": "Out of stock",
+    "addToCart": "Add to cart",
+    "successRemove": "Wishlist item removed successfully"
+  }
+}

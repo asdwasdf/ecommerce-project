@@ -1,0 +1,98 @@
+.accountForm {
+  display: block;
+  flex: 1;
+}
+
+.accountForm h2 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.form-content form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  max-width: 550px;
+}
+
+.remember {
+  justify-items: flex-end;
+  order: 10;
+  margin-right: auto;
+}
+
+.remember > label {
+  cursor: pointer;
+  margin: 0;
+  color: var(--ts-gray-color);
+  font-size: 1.35rem;
+}
+
+input[type^="checkbox"] {
+  display: inline;
+  vertical-align: middle;
+  cursor: pointer;
+  margin: -2px 3px 0 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  text-align: center;
+}
+
+.form-content button {
+  flex: 1;
+  filter: none;
+  transition: 300ms;
+  cursor: pointer;
+  margin: 0;
+  box-shadow: none;
+  border: 1px solid var(--ts-btn-border);
+  border-radius: 6px;
+  background-color: var(--ts-btn-bg);
+  padding: 1.3rem 4rem;
+  width: 100%;
+  color: var(--ts-btn-color);
+  font-style: var(--ts-btn-font-style);
+  font-weight: var(--ts-btn-font-weight);
+  font-size: var(--ts-btn-font-size);
+  text-transform: uppercase;
+}
+
+.form-content button:hover {
+  border-color: var(--ts-btn-hover-border);
+  background-color: var(--ts-btn-hover-bg);
+  color: var(--ts-btn-hover-color);
+}
+
+.create-account-wrapper {
+  display: inline-block;
+  margin: 3.5rem 0 0;
+  border-bottom: 1px solid #000;
+  font-weight: normal;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.disabled {
+  opacity: 0.1;
+  cursor: not-allowed;
+  border-color: var(--ts-btn-hover-border) !important;
+  background-color: var(--ts-btn-hover-bg) !important;
+  color: var(--ts-btn-hover-color) !important;
+}
+
+.disabled:hover {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 992px) {
+  .accountForm h2 {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+}

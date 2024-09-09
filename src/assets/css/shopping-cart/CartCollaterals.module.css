@@ -1,0 +1,142 @@
+.box {
+  border: 2px solid var(--ts-primary-color);
+  border-radius: 10px;
+  padding: 30px;
+  width: 410px;
+}
+
+.cart_totals {
+  float: none;
+  width: 100%;
+}
+
+.cart_totals > h2 {
+  position: relative;
+  margin: 0 0 20px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-weight: 800;
+  font-size: 1.2em;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+}
+
+.cart_totals table {
+  margin: 0;
+  border: 0;
+  border-collapse: separate;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.shop-table tbody {
+  max-width: 100%;
+}
+
+.cart_totals table th,
+.cart_totals table td {
+  vertical-align: middle;
+  padding: 22px 0 !important;
+  width: 36%;
+  text-align: start;
+}
+
+.Subtotal {
+  font-weight: 700;
+  font-size: 17px;
+  text-align: right !important;
+}
+
+.cart_totals tr th,
+.cart_totals tr td {
+  border-bottom: 1px solid #e9e6ed;
+}
+
+.shipping ul li input {
+  margin: 3px 8px 0 0;
+}
+
+.shipping th {
+  vertical-align: top !important;
+}
+
+.cart_totals p {
+  display: block;
+  margin-top: 5px;
+  color: var(--ts-gray-color);
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.shipping-calculator-button {
+  display: flex;
+  align-items: center;
+}
+
+.shipping-calculator-button svg {
+  margin-right: 16px;
+  font-size: 24px;
+}
+
+.shipping-calculator-button span {
+  font-size: 14px;
+}
+
+.button {
+  filter: none;
+  transition: 350ms;
+  cursor: pointer;
+  box-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ts-btn-border);
+  border-radius: 6px;
+  background-image: none;
+  background-color: var(--ts-btn-bg);
+  padding: 17px 30px;
+  width: 100%;
+  color: var(--ts-btn-color);
+  font-style: var(--ts-btn-font-style);
+  font-weight: var(--ts-btn-font-weight);
+  font-size: var(--ts-btn-font-size);
+  line-height: var(--ts-btn-line-height);
+  font-family: var(--ts-btn-font-family);
+  letter-spacing: var(--ts-btn-letter-spacing);
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+.button {
+  /* min-width: 170px; */
+}
+
+.button:hover {
+  filter: none;
+  outline: none;
+  border-color: var(--ts-btn-hover-border);
+  background-image: none;
+  background-color: var(--ts-btn-hover-bg);
+  color: var(--ts-btn-hover-color);
+  text-shadow: none;
+}
+
+.cart-subtotal:last-child th,
+.cart-subtotal:last-child td {
+  border-bottom: none !important;
+}
+
+.checkout {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1279px) {
+  .box {
+    margin-bottom: 60px !important;
+    width: 100%;
+  }
+}

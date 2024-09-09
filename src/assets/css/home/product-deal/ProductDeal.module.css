@@ -1,0 +1,15 @@
+.product-deal {
+  margin: 10rem 0;
+}
+.product-deals-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex: 1;
+  gap: 3rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .product-deal {
+    margin: 6rem 0;
+  }
+}

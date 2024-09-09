@@ -1,0 +1,44 @@
+.button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--ts-btn-hover-border);
+  border-radius: 1rem;
+  background-color: var(--ts-btn-hover-bg);
+  padding: 1.3rem 1rem;
+  width: 100%;
+  color: #000;
+}
+
+.button:hover {
+  border-color: var(--ts-btn-border);
+  background-color: var(--ts-btn-bg);
+  color: var(--ts-btn-color);
+}
+
+.button span {
+  font-weight: 850;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1279px) {
+  .button {
+    padding: 0.5rem 1rem;
+  }
+
+  .button span {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .button {
+    padding: 0.5rem 0;
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  .button span {
+    font-size: 1.5rem;
+  }
+}

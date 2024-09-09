@@ -1,0 +1,7 @@
+.content {
+  margin-bottom: 6rem;
+}
+
+.content > div > div {
+  width: 100%;
+}

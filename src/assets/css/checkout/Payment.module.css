@@ -1,0 +1,167 @@
+ul.payment_methods {
+  margin: 0;
+  border-width: 0;
+  padding: 20px 0;
+  list-style: none outside;
+  text-align: left;
+}
+
+ul.payment_methods li {
+  margin: 0;
+  padding: 0 0 10px 0;
+  font-weight: 400;
+  line-height: 2;
+  text-align: left;
+}
+
+.payment-method label {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.payment-method input[type="radio"] {
+  margin-right: 10px;
+}
+
+.payment-details {
+  margin-left: 20px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  padding: 10px;
+}
+
+ul.payment_methods li input {
+  margin: -2px 5px 0 0;
+}
+
+ul.payment_methods li label {
+  display: inline;
+  padding: 0 0 6px 0;
+  color: var(--ts-heading-color);
+  line-height: 18px;
+}
+
+.payment_box {
+  position: relative;
+  box-sizing: border-box;
+  margin: 10px 0 0;
+  border-radius: 4px;
+  background: rgba(101, 101, 101, 0.1);
+  padding: 18px 25px;
+  width: 100%;
+  color: inherit;
+  font-size: 100%;
+  line-height: 24px;
+}
+
+.payment_box::before {
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  margin: -10px 0 0 25px;
+  border: 10px solid rgba(101, 101, 101, 0.1);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  content: "";
+}
+
+ul.payment_methods li img {
+  margin: -2px 5px 0;
+  max-width: 120px;
+}
+
+.sublink {
+  float: none;
+  color: inherit;
+  font-size: 10px;
+  line-height: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.termsAndPlaceOrder {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkboxContainer input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.checkboxContainer label {
+  font-size: 14px;
+}
+
+.checkboxContainer a {
+  color: #0070ba;
+  text-decoration: none;
+}
+
+.checkboxContainer a:hover {
+  text-decoration: underline;
+}
+
+.required {
+  color: red;
+}
+
+.placeOrderButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #0070ba;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+}
+
+.placeOrderButton:disabled {
+  cursor: not-allowed;
+  background-color: #cccccc;
+}
+
+.button {
+  float: none;
+  filter: none;
+  transition: 350ms;
+  cursor: pointer;
+  margin-bottom: 0;
+  box-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ts-btn-border);
+  border-radius: 6px;
+  background-image: none;
+  background-color: var(--ts-btn-bg);
+  padding: 17px 30px;
+  width: 100%;
+  min-width: 150px;
+  color: var(--ts-btn-color);
+  font-style: var(--ts-btn-font-style);
+  font-weight: var(--ts-btn-font-weight);
+  font-size: var(--ts-btn-font-size);
+  line-height: var(--ts-btn-line-height);
+  font-family: var(--ts-btn-font-family);
+  letter-spacing: var(--ts-btn-letter-spacing);
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  border-color: var(--ts-btn-hover-border);
+  background-color: var(--ts-btn-hover-bg);
+  color: var(--ts-btn-hover-color);
+}

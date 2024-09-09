@@ -1,0 +1,23 @@
+.list-categories {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.9rem 1.5rem;
+  margin: 0;
+  width: 100%;
+}
+
+.list-categories > ul {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1.4rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.list-categories > ul > li:hover {
+  color: var(--ts-primary-color);
+}

@@ -1,0 +1,209 @@
+.sticky-wrapper {
+  height: 17.9rem;
+}
+
+.header-sticky {
+  position: relative;
+  transition: 100ms ease 0s;
+  width: 100%;
+}
+
+.sticky-wrapper.is-sticky .header-sticky {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  /* -webkit-backface-visibility: hidden; */
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  animation-name: myStick;
+  box-shadow: 0 0 10px rgba(162, 162, 162, 0.3);
+  border-width: 0;
+}
+
+.headerMiddle,
+.headerBottom {
+  border-bottom: 1px solid var(--ts-hd-middle-border);
+  background-color: var(--ts-hd-middle-bg);
+  color: var(--ts-hd-middle-color);
+}
+
+.headerMiddle > div {
+  padding-top: 3.4rem;
+  padding-bottom: 3.4rem;
+}
+
+.headerLeft,
+.headerCenter,
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--ts-hd-gap);
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  min-width: 19rem;
+  max-height: 7rem;
+}
+
+.logoWrapper img {
+  width: var(--ts-logo-width, 160px);
+}
+
+.headerCenter {
+  flex: 1;
+}
+
+.headerCenter > div {
+  width: 100%;
+}
+.headerCenter form {
+  display: flex;
+  position: relative;
+  align-items: center;
+  border: 2px solid var(--ts-primary-color);
+  border-radius: 6px;
+  background: var(--ts-input-background);
+  width: 100%;
+}
+
+.headerRight {
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.hotline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  /* width: 100%; */
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.hotline > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotline > .icon {
+  transition-duration: 200ms;
+  width: 3.4rem; /* Corresponds to w-9 */
+  height: 3.4rem; /* Corresponds to h-9 */
+}
+
+.hotline:hover .icon {
+  color: var(--ts-primary-color);
+}
+
+.label {
+  color: var(--ts-gray-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.number {
+  color: var(--ts-primary-color);
+  font-weight: bold;
+}
+
+.headerBottom > div {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.icon-menu-sticky-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  height: 100%;
+}
+
+.icon-menu {
+  display: inline-block;
+  transition: 350ms ease;
+  cursor: pointer;
+  padding: 0;
+  width: 4.2rem;
+  height: 3.8rem;
+  font-weight: 100;
+}
+
+.icon-menu:hover {
+  color: var(--ts-primary-color);
+}
+
+@keyframes myStick {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .headerMiddle > div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .logoWrapper img {
+    width: 135px;
+  }
+
+  .logoWrapper {
+    min-width: unset;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .hotline {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .headerCenter {
+    display: none;
+  }
+
+  .icon-menu-sticky-header {
+    display: none;
+    padding: 0 1rem;
+  }
+
+  .mobile {
+    display: flex;
+  }
+
+  .icon-menu {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .headerBottom {
+    display: none;
+  }
+
+  .sticky-wrapper {
+    height: 8rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sticky-wrapper.is-sticky .header-sticky {
+    box-shadow: unset;
+  }
+  .headerRight {
+    gap: 0;
+  }
+}

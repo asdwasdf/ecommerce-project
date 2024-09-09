@@ -1,0 +1,118 @@
+.box {
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 20px;
+  margin: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ts-border);
+  border-radius: 10px;
+  padding: 20px;
+  list-style: none;
+}
+
+.item-wrapper,
+.additional-info-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+.product-thumbnail {
+  display: inline-block;
+  margin-right: 20px;
+  width: 100px;
+  max-width: none;
+}
+
+.product-thumbnail > img {
+  width: 100%;
+  height: auto;
+}
+
+.item-details {
+  flex: 1;
+  width: auto;
+}
+
+.product-name h3 {
+  margin-bottom: 7px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.product-price span:nth-child(2) {
+  color: var(--ts-product-price-color);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.product-price span:nth-child(1) {
+  margin-right: 5px;
+  color: #848484;
+  font-weight: normal;
+  font-size: 15px;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.additional-info-wrapper {
+  margin-top: 10px;
+}
+
+.product-stock-status {
+  width: 100%;
+  color: #297e29;
+  font-size: 13px;
+}
+
+.wishlist-in-stock {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.button a {
+  display: block;
+  filter: none;
+  cursor: pointer;
+  box-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ts-btn-border);
+  border-radius: 6px;
+  background-image: none;
+  background-color: var(--ts-btn-bg);
+  padding: 12px 26px !important;
+  width: 100%;
+  color: var(--ts-btn-color);
+  font-style: var(--ts-btn-font-style);
+  font-weight: var(--ts-btn-font-weight);
+  font-size: 15px;
+
+  line-height: var(--ts-btn-line-height);
+  font-family: var(--ts-btn-font-family);
+  letter-spacing: var(--ts-btn-letter-spacing);
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+.remove svg {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 40px;
+}

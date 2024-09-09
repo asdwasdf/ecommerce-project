@@ -1,0 +1,692 @@
+{
+  "free_shipping": "Miễn phí vận chuyển cho đơn hàng trên $100",
+  "flash_sale": "Khuyến mãi",
+  "shopCategories": "Danh mục mua sắm",
+  "track_order": "Theo dõi đơn hàng",
+  "about": "Giới thiệu",
+  "contact": "Liên hệ",
+  "blog": "Blog",
+  "shop_categories": "Danh mục sản phẩm",
+  "todays_deal": "Ưu đãi hôm nay",
+  "hot": "Hot",
+  "wishlist": "Danh sách yêu thích",
+  "menu_home": "Trang chủ",
+  "menu_laptops": "Máy tính xách tay",
+  "menu_smartphone": "Điện thoại thông minh",
+  "menu_headphone": "Tai nghe",
+  "menu_camera": "Máy ảnh",
+  "menu_headphones": "Tai nghe",
+  "menu_pc_gaming": "PC Gaming",
+  "menu_tablets": "Máy tính bảng",
+  "menu_smartwatches": "Đồng hồ thông minh",
+  "menu_speakers": "Loa",
+  "menu_kid_electronic": "Thiết bị điện tử cho trẻ em",
+  "menu_tech_gift": "Quà công nghệ",
+  "allCategories": "Danh mục",
+  "camera": "Máy ảnh",
+  "cameraAccessories": "Phụ kiện máy ảnh",
+  "cameraLenses": "Máy ảnh & Ống kính",
+  "drones": "Drone",
+  "securityCameras": "Camera an ninh",
+  "games": "Trò chơi",
+  "gameAccessories": "Phụ kiện trò chơi",
+  "playstation4": "Playstation 4",
+  "playstation5": "Playstation 5",
+  "xboxSeries": "Xbox Series",
+  "headphones": "Tai nghe",
+  "airpods": "AirPods",
+  "gamingHeadsets": "Tai nghe chơi game",
+  "kidsHeadphones": "Tai nghe trẻ em",
+  "wirelessEarbuds": "Tai nghe không dây",
+  "iwatch": "Iwatch",
+  "laptopsDesktops": "Máy tính xách tay & Máy tính để bàn",
+  "laptopAccessories": "Phụ kiện máy tính xách tay",
+  "laptops": "Máy tính xách tay",
+  "monitors": "Màn hình",
+  "smartHome": "Nhà thông minh",
+  "smartphone": "Điện thoại thông minh",
+  "iphone": "iPhone",
+  "prepaidPhones": "Điện thoại trả trước",
+  "samsungGalaxy": "Samsung Galaxy",
+  "unlockedPhones": "Điện thoại mở khóa",
+  "speakers": "Loa",
+  "bluetoothSpeakers": "Loa Bluetooth",
+  "portableSpeakers": "Loa di động",
+  "professionalSpeakers": "Loa chuyên nghiệp",
+  "waterproofSpeakers": "Loa chống nước",
+  "tablets": "Máy tính bảng",
+  "television": "Tivi",
+  "55Tvs": "Tivi 55\"",
+  "65Tvs": "Tivi 65\"",
+  "oledTvs": "Tivi OLED",
+  "qledTvs": "Tivi QLED",
+  "need_help": "Giúp đỡ?",
+  "search_placeholder": "Tìm kiếm",
+  "check_payments": "Thanh toán bằng séc",
+  "please_accept_terms": "Vui lòng đọc và chấp nhận các điều khoản và điều kiện để tiếp tục đặt hàng.",
+  "order_created_successfully": "Đơn hàng đã được tạo thành công",
+  "checkout": "Thanh toán",
+
+  "loginHeader": {
+    "my_account": "Tài khoản ",
+    "login": "Đăng nhập",
+    "my_orders": "Đơn hàng ",
+    "change_password": "Đổi mật khẩu",
+    "logout": "Đăng xuất",
+    "username_or_email": "Tên đăng nhập hoặc địa chỉ email",
+    "password": "Mật khẩu",
+    "remember_me": "Ghi nhớ đăng nhập",
+    "sign_in": "Đăng nhập",
+    "new_client": "Khách hàng mới.",
+    "create_account": "Tạo tài khoản",
+    "username_error": "Tên đăng nhập chưa được đăng ký trên trang này.",
+    "password_error": "Mật khẩu không chính xác."
+  },
+  "searchInput": {
+    "placeholder": "Tìm kiếm sản phẩm",
+    "search_button": "Tìm kiếm"
+  },
+  "shoppingCart": {
+    "myCart": "Giỏ hàng",
+    "emptyCart": "Giỏ hàng của bạn hiện đang trống",
+    "subtotal": "Tổng tiền",
+    "viewCart": "Xem giỏ hàng",
+    "checkout": "Thanh toán"
+  },
+  "headerBottom": {
+    "home": "Trang chủ",
+    "laptops": "Máy tính xách tay",
+    "smartphone": "Điện thoại thông minh",
+    "headphone": "Tai nghe",
+    "camera": "Máy ảnh",
+    "todaysDeal": "Ưu đãi hôm nay",
+    "hotLabel": "Hot"
+  },
+  "headphonesMenuDrop": {
+    "categories": {
+      "computersTablets": "Máy tính & Máy tính bảng",
+      "cellPhone": "Điện thoại di động",
+      "audio": "Âm thanh",
+      "videoGames": "Trò chơi điện tử"
+    },
+    "links": {
+      "laptopsDesktops": "Máy tính xách tay & Máy tính để bàn",
+      "tablets": "Máy tính bảng",
+      "monitors": "Màn hình",
+      "laptops": "Máy tính xách tay",
+      "accessories": "Phụ kiện",
+      "macbook": "Macbook",
+      "smartphone": "Điện thoại thông minh",
+      "att": "AT&T",
+      "iphone": "iPhone",
+      "prepaidPhones": "Điện thoại trả trước",
+      "samsungGalaxy": "Samsung Galaxy",
+      "unlockedPhones": "Điện thoại mở khóa",
+      "bluetoothSpeakers": "Loa Bluetooth",
+      "portableSpeakers": "Loa di động",
+      "professionalSpeakers": "Loa chuyên nghiệp",
+      "waterproofSpeakers": "Loa chống nước",
+      "headphones": "Tai nghe",
+      "speakers": "Loa",
+      "xboxSeries": "Xbox Series",
+      "ps4": "Playstation 4",
+      "ps5": "Playstation 5",
+      "gamingHeadsets": "Tai nghe chơi game",
+      "pcGaming": "Chơi game trên PC"
+    },
+    "banners": {
+      "computers": "Máy tính",
+      "cellPhone": "Điện thoại di động",
+      "audio": "Âm thanh",
+      "videoGames": "Trò chơi điện tử",
+      "products": "sản phẩm"
+    }
+  },
+  "homeMenuDrop": {
+    "homepage": "Trang chủ",
+    "shopLayouts": "Giao diện cửa hàng",
+    "productLayouts": "Giao diện sản phẩm",
+    "others": "Khác",
+    "links": {
+      "home01": "Trang chủ 01",
+      "home02": "Trang chủ 02",
+      "home03": "Trang chủ 03",
+      "home04": "Trang chủ 04",
+      "home05": "Trang chủ 05",
+      "home06": "Trang chủ 06",
+      "shopTopCategories": "Danh mục hàng đầu",
+      "shopTopBrands": "Thương hiệu hàng đầu",
+      "shopList": "Danh sách cửa hàng",
+      "shopScrollSidebar": "Thanh bên cuộn cửa hàng",
+      "shopTopFilter": "Bộ lọc hàng đầu",
+      "shopLoadMoreButton": "Nút tải thêm cửa hàng",
+      "shopInfinityScroll": "Cuộn vô hạn cửa hàng",
+      "shopAjaxPagination": "Phân trang Ajax cửa hàng",
+      "horizontalThumbnails": "Thu nhỏ ngang",
+      "verticalThumbnails": "Thu nhỏ dọc",
+      "gridThumbnails": "Thu nhỏ lưới",
+      "variationThumbnails": "Thu nhỏ biến thể",
+      "variationDropdown": "Dropdown biến thể",
+      "productDeal": "Ưu đãi sản phẩm",
+      "groupProducts": "Nhóm sản phẩm",
+      "productVideo": "Video sản phẩm",
+      "aboutUs": "Về chúng tôi",
+      "contactUs": "Liên hệ với chúng tôi",
+      "blog": "Blog",
+      "blogDetail": "Chi tiết blog",
+      "trackOrder": "Theo dõi đơn hàng",
+      "flashSale": "Khuyến mãi flash",
+      "comingSoon": "Sắp ra mắt",
+      "404": "404"
+    }
+  },
+  "laptopsLi": {
+    "laptopsAndDesktops": "Laptop & Máy tính để bàn",
+    "accessories": "Phụ kiện",
+    "chromebook": "Chromebook",
+    "computerComponent": "Linh kiện máy tính",
+    "desktops": "Máy tính để bàn",
+    "imac": "iMac",
+    "laptops": "Laptop",
+    "macbook": "Macbook",
+    "monitors": "Màn hình",
+    "pcGaming": "PC Gaming",
+    "printersAndInk": "Máy in & Mực",
+    "restoredComputers": "Máy tính tân trang",
+    "windowsLaptops": "Laptop Windows"
+  },
+  "laptopsMenuDrop": {
+    "computersAndTablets": "Máy tính & Máy tính bảng",
+    "cellPhone": "Điện thoại di động",
+    "audio": "Âm thanh",
+    "videoGames": "Trò chơi video",
+    "camera": "Máy ảnh",
+    "tvAndHomeTheater": "TV & Rạp hát tại nhà",
+    "smartHome": "Nhà thông minh",
+    "headphones": "Tai nghe",
+    "laptopsAndDesktops": "Laptop & Máy tính để bàn",
+    "tablets": "Máy tính bảng",
+    "monitors": "Màn hình",
+    "accessories": "Phụ kiện",
+    "smartphone": "Điện thoại thông minh",
+    "att": "AT&T",
+    "iphone": "iPhone",
+    "prepaidPhones": "Điện thoại trả trước",
+    "samsungGalaxy": "Samsung Galaxy",
+    "unlockedPhones": "Điện thoại không khóa",
+    "bluetoothSpeakers": "Loa Bluetooth",
+    "portableSpeakers": "Loa di động",
+    "professionalSpeakers": "Loa chuyên nghiệp",
+    "waterproofSpeakers": "Loa chống nước",
+    "speakers": "Loa",
+    "xboxSeries": "Xbox Series",
+    "playstation4": "Playstation 4",
+    "playstation5": "Playstation 5",
+    "gamingHeadsets": "Tai nghe chơi game",
+    "cameras": "Máy ảnh",
+    "cameraAndLenses": "Máy ảnh & Ống kính",
+    "drones": "Drone",
+    "television": "TV",
+    "55InchTvs": "TV 55\"",
+    "65InchTvs": "TV 65\"",
+    "oledTvs": "TV OLED",
+    "qledTvs": "TV QLED",
+    "kidsHeadphones": "Tai nghe cho trẻ em",
+    "wirelessEarbuds": "Tai nghe không dây"
+  },
+  "smartPhoneLi": {
+    "computersAndTablets": "Máy tính & Máy tính bảng",
+    "cellPhone": "Điện thoại di động",
+    "camera": "Máy ảnh",
+    "tvAndHomeTheater": "TV & Rạp hát tại nhà",
+    "laptopsAndDesktops": "Laptop & Máy tính để bàn",
+    "tablets": "Máy tính bảng",
+    "monitors": "Màn hình",
+    "accessories": "Phụ kiện",
+    "drones": "Drone",
+    "smartphone": "Điện thoại thông minh",
+    "att": "AT&T",
+    "iphone": "iPhone",
+    "prepaidPhones": "Điện thoại trả trước",
+    "samsungGalaxy": "Samsung Galaxy",
+    "unlockedPhones": "Điện thoại không khóa",
+    "55InchTvs": "TV 55\"",
+    "65InchTvs": "TV 65\"",
+    "oledTvs": "TV OLED",
+    "topBrands": "THƯƠNG HIỆU HÀNG ĐẦU",
+    "saleOff": "Giảm giá 30% Flycam"
+  },
+  "smartphoneMenuDrop": {
+    "computersAndTablets": "Máy tính & Máy tính bảng",
+    "laptopsAndDesktops": "Laptop & Máy tính để bàn",
+    "tablets": "Máy tính bảng",
+    "monitors": "Màn hình",
+    "accessories": "Phụ kiện",
+    "computerComponent": "Lin phụ kiện máy tính",
+    "pcGaming": "Chơi game PC",
+    "cellPhone": "Điện thoại di động",
+    "smartphone": "Điện thoại thông minh",
+    "att": "AT&T",
+    "iphone": "iPhone",
+    "prepaidPhones": "Điện thoại trả trước",
+    "samsungGalaxy": "Samsung Galaxy",
+    "unlockedPhones": "Điện thoại không khóa",
+    "verizon": "Verizon",
+    "appleWatchDeals": "Ưu đãi Apple Watch tuần này",
+    "upToOff": "GIẢM ĐẾN $70"
+  },
+  "footer": {
+    "findLocation": "Tìm địa điểm gần nhất",
+    "ourStores": "Các cửa hàng của chúng tôi",
+    "supportEmail": "Hỗ trợ: Support1234@Ecomall.com",
+    "phone": "+08 9229 8228",
+    "aboutUs": "Giới thiệu",
+    "newsAndBlog": "Tin tức & Blog",
+    "brands": "Thương hiệu",
+    "pressCenter": "Trung tâm báo chí",
+    "advertising": "Quảng cáo",
+    "investors": "Nhà đầu tư",
+    "supportCenter": "Trung tâm hỗ trợ",
+    "manage": "Quản lý",
+    "service": "Dịch vụ",
+    "haulAway": "Vận chuyển đi",
+    "securityCenter": "Trung tâm bảo mật",
+    "contact": "Liên hệ",
+    "checkOrder": "Kiểm tra đơn hàng",
+    "deliveryAndPickup": "Giao hàng & Nhận hàng",
+    "returns": "Trả hàng",
+    "exchanges": "Hoán đổi",
+    "developers": "Nhà phát triển",
+    "giftCards": "Thẻ quà tặng",
+    "trendingTags": "Thẻ phổ biến",
+    "accessories": "Phụ kiện",
+    "appleIphone": "Apple iPhone",
+    "cameraVideo": "Máy ảnh & Video",
+    "cellphone": "Điện thoại di động",
+    "desktopComputers": "Máy tính để bàn",
+    "electronic": "Điện tử",
+    "game": "Trò chơi",
+    "gamingHeadsets": "Tai nghe chơi game",
+    "headphone": "Tai nghe",
+    "iwatch": "Đồng hồ thông minh",
+    "kidsElectronics": "Điện tử cho trẻ em",
+    "laptop": "Máy tính xách tay",
+    "mobileTablet": "Di động & Máy tính bảng",
+    "panasonic": "Panasonic",
+    "pcGaming": "Game PC",
+    "smartwatches": "Đồng hồ thông minh",
+    "speaker": "Loa",
+    "techAccessories": "Phụ kiện công nghệ",
+    "television": "Tivi",
+    "copyright": "© Ecomall. Tất cả quyền được bảo lưu."
+  },
+  "addToCartModal": {
+    "productAdded": "Sản phẩm đã được thêm vào giỏ hàng",
+    "viewCart": "Xem Giỏ Hàng",
+    "checkOut": "Thanh Toán"
+  },
+  "inputField": {
+    "required": "là bắt buộc",
+    "emailPattern": "Email không được định dạng đúng."
+  },
+  "orderDetails": {
+    "orderDetails": "Chi tiết đơn hàng",
+    "product": "Sản phẩm",
+    "total": "Tổng",
+    "subtotal": "Tạm tính",
+    "shipping": "Vận chuyển",
+    "freeShipping": "Giao hàng miễn phí",
+    "localPickup": "Nhận hàng tại địa điểm",
+    "flatRate": "Tỷ lệ cố định",
+    "paymentMethod": "Phương thức thanh toán",
+    "note": "Ghi chú",
+    "billingAddress": "Địa chỉ thanh toán"
+  },
+  "productCard": {
+    "addToCart": "Thêm vào giỏ hàng",
+    "readMore": "Đọc thêm",
+    "ram": "RAM",
+    "hardDrive": "Ổ cứng",
+    "screenSize": "Kích thước"
+  },
+  "searchResult": {
+    "viewAll": "Xem tất cả {{count}} kết quả",
+    "noProductsFound": "Không tìm thấy sản phẩm"
+  },
+  "shipping": {
+    "freeShipping": "Giao hàng miễn phí",
+    "localPickup": "Nhận tại nhà: ${{cost}}",
+    "flatRate": "Phí cố định: ${{cost}}"
+  },
+  "categories": {
+    "camera": "Máy ảnh",
+    "headphones": "Tai nghe",
+    "gamers": "Game thủ",
+    "tablets": "Máy tính bảng",
+    "speakers": "Loa"
+  },
+  "newsletter": {
+    "title": "Đăng ký nhận bản tin & Nhận 20% Giảm giá",
+    "placeholder": "Địa chỉ email của bạn",
+    "subscribe": "Đăng ký"
+  },
+  "services": {
+    "free_delivery": {
+      "title": "Giao hàng miễn phí",
+      "description": "Miễn phí vận chuyển cho tất cả các đơn hàng"
+    },
+    "returns": {
+      "title": "Hoàn trả",
+      "description": "Đảm bảo hoàn lại trong vòng 7 ngày"
+    },
+    "support_24_7": {
+      "title": "Hỗ trợ 24/7",
+      "description": "Hỗ trợ trực tuyến 24 giờ mỗi ngày"
+    },
+    "payments": {
+      "title": "Thanh toán",
+      "description": "Bảo mật thanh toán 100%"
+    }
+  },
+  "promotion": {
+    "only_for_today": "CHỈ HÔM NAY",
+    "deal_of_the_day": "Khuyến Mãi",
+    "deal_description": "Khuyến mãi trong ngày với các giao dịch điện tử tiêu dùng. Theo dõi nhiều ưu đãi hàng ngày khác.",
+    "hours": "giờ",
+    "mins": "phút",
+    "secs": "giây"
+  },
+  "buttons": {
+    "add_to_cart": "Thêm vào Giỏ Hàng"
+  },
+
+  "ordersDetail": {
+    "billing_details": "Chi tiết thanh toán",
+    "fields": {
+      "first_name": {
+        "label": "Tên",
+        "placeholder": ""
+      },
+      "last_name": {
+        "label": "Họ",
+        "placeholder": ""
+      },
+      "company": {
+        "label": "Tên công ty (tùy chọn)",
+        "placeholder": ""
+      },
+      "address_1": {
+        "label": "Địa chỉ",
+        "placeholder": "Số nhà và tên đường"
+      },
+      "address_2": {
+        "label": "Căn hộ, suite, đơn vị, v.v. (tùy chọn)",
+        "placeholder": "Căn hộ, suite, đơn vị, v.v. (tùy chọn)"
+      },
+      "postcode": {
+        "label": "Mã bưu chính / ZIP",
+        "placeholder": ""
+      },
+      "city": {
+        "label": "Thành phố / Quận",
+        "placeholder": "Số nhà và tên đường"
+      },
+      "phone": {
+        "label": "Số điện thoại",
+        "placeholder": ""
+      },
+      "email": {
+        "label": "Địa chỉ email",
+        "placeholder": ""
+      },
+      "country": {
+        "label": "Quốc gia / Khu vực",
+        "placeholder": "Chọn một quốc gia..."
+      },
+      "order_comments": {
+        "label": "Ghi chú về đơn hàng của bạn (tùy chọn)",
+        "placeholder": "Ghi chú về đơn hàng của bạn, ví dụ: ghi chú đặc biệt cho giao hàng."
+      }
+    }
+  },
+  "orderReceived": {
+    "breadcrumb": {
+      "home": "Trang chủ",
+      "checkout": "Thanh toán"
+    },
+    "thankYouMessage": "Cảm ơn bạn. Đơn hàng của bạn đã được nhận.",
+    "orderNumber": "Số đơn hàng",
+    "date": "Ngày",
+    "email": "Email",
+    "total": "Tổng cộng",
+    "paymentMethod": "Phương thức thanh toán"
+  },
+  "orderReview": {
+    "heading": "Đơn hàng của bạn",
+    "productName": "Sản phẩm",
+    "subtotal": "Tạm tính",
+    "shipping": "Vận chuyển",
+    "total": "Tổng cộng"
+  },
+  "payment": {
+    "checkPayments": "Thanh toán bằng séc",
+    "cashOnDelivery": "Thanh toán khi nhận hàng",
+    "paypal": "PayPal",
+    "paypalInfo": "PayPal là gì?",
+    "checkPaymentsDescription": "Vui lòng gửi séc đến Tên cửa hàng, Địa chỉ cửa hàng, Thành phố cửa hàng, Tỉnh / Huyện cửa hàng, Mã bưu chính cửa hàng.",
+    "cashOnDeliveryDescription": "Thanh toán bằng tiền mặt khi nhận hàng.",
+    "paypalDescription": "Thanh toán qua PayPal; bạn có thể thanh toán bằng thẻ tín dụng nếu bạn không có tài khoản PayPal.",
+    "agreeTerms": "Tôi đồng ý với các điều khoản và điều kiện",
+    "placeOrder": "ĐẶT HÀNG"
+  },
+  "compareProduct": {
+    "title": "So sánh sản phẩm",
+    "noProducts": "Chưa có sản phẩm nào trong bảng so sánh.",
+    "description": "Mô tả",
+    "sku": "Mã sản phẩm",
+    "availability": "Tình trạng",
+    "weight": "Cân nặng",
+    "dimensions": "Kích thước",
+    "color": "Màu sắc",
+    "addToCart": "Thêm vào giỏ hàng"
+  },
+  "loginForm": {
+    "title": "Đăng nhập",
+    "usernameLabel": "Tên người dùng hoặc địa chỉ email",
+    "passwordLabel": "Mật khẩu",
+    "rememberMe": "Nhớ tài khoản",
+    "successMessage": "Bạn đã đăng nhập thành công.",
+    "signIn": "Đăng nhập",
+    "lostPassword": "Quên mật khẩu?",
+    "errors": {
+      "username": "Tên người dùng không được đăng ký trên trang này.",
+      "password": "Mật khẩu không chính xác."
+    }
+  },
+  "registerForm": {
+    "title": "Đăng ký",
+    "username": "Tên đăng nhập",
+    "email": "Địa chỉ email",
+    "password": "Mật khẩu",
+    "signUp": "Đăng ký",
+    "successMessage": "Đăng ký thành công",
+    "emailExists": "Đã có tài khoản được đăng ký với địa chỉ email của bạn."
+  },
+  "passwordStrength": {
+    "veryWeak": "Rất yếu - Vui lòng nhập mật khẩu mạnh hơn.",
+    "weak": "Yếu - Vui lòng nhập mật khẩu mạnh hơn.",
+    "medium": "Trung bình",
+    "strong": "Mạnh",
+    "hint": "Gợi ý: Mật khẩu nên có ít nhất mười hai ký tự. Để làm mật khẩu mạnh hơn, hãy sử dụng chữ hoa và chữ thường, số và ký hiệu như ! \" ? $ % ^ &amp; )."
+  },
+  "orders": {
+    "myOrders": "Đơn hàng của tôi",
+    "order": "Đơn hàng",
+    "date": "Ngày",
+    "status": "Trạng thái",
+    "total": "Tổng cộng",
+    "actions": "Hành động",
+    "onHold": "Đang chờ xử lý",
+    "for": "với",
+    "item": "mặt hàng",
+    "view": "Chi tiết"
+  },
+  "orderDetail": {
+    "orderNumber": "Đơn hàng #",
+    "wasPlacedOn": "được đặt vào ngày",
+    "andIsCurrently": "và hiện đang",
+    "onHold": "Đang chờ xử lý"
+  },
+  "pageNotFound": {
+    "notFoundTitle": "Trang bạn tìm kiếm không tồn tại hoặc có thể đã di chuyển đâu đó...",
+    "notFoundDescription": "Vui lòng trở về trang chủ hoặc kiểm tra các ưu đãi của chúng tôi",
+    "backToHomepage": "Quay lại trang chủ"
+  },
+  "category": {
+    "camera": "Máy ảnh",
+    "headphones": "Tai nghe",
+    "games": "Trò chơi",
+    "tablets": "Máy tính bảng",
+    "speakers": "Loa",
+    "smartphone": "Điện thoại thông minh",
+    "laptops": "Máy xách tay & Máy bàn",
+    "iwatch": "Đồng hồ thông minh"
+  },
+  "filter": {
+    "brands": "Thương hiệu",
+    "screenSize": "Kích thước màn hình",
+    "hardDriveSize": "Kích thước ổ cứng",
+    "ram": "RAM",
+    "operatingSystem": "Hệ điều hành",
+    "laptopComputerType": "Loại máy tính xách tay",
+    "storageCapacity": "Dung lượng lưu trữ",
+    "color": "Màu sắc",
+    "condition": "Tình trạng"
+  },
+  "noProductsFound": "Không tìm thấy sản phẩm nào phù hợp với lựa chọn của bạn.",
+  "checkSpellingOrTryDifferentWords": "Kiểm tra chính tả hoặc sử dụng từ hoặc cụm từ khác.",
+  "searchPlaceholder": "Tìm kiếm sản phẩm...",
+  "shop": {
+    "home": "Trang chủ",
+    "shop": "Sản phẩm",
+    "searchResults": "Kết quả tìm kiếm cho “{{query}}”",
+    "shopTitle": "Cửa hàng",
+    "activeFilters": "Bộ lọc hiện tại:",
+    "minPrice": "Giá thấp nhất",
+    "maxPrice": "Giá cao nhất",
+    "filterSaleItems": "Hiển thị sản phẩm đang giảm giá"
+  },
+  "sortOptions": {
+    "sortBy": "Sắp xếp Theo",
+    "latest": "Mới Nhất",
+    "bestSelling": "Bán Chạy Nhất",
+    "rating": "Đánh Giá",
+    "priceLow": "Giá Thấp",
+    "priceHigh": "Giá Cao"
+  },
+  "productToolbar": {
+    "filter": "Bộ lọc"
+  },
+  "showOptions": {
+    "show": "Hiển thị"
+  },
+  "addReview": {
+    "addReview": "Thêm đánh giá",
+    "firstReview": "Hãy là người đầu tiên đánh giá “{{name}}”",
+    "emailNotPublished": "Địa chỉ email của bạn sẽ không được công bố.",
+    "requiredFields": "Các trường bắt buộc được đánh dấu",
+    "yourRating": "Đánh giá của bạn",
+    "yourReview": "Đánh giá của bạn *",
+    "name": "Tên *",
+    "email": "Email *",
+    "submit": "GỬI"
+  },
+  "productDetail": {
+    "breadcrumbs": {
+      "home": "Trang chủ",
+      "shop": "Sản phẩm"
+    },
+    "relatedProducts": {
+      "mayAlsoLike": "Bạn có thể thích…",
+      "relatedProducts": "Sản phẩm liên quan"
+    },
+    "tabs": {
+      "productDetails": "Chi tiết sản phẩm",
+      "reviews": "Đánh giá ({{count}})"
+    },
+    "reviews": {
+      "title": "Đánh giá của khách hàng",
+      "ratingCount": "{{count}}",
+      "commentText": "Mac đã qua sử dụng trong tình trạng tuyệt vời, được đóng gói tốt, như mới khi mở hộp, mua sắm tuyệt vời!",
+      "date": "{{date}}",
+      "noReviews": "Chưa có đánh giá nào."
+    },
+    "addToCartSuccess": "Đã thêm sản phẩm vào giỏ hàng thành công",
+    "addToCompareSuccess": "Đã thêm sản phẩm vào so sánh thành công",
+    "addToCart": "Thêm vào giỏ hàng",
+    "browseWishlist": "Xem danh sách yêu thích",
+    "addToWishlist": "Thêm vào danh sách yêu thích",
+    "added": "Đã thêm",
+    "compare": "So sánh",
+    "skuLabel": "SKU:",
+    "tagsLabel": "Thẻ:",
+    "shareLabel": "Chia sẻ:",
+    "inStock": "Có hàng",
+    "outOfStock": "Hết hàng",
+    "specifications": {
+      "ram": "RAM: 16GB",
+      "hardDrive": "Ổ cứng: 256GB SSD",
+      "screenSize": "Kích thước màn hình: 13.3 inches"
+    },
+    "additionalInfo": {
+      "deliveryTime": "Thời gian giao hàng dự kiến 14-30 ngày",
+      "warranty": "Bảo hành 18 tháng tại Trung tâm Bảo hành Chính hãng.",
+      "contents": "Có gì trong hộp: Bộ nguồn 30W và Khối"
+    }
+  },
+
+  "shopping": {
+    "home": "Trang chủ",
+    "shoppingCart": "Giỏ hàng",
+    "title": "Giỏ hàng",
+    "emptyMessage": "Giỏ hàng của bạn hiện đang trống.",
+    "returnToShop": "Quay lại cửa hàng",
+    "relatedProductsTitle": "Bạn có thể quan tâm đến…"
+  },
+  "CartCollaterals": {
+    "cartTotals": "Tổng giỏ hàng",
+    "subtotal": "Tạm tính",
+    "shipping": "Giao hàng",
+    "shippingInfo": "Các tùy chọn giao hàng sẽ được cập nhật trong quá trình thanh toán.",
+    "calculateShipping": "Tính phí giao hàng",
+    "total": "Tổng",
+    "proceedToCheckout": "Tiến hành thanh toán"
+  },
+  "cartForm": {
+    "removeItem": "Xóa sản phẩm",
+    "product": "Sản phẩm",
+    "price": "Giá",
+    "quantity": "Số lượng",
+    "subtotal": "Tạm tính",
+    "couponLabel": "Mã giảm giá:",
+    "couponPlaceholder": "Nhập mã giảm giá",
+    "applyCoupon": "Áp dụng mã",
+    "updateCart": "Cập nhật giỏ hàng",
+    "emptyCart": "Xóa giỏ hàng"
+  },
+  "wishlist": {
+    "breadcrumbHome": "Trang chủ",
+    "breadcrumbWishlist": "Danh sách yêu thích",
+    "wishlistTitle": "Danh sách yêu thích",
+    "shareTitle": "Chia sẻ trên:",
+    "productName": "Tên sản phẩm",
+    "unitPrice": "Đơn giá",
+    "stockStatus": "Tình trạng kho",
+    "noProducts": "Không có sản phẩm nào trong danh sách yêu thích",
+    "removeProduct": "Xóa sản phẩm này",
+    "inStock": "Còn hàng",
+    "outStock": "Hết hàng",
+    "addToCart": "Thêm vào giỏ hàng",
+    "successRemove": "Đã xóa sản phẩm khỏi danh sách yêu thích thành công"
+  }
+}

@@ -1,0 +1,168 @@
+.checkout-title-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.checkout-title-container h2 {
+  padding: 0;
+  font-size: 30px;
+}
+
+.table {
+  margin: 0;
+  border: 0;
+  border-radius: 5px;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  empty-cells: show;
+  font-size: 100%;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.table tbody,
+.table tfood,
+.table thead {
+  max-width: 100%;
+}
+
+.table th {
+  font-weight: 700;
+}
+
+.table thead th,
+.table td {
+  margin-bottom: 20px;
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: var(--ts-border);
+  padding-top: 0px;
+  max-width: 100%;
+  table-layout: auto;
+
+  line-height: 1.5em;
+  text-align: left;
+}
+
+.table th:first-child {
+  padding: 0 0 20px 0;
+}
+
+.table th:last-child,
+.table td:last-child {
+  padding-right: 0;
+  text-align: end;
+}
+
+.table th {
+  padding: 0 0 20px 20px;
+}
+
+.table tbody td {
+  padding: 20px 0 20px 20px;
+}
+
+.table tbody td:first-child {
+  padding-left: 0 !important;
+}
+
+.amount {
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.button {
+  filter: none;
+  transition: 350ms;
+  cursor: pointer;
+  box-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ts-btn-border);
+  border-radius: 6px;
+  background-image: none;
+  background-color: var(--ts-btn-bg);
+  padding: 5px 20px;
+  min-width: 0;
+  color: var(--ts-btn-color);
+  font-style: var(--ts-btn-font-style);
+  font-weight: var(--ts-btn-font-weight);
+  font-size: 15px;
+  line-height: inherit;
+  font-family: var(--ts-btn-font-family);
+  letter-spacing: var(--ts-btn-letter-spacing);
+  text-align: center;
+  text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  border-color: var(--ts-btn-hover-border);
+  background-color: var(--ts-btn-hover-bg);
+  color: var(--ts-btn-hover-color);
+}
+
+.text {
+  display: block;
+  margin: 0 0 20px;
+}
+
+.text mark {
+  background-color: transparent;
+  color: inherit;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    margin-top: -1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--ts-border);
+    padding: 30px;
+  }
+
+  .table td {
+    display: block;
+    margin: 0;
+    padding-right: 0;
+    padding-left: 0 !important;
+    text-align: right !important;
+  }
+
+  .table td::before {
+    float: left;
+    font-weight: 700;
+  }
+
+  .table td:nth-child(1)::before {
+    content: "Order";
+  }
+
+  .table td:nth-child(2)::before {
+    content: "Date";
+  }
+
+  .table td:nth-child(3)::before {
+    content: "Status";
+  }
+
+  .table td:nth-child(4)::before {
+    content: "Total";
+  }
+
+  .table td:nth-child(5)::before {
+    content: "Actions";
+  }
+}

@@ -1,0 +1,29 @@
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  order: -1;
+  gap: 10px;
+}
+
+.box span {
+  cursor: pointer;
+}
+
+.box span svg {
+  font-size: 32px;
+}
+
+.active,
+.box span:hover {
+  color: var(--ts-primary-color);
+}
+
+.active {
+  cursor: default !important;
+}
+
+@media only screen and (max-width: 776px) {
+  .box {
+    display: none;
+  }
+}

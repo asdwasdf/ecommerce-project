@@ -1,0 +1,213 @@
+.group {
+  /* width: 100%; */
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 0 1rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.login > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.login > .icon {
+  transition-duration: 200ms;
+  width: 3.4rem; /* Corresponds to w-9 */
+  height: 3.4rem; /* Corresponds to h-9 */
+  font-weight: lighter;
+}
+
+.login:hover .icon,
+.login:hover .number {
+  color: var(--ts-primary-color);
+}
+
+.label {
+  color: var(--ts-gray-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.number {
+  transition-duration: 200ms;
+  font-weight: 800;
+}
+
+.group {
+  position: relative;
+}
+
+.group:hover .accountForm {
+  display: block;
+}
+
+.accountForm {
+  display: none;
+  position: absolute;
+  right: -10rem;
+  -webkit-transform-origin: 0 0 0;
+  z-index: 5;
+  animation-duration: 200ms;
+  -webkit-animation-delay: 100ms;
+  animation-fill-mode: both;
+  animation-name: menu-animation;
+  background-color: var(--ts-hd-middle-bg);
+  padding: 5.5rem 4rem 4rem;
+}
+
+.loginHidden {
+  right: -12rem;
+  width: 41.5rem;
+}
+
+.accountForm ul li:first-child {
+  padding-top: 0;
+}
+
+.accountForm ul li {
+  padding: 5px 0;
+}
+
+.accountForm ul li:hover {
+  color: var(--ts-primary-color);
+}
+
+.accountForm::before {
+  display: block;
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(162, 162, 162, 0.33);
+  border-radius: 1rem;
+  background-color: var(--ts-dropdown-bg);
+  content: "";
+}
+
+.form-content form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+}
+
+.form-content form p {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+.form-content label {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0;
+  line-height: 1.8rem;
+}
+
+.form-content input[type^="text"],
+input[type^="password"] {
+  vertical-align: bottom;
+  filter: none !important;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-color: var(--ts-input-border);
+  border-radius: 6px;
+  background-color: var(--ts-input-background-color);
+  padding: 1.2rem 1.6rem;
+  width: 100%;
+  color: var(--ts-input-color);
+  font-size: var(--ts-body-font-size);
+  line-height: 2.4rem;
+}
+
+.remember {
+  justify-items: flex-end;
+  order: 10;
+  margin-right: auto;
+}
+
+.remember > label {
+  cursor: pointer;
+  margin: 0;
+  color: var(--ts-gray-color);
+  font-size: 1.35rem;
+}
+
+input[type^="checkbox"] {
+  display: inline;
+  vertical-align: middle;
+  cursor: pointer;
+  margin: -2px 3px 0 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  text-align: center;
+}
+
+.form-content button {
+  flex: 1;
+  filter: none;
+  transition: 300ms;
+  cursor: pointer;
+  margin: 0;
+  box-shadow: none;
+  border: 1px solid var(--ts-btn-border);
+  border-radius: 6px;
+  background-color: var(--ts-btn-bg);
+  padding: 1.3rem 4rem;
+  width: 100%;
+  color: var(--ts-btn-color);
+  font-style: var(--ts-btn-font-style);
+  font-weight: var(--ts-btn-font-weight);
+  font-size: var(--ts-btn-font-size);
+  text-transform: uppercase;
+}
+
+.form-content button:hover {
+  border-color: var(--ts-btn-hover-border);
+  background-color: var(--ts-btn-hover-bg);
+  color: var(--ts-btn-hover-color);
+}
+
+.form-content form > div {
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.create-account-wrapper {
+  margin: 3.5rem 0 0;
+}
+
+.create-account-wrapper a {
+  display: inline-block;
+  color: var(--ts-primary-color);
+  font-weight: bold;
+}
+
+@keyframes menu-animation {
+  0% {
+    transform: scale(1, 0.7);
+    visibility: hidden;
+  }
+  100% {
+    transform: scale(1, 1);
+    visibility: visible;
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .login > div {
+    display: none;
+  }
+}

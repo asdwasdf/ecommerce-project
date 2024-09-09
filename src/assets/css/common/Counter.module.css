@@ -1,0 +1,43 @@
+.counter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--ts-border);
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  padding: 0 30px;
+  width: 164px;
+}
+
+.counter-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  height: 50px;
+  font-size: 18px;
+  line-height: 48px;
+}
+
+.counter-value {
+  margin: 0;
+  box-shadow: none;
+  border-color: #ededed;
+  background: transparent;
+  background-color: #ededed;
+  padding: 0 30px;
+  width: 100%;
+  color: #000000;
+  line-height: 36px;
+  text-align: center;
+  text-shadow: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .counter-container {
+    padding: 0 10px;
+    width: 110px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+}

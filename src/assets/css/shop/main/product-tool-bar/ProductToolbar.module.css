@@ -1,0 +1,63 @@
+.box {
+  display: flex;
+  position: relative;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px 40px;
+  z-index: 7;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 16px;
+}
+
+.filter {
+  display: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .box {
+    gap: 15px 20px;
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  .box {
+    position: sticky;
+    top: 70px;
+    right: 0;
+    left: 0;
+    align-items: center;
+    gap: 0;
+    transition: 300ms ease 20ms;
+    margin: 0 -10px 20px;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: var(--ts-border);
+    background: var(--ts-main-bg);
+    padding: 10px 10px;
+  }
+
+  .filter {
+    display: block;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 50%;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .filter a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 5px 20px;
+    text-decoration: none;
+  }
+
+  .filter svg {
+    font-size: 26px;
+  }
+}

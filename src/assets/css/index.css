@@ -1,0 +1,166 @@
+body {
+  font-weight: 600;
+  font-family: "Mulish";
+}
+
+.container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 4rem;
+  margin: auto;
+  max-width: 140rem;
+}
+
+.relative {
+  position: relative;
+}
+
+/* Swiper css */
+
+.swiper {
+  width: 100%;
+}
+
+.swiper.product {
+  padding-bottom: 4rem !important;
+}
+
+.swiper.product-related {
+  margin-bottom: -200px;
+  padding-bottom: 200px;
+}
+
+.mySwiper .swiper-slide {
+  height: auto;
+}
+
+.mySwiper .swiper-pagination-bullet {
+  opacity: 1 !important;
+  z-index: 5;
+  transition: all 0.5s ease !important;
+  margin: 0 0.5rem !important;
+  border-radius: 50% !important;
+  background-color: #d6d6d6 !important;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+}
+
+.mySwiper.hero-banner .swiper-pagination-bullet {
+  background-color: white !important;
+}
+
+.mySwiper.grid .swiper-pagination {
+  position: static;
+  margin-top: 3rem;
+}
+
+.mySwiper.hero-banner .swiper-pagination-bullet-active,
+.mySwiper.hero-banner .swiper-pagination-bullet:hover,
+.swiper.product .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  border-radius: 2rem !important;
+  background-color: #007aff !important;
+  width: 5rem !important;
+  height: 1.2rem !important;
+}
+
+.swiper-container {
+  z-index: 1; /* Đặt z-index thấp hơn để phần Add to Cart nằm trên */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 300ms;
+  border-radius: 50%; /* Hình dạng tròn */
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 38px !important;
+  height: 38px !important;
+  color: #fff !important;
+  font-size: 3rem;
+}
+
+.swiper.product-related .swiper-button-prev,
+.swiper.product-related .swiper-button-next {
+  top: var(--swiper-navigation-top-offset, 20%);
+}
+
+.mySwiper:hover .swiper-button-next,
+.mySwiper:hover .swiper-button-prev {
+  visibility: visible;
+  opacity: 1;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.8rem !important; /* Mũi tên tiếp theo */
+}
+
+/* Star Rating css */
+
+.star-ratings .star-container svg {
+  display: inline-block;
+  margin-right: 0; /* Khoảng cách giữa các ngôi sao */
+  border-radius: 50%;
+  width: 1.8rem !important ; /* Kích thước ngôi sao */
+  height: 1.8rem !important;
+  height: 100% !important ;
+}
+
+.star-ratings .star-container {
+  padding: 0 !important;
+}
+
+.star-ratings .star-container:last-child {
+  margin-right: 0; /* Xóa khoảng cách sau ngôi sao cuối cùng */
+}
+
+@media only screen and (max-width: 1300px) {
+  .star-ratings .star-container svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 992px) {
+  .container {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .swiper.product-related {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  .star-ratings .star-container svg {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+}

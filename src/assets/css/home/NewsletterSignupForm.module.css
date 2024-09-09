@@ -1,0 +1,141 @@
+.content {
+  background-image: url("https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/11/bg-newsletter.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  margin: 5rem 0;
+  border: 1rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  padding: 5rem;
+  width: 100%;
+}
+
+.widget-container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  clear: both;
+  gap: 4vw;
+  width: 100%;
+}
+
+.widget-title-wrapper {
+  width: 50%;
+}
+
+.widget-title-wrapper {
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+.subscribe-widget {
+  flex: 1;
+  width: auto;
+}
+
+.subscribe-email {
+  position: relative;
+}
+
+.subscribe-email input {
+  vertical-align: bottom;
+  appearance: none;
+  filter: none !important;
+  transition: 350ms;
+  margin: 0;
+  outline: 0;
+  box-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000;
+  border-radius: 0.6rem;
+  background: #fff;
+  padding: 1.2rem 2.6rem;
+  padding-right: 17rem;
+  width: 100%;
+  color: var(--ts-input-color);
+  font-size: var(--ts-body-font-size);
+  line-height: 2.4rem;
+}
+
+.subscribe-email:hover input[type="email"],
+.subscribe-email input[type="email"]:focus {
+  border-color: var(--ts-primary-color);
+}
+
+.button {
+  position: absolute;
+  transition: 350ms;
+  cursor: pointer;
+  inset: 0 0 0 auto;
+  border-color: #000;
+  border-radius: 0.6rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: #000;
+  padding: 0.5rem 1rem;
+  min-width: 15rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.subscribe-email:hover .button,
+.subscribe-email input[type="email"]:focus ~ .button {
+  border-color: var(--ts-primary-color);
+  background: var(--ts-primary-color);
+  color: var(--ts-text-in-primary-color);
+}
+
+@media only screen and (max-width: 1300px) {
+  .widget-title-wrapper h3 {
+    font-weight: 800;
+    font-size: 3rem;
+  }
+
+  .subscribe-email input {
+    width: 60rem;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .widget-title-wrapper h3 {
+    font-size: 2.4rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .widget-title-wrapper h3 {
+    font-size: 2.5rem;
+  }
+
+  .widget-title-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .widget-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .subscribe-widget {
+    width: 100%;
+  }
+
+  .subscribe-email input {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  .button {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+}

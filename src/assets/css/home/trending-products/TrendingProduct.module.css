@@ -1,0 +1,38 @@
+.content {
+  background: #f4f4f4;
+}
+
+.wrapper {
+  padding: 10rem 0;
+  width: 100%;
+}
+
+.shortcode-heading-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: #ccc;
+  padding-bottom: 2.3rem;
+  width: 100%;
+}
+
+.shortcode-heading-wrapper h3 {
+  font-size: 3rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    padding: 6rem 0;
+  }
+}

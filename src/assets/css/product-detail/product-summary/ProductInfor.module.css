@@ -1,0 +1,249 @@
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-self: flex-start;
+  clear: both;
+  gap: 30px;
+  margin: 0;
+  margin-bottom: 80px;
+  padding-left: 30px;
+  width: 46%;
+  line-height: 18px;
+}
+
+.cats-link {
+  flex: none;
+  width: 100%;
+  height: 10px;
+  color: #848484 !important;
+}
+
+.product_title {
+  flex: none;
+  margin: 0;
+  margin-top: -16px;
+  width: 100%;
+  /* height: 40px; */
+  font-weight: normal;
+  font-size: 30px;
+}
+
+.product-ratings-stock {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: -16px;
+  width: 100%;
+  /* height: 10px; */
+}
+
+.product-rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.availability {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 3px 10px;
+  min-width: 80px;
+  color: #0fb232;
+  font-size: 0.8rem;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.availability.sold-out {
+  color: red;
+}
+
+.product-price {
+  display: flex;
+  gap: 16px;
+}
+
+.product-price span:first-child {
+  color: var(--ts-product-price-color);
+  font-weight: 700;
+  font-size: 3.6rem;
+}
+
+.product-price span:nth-child(2) {
+  color: #848484;
+  font-weight: normal;
+  font-size: 2rem;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.discount-percent {
+  font-size: 20px;
+}
+
+.short-description {
+  flex: none;
+  width: 100%;
+}
+
+.short-description ul,
+.summary-custom-content ul {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.short-description > ul > li::before,
+.summary-custom-content > ul > li::before {
+  display: inline-block;
+  /* position: absolute;
+  top: 6px;
+  left: 0; */
+  vertical-align: 3px;
+  margin-right: 1rem;
+  border-radius: 2px;
+  background: var(--ts-text-color);
+  width: 4px;
+  height: 4px;
+  content: "";
+}
+
+.summary-custom-content {
+  flex: none;
+  border-radius: 10px;
+  background: #e8f3fe;
+  padding: 15px 20px;
+  width: 100%;
+  color: #0068c8;
+}
+
+.button {
+  flex: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--ts-btn-border);
+  border-radius: 1rem;
+  background-color: var(--ts-btn-bg);
+  padding: 1.3rem 1rem;
+  width: 100%;
+  color: var(--ts-btn-color);
+}
+
+.button:hover {
+  border-color: var(--ts-btn-hover-border);
+  background-color: var(--ts-btn-hover-bg);
+  color: #000;
+}
+
+.button span {
+  font-weight: 850;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.single-product-buttons {
+  display: flex;
+  flex: none;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.button-in {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button-in:hover {
+  color: var(--ts-primary-color);
+}
+
+.button-in:first-child {
+  margin-right: 38px;
+}
+
+.button-in svg {
+  margin-right: 5px;
+  font-size: 22px;
+}
+
+.meta-content {
+  flex: none;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: var(--ts-border);
+  padding-top: 27px;
+  width: 100%;
+}
+
+.meta-content > div {
+  margin: 0 0 12px;
+}
+
+.meta-content > div > span:first-child {
+  display: inline-block;
+  margin-right: 10px;
+  min-width: 50px;
+}
+
+.sku,
+.tag-links {
+  color: #848484;
+  font-weight: normal;
+}
+
+.tag-links:hover {
+  color: var(--ts-primary-color);
+}
+
+.meta-content > div:last-child {
+  margin-bottom: 0;
+}
+
+.ts-social-sharing {
+  display: inline-flex;
+  vertical-align: -5px;
+  gap: 12px;
+  margin: 0;
+}
+
+.ts-social-sharing li svg {
+  cursor: pointer;
+  color: #848484;
+  font-size: 24px;
+}
+
+.ts-social-sharing li:hover svg {
+  color: var(--ts-primary-color);
+}
+
+@media only screen and (max-width: 1300px) {
+  .product_title {
+    /* height: 30px; */
+    font-size: 24px;
+  }
+
+  .box {
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .box {
+    margin-bottom: 20px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .availability {
+    font-size: 12px;
+  }
+}

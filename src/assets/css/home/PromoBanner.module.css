@@ -1,0 +1,279 @@
+.content {
+  margin-bottom: 10rem;
+}
+
+.content > div {
+  gap: 3rem;
+}
+
+.ts-banner {
+  width: 100%;
+}
+
+.ts-banner:first-child {
+  flex: 2;
+}
+
+.ts-banner:nth-child(2) {
+  flex: 1;
+}
+
+.banner-wrapper {
+  display: flex;
+  position: relative;
+  flex-flow: column wrap;
+  border-radius: 1rem;
+  height: 45rem;
+  overflow: hidden;
+}
+
+.banner-wrapper::before {
+  position: absolute;
+  transition: all 0.3s;
+  inset: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.ts-banner:first-child .banner-wrapper::before {
+  background-image: url(@img/promobanner-1.jpg);
+}
+
+.ts-banner:nth-child(2) .banner-wrapper::before {
+  background-image: url(@img/promobanner-2.jpg);
+}
+
+.ts-banner:hover .banner-wrapper::after {
+  animation-duration: 1200ms;
+  animation: shine 1.8s;
+}
+
+.banner-wrapper::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transform: skewX(-25deg);
+  z-index: 2;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%);
+  width: 50%;
+  height: 100%;
+  content: "";
+}
+
+.box-content {
+  position: static;
+  bottom: 0;
+  z-index: 20;
+}
+.box-left {
+  margin: auto 0;
+  padding: 0 7.5rem;
+  max-width: 70%;
+}
+
+.box-right {
+  margin: 0 auto;
+  padding: 4.3rem;
+  max-width: 80%;
+  text-align: center;
+}
+
+.box-left .description {
+  margin-bottom: 0.3rem;
+  color: #dd2831;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.box-content h2 {
+  margin-bottom: 1.4rem;
+  color: #000;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+.box-left h2 {
+  font-weight: 900;
+}
+
+.box-right h2 {
+  font-weight: 500;
+}
+
+.box-left .description-bottom {
+  margin-bottom: 5.5rem;
+  color: #000;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.box-right .description-bottom {
+  margin-bottom: 0.7rem;
+  color: #0068c8;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+}
+
+.button {
+  filter: none;
+  transition: 150ms ease 0s;
+  cursor: pointer;
+  box-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ts-btn-border);
+  border-radius: 0.6rem;
+  background-image: none;
+  background-color: var(--ts-btn-bg);
+  padding: 1.7rem 3rem;
+  color: var(--ts-btn-color);
+  font-style: var(--ts-btn-font-style);
+  font-weight: var(--ts-btn-font-weight);
+  font-size: var(--ts-btn-font-size);
+  line-height: var(--ts-btn-line-height);
+  font-family: var(--ts-btn-font-family);
+  letter-spacing: var(--ts-btn-letter-spacing);
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  border-color: #fff;
+  background: #fff;
+  color: #0068c8;
+}
+
+.box-right .description {
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  border-radius: 0 0.6rem 0.6rem 0.6rem;
+  background-color: #dd2831;
+  padding: 0.5rem 1.2rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1;
+  letter-spacing: 0.075em;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .box-content h2 {
+    font-size: 3.6rem;
+  }
+
+  .button {
+    padding: 1rem;
+    width: 12rem;
+    height: 3.9rem;
+    font-size: 1.2rem;
+  }
+
+  .banner-wrapper {
+    height: 38rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .box-left .description-bottom {
+    margin-bottom: 3rem;
+  }
+
+  .box-content.box-left {
+    margin: 0;
+    padding: 4rem;
+  }
+
+  .content {
+    height: 320px;
+  }
+
+  .box-right {
+    padding: 3rem;
+  }
+
+  .box-content h2 {
+    font-size: 2.6rem;
+  }
+
+  .description-bottom {
+    font-size: 1.3rem !important;
+  }
+
+  .box-right .description {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .ts-banner:first-child {
+    flex: 1;
+  }
+
+  .box-content.box-left {
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .banner-wrapper {
+    height: 40rem;
+  }
+
+  .ts-banner:first-child .banner-wrapper::before {
+    background-image: url("https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/11/banner-1-mobile.jpg");
+  }
+
+  .box-left .description-bottom {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  .content > div {
+    flex-direction: column;
+  }
+
+  .content {
+    margin-bottom: 65rem;
+  }
+
+  .ts-banner:first-child .banner-wrapper {
+    align-items: center;
+    height: 420px;
+  }
+
+  .ts-banner:nth-child(2) .banner-wrapper {
+    align-items: center;
+    height: 350px;
+  }
+
+  .box-content h2 {
+    font-size: 3.1rem;
+  }
+
+  .description-bottom {
+    font-size: 1.5rem !important;
+  }
+
+  .button {
+    width: 14rem;
+    height: 4.9rem;
+    font-size: 1.5rem;
+  }
+
+  .box-right .description {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,67 @@
+.box {
+  margin-left: auto;
+}
+
+.box label {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  padding: 0;
+  color: var(--ts-gray-color);
+}
+
+.box label::before {
+  display: inline-block;
+  border: 1px solid #848484;
+  border-radius: 3px;
+  background: #ffffff;
+  width: 17px;
+  height: 17px;
+  content: "";
+}
+
+.box label:hover {
+  color: var(--ts-primary-color);
+}
+
+.box label::after {
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 150ms ease;
+  content: "X";
+  color: #fff;
+  font-size: 14px;
+}
+
+.box label > input[type^="check"] {
+  display: none;
+}
+
+input[type^="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.box label:hover::after,
+.active label::after {
+  visibility: visible;
+  opacity: 1;
+  color: var(--ts-primary-color);
+}
+
+@media only screen and (max-width: 776px) {
+  .hidden {
+    display: none;
+  }
+
+  .box label {
+    color: #000;
+  }
+}

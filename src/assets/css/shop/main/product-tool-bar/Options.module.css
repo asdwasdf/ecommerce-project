@@ -1,0 +1,167 @@
+.box {
+  display: flex;
+  position: relative;
+  /* width: 100%; */
+  font-size: 15px;
+}
+
+.label {
+  color: var(--ts-gray-color);
+}
+
+.label::after {
+  display: inline-block;
+  margin-right: 5px;
+  content: ":";
+}
+
+.current-value {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--ts-text-color);
+  font-weight: 700;
+}
+
+.current-value::after {
+  display: inline-block;
+  vertical-align: -3px;
+  transform: rotate(-90deg);
+  border-color: var(--ts-border);
+  content: "\2039";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.box:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  /* display: block; */
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation-duration: 300ms;
+  -moz-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: animation_fade;
+  -moz-animation-name: animation_fade;
+  animation-name: animation_fade;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 10px;
+  padding: 20px 3px 10px;
+  width: 100%;
+  min-width: 160px;
+  color: var(--ts-dropdown-color);
+}
+
+.dropdown::before {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(162, 162, 162, 0.3);
+  border-color: var(--ts-border);
+  border-radius: 10px;
+  background-color: var(--ts-dropdown-bg);
+  content: "";
+}
+
+.dropdown li {
+  z-index: 4;
+  cursor: pointer;
+  padding: 1px 0 !important;
+  list-style: none;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 7px 20px;
+  color: inherit;
+}
+
+.dropdown > li > a:hover,
+.current {
+  /* cursor: default; */
+  background: var(--ts-primary-opacity);
+  color: var(--ts-primary-color);
+}
+
+.current {
+  cursor: default;
+}
+
+.box select,
+.box svg,
+.filter {
+  display: none;
+}
+
+@keyframes animation_fade {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .show {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  .box {
+    flex: 1;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .box > ul {
+    display: none;
+  }
+
+  .label::after {
+    display: none;
+  }
+
+  .label {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: #000;
+    font-size: 15px;
+  }
+
+  .box select {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+    inset: 0;
+  }
+
+  .box > svg {
+    display: block;
+    font-size: 26px;
+  }
+}
