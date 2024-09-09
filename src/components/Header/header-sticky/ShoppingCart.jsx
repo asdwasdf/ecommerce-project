@@ -6,11 +6,13 @@ import CartItem from "./CartItem";
 import { calculateTotalPrice } from "@/utils/function";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { TailSpin } from "react-loader-spinner";
 
 const ShoppingCart = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart.items);
+  const { loading } = useSelector((state) => state.cart);
 
   return (
     <div className={styles.group}>
@@ -34,8 +36,22 @@ const ShoppingCart = () => {
               <div className={styles["cart-wrapper"]}>
                 <div className={styles["cart-content"]}>
                   <ul>
+                    {loading && (
+                      <div className="spinner-overlay">
+                        <TailSpin
+                          visible={true}
+                          height="80"
+                          width="80"
+                          color="#fff"
+                          ariaLabel="tail-spin-loading"
+                          radius="1"
+                        />
+                      </div>
+                    )}
                     {cartItems.map((item) => (
-                      <CartItem key={item.id} item={item} />
+                      <li key={item.id}>
+                        <CartItem item={item} />
+                      </li>
                     ))}
                   </ul>
                   <div className={styles["dropdown-footer"]}>

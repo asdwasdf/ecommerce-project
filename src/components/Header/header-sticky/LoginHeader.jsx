@@ -13,10 +13,13 @@ import { clearWishlist } from "@/features/wishlistSlice";
 import { clearCart } from "@/features/cartSlice";
 import { clearOrders } from "@/features/checkoutSlice";
 import { useTranslation } from "react-i18next"; // Import i18n
+import { TailSpin } from "react-loader-spinner";
 
 const LoginHeader = () => {
   const { t } = useTranslation(); // Sử dụng i18n
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
   const form = useForm({
     mode: "onSubmit"
   });
@@ -34,10 +37,10 @@ const LoginHeader = () => {
   };
 
   const onSubmit = async (data) => {
+    setLoading(true);
+
     setErrors({});
     const { username, password } = data;
-
-    console.log(data);
 
     const hasUser = await hasExisted("email", username);
     const checkPassword = await checkedPassword("email", username, password);
@@ -47,6 +50,8 @@ const LoginHeader = () => {
         ...prevErrors,
         username: t("loginHeader.username_error")
       }));
+      setLoading(false);
+
       return;
     }
 
@@ -55,12 +60,15 @@ const LoginHeader = () => {
         ...prevErrors,
         password: t("loginHeader.password_error")
       }));
+      setLoading(false);
+
       return;
     }
 
     dispatch(loginUser(username, password));
     toast.success("Login successfully");
     reset();
+    setLoading(false);
     navigate("/");
   };
 
@@ -134,7 +142,22 @@ const LoginHeader = () => {
                     </label>
                   </p>
                   <p className={styles.submitBtn}>
-                    <button type="submit">{t("loginHeader.sign_in")}</button>
+                    <button type="submit">
+                      {loading ? (
+                        <TailSpin
+                          visible={true}
+                          height="20"
+                          width="20"
+                          color="#fff"
+                          ariaLabel="tail-spin-loading"
+                          radius="1"
+                          wrapperStyle={{}}
+                          wrapperClass=""
+                        />
+                      ) : (
+                        t("loginForm.signIn")
+                      )}
+                    </button>
                   </p>
                 </div>
               </form>

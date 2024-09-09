@@ -2,20 +2,25 @@ import { useTranslation } from "react-i18next";
 import styles from "@style/my-account/LoginForm.module.css";
 import InputField from "@/components/common/InputField";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "@/features/authSlice";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { hasExisted, checkedPassword } from "@/utils/function";
+import { TailSpin } from "react-loader-spinner";
 
 const LoginForm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const form = useForm({
     mode: "onSubmit"
   });
+
+  // const { loading } = useSelector((state) => state.auth);
+
   const { register, handleSubmit, reset } = form;
 
   const [errors, setErrors] = useState({});
@@ -23,6 +28,7 @@ const LoginForm = () => {
   const dispatch = useDispatch();
 
   const onSubmit = async (e) => {
+    setLoading(true);
     setErrors({});
     const { username, password } = e;
     const hasUser = await hasExisted("email", username);
@@ -33,6 +39,8 @@ const LoginForm = () => {
         ...prevErrors,
         username: t("loginForm.errors.username")
       }));
+      setLoading(false);
+
       return;
     }
 
@@ -41,12 +49,14 @@ const LoginForm = () => {
         ...prevErrors,
         password: t("loginForm.errors.password")
       }));
+      setLoading(false);
       return;
     }
 
     dispatch(loginUser(e.username, e.password));
     toast.success(t("loginForm.signIn") + " " + t("loginForm.successMessage"));
     reset();
+    setLoading(false);
     navigate("/");
   };
 
@@ -85,7 +95,22 @@ const LoginForm = () => {
                 </label>
               </p>
               <div className={styles.submitBtn}>
-                <button type="submit">{t("loginForm.signIn")}</button>
+                <button type="submit">
+                  {loading ? (
+                    <TailSpin
+                      visible={true}
+                      height="20"
+                      width="20"
+                      color="#fff"
+                      ariaLabel="tail-spin-loading"
+                      radius="1"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                    />
+                  ) : (
+                    t("loginForm.signIn")
+                  )}
+                </button>
               </div>
             </div>
           </form>

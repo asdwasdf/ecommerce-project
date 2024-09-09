@@ -8,10 +8,13 @@ import { registerUser } from "@/features/authSlice";
 import { hasExisted } from "@/utils/function";
 import SetErrorsPasswordRegister from "./SetErrorsPasswordRegister";
 import { useTranslation } from "react-i18next"; // Import useTranslation
+import { TailSpin } from "react-loader-spinner";
 
 const RegisterForm = () => {
   const { t } = useTranslation(); // Use useTranslation hook
   const [errors, setErrors] = useState({});
+
+  const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
   const form = useForm({ mode: "onSubmit" });
@@ -21,6 +24,8 @@ const RegisterForm = () => {
 
   // Handle form submission
   const onSubmit = async (data) => {
+    setLoading(true);
+
     setErrors({}); // Clear existing errors
     const email = data["register-email"];
 
@@ -31,12 +36,14 @@ const RegisterForm = () => {
         ...prevErrors,
         email: t("registerForm.emailExists") // Translate email exists error
       }));
+      setLoading(false);
       return;
     }
 
     // Dispatch registration action
     dispatch(registerUser(data["register-username"], email, data["register-password"]));
     toast.success(t("registerForm.successMessage")); // Translate success message
+    setLoading(false);
     reset(); // Reset form fields
   };
 
@@ -97,7 +104,20 @@ const RegisterForm = () => {
               <button
                 disabled={password?.length < 8}
                 className={password?.length < 8 ? styles.disabled : ""}>
-                {t("registerForm.signUp")}
+                {loading ? (
+                  <TailSpin
+                    visible={true}
+                    height="20"
+                    width="20"
+                    color="#fff"
+                    ariaLabel="tail-spin-loading"
+                    radius="1"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                  />
+                ) : (
+                  t("loginForm.signIn")
+                )}
               </button>
             </p>
           </div>

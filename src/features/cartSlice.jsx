@@ -9,7 +9,8 @@ const loadCartFromLocalStorage = () => {
 };
 
 const initialState = {
-  items: loadCartFromLocalStorage()
+  items: loadCartFromLocalStorage(),
+  loading: false
 };
 
 const cartSlice = createSlice({
@@ -55,17 +56,28 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.items = [];
       localStorage.removeItem("cart");
+    },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
     }
   }
 });
 
-export const { incrementCount, addToCart, removeFromCart, setCart, clearCart, updateCount } =
-  cartSlice.actions;
+export const {
+  setLoading,
+  incrementCount,
+  addToCart,
+  removeFromCart,
+  setCart,
+  clearCart,
+  updateCount
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
 
 export const addToCartUser = (userId, item) => async (dispatch) => {
   try {
+    dispatch(setLoading(true));
     if (userId) {
       const userRef = doc(db, "users", userId);
       const cartCollectionRef = collection(userRef, "cart");
@@ -76,6 +88,8 @@ export const addToCartUser = (userId, item) => async (dispatch) => {
     dispatch(addToCart(item));
   } catch (error) {
     console.error(error);
+  } finally {
+    dispatch(setLoading(false));
   }
 };
 
@@ -83,6 +97,8 @@ export const deleteToCartUser =
   (userId = false, id) =>
   async (dispatch) => {
     try {
+      dispatch(setLoading(true));
+
       if (userId) {
         const userRef = doc(db, "users", userId);
         const cartCollectionRef = collection(userRef, "cart");
@@ -92,6 +108,8 @@ export const deleteToCartUser =
       dispatch(removeFromCart(id));
     } catch (error) {
       console.error(error);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
 
@@ -99,6 +117,7 @@ export const updateCountUser =
   (userId, id, newCount = 1) =>
   async (dispatch) => {
     try {
+      dispatch(setLoading(true));
       if (userId) {
         const userRef = doc(db, "users", userId);
         const cartCollectionRef = collection(userRef, "cart");
@@ -121,6 +140,8 @@ export const updateCountUser =
       dispatch(updateCount(id, newCount));
     } catch (error) {
       console.error("Error updating count:", error);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
 
@@ -128,6 +149,7 @@ export const decrementCountUser =
   (userId, id, newCount = 1) =>
   async (dispatch) => {
     try {
+      dispatch(setLoading(true));
       if (userId) {
         const userRef = doc(db, "users", userId);
         const cartCollectionRef = collection(userRef, "cart");
@@ -150,11 +172,14 @@ export const decrementCountUser =
       dispatch(incrementCount(id));
     } catch (error) {
       console.error("Error updating count:", error);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
 
 export const setCartUser = (userId, items) => async (dispatch) => {
   try {
+    dispatch(setLoading(true));
     if (userId) {
       const userRef = doc(db, "users", userId);
       const cartCollectionRef = collection(userRef, "cart");
@@ -170,11 +195,14 @@ export const setCartUser = (userId, items) => async (dispatch) => {
     dispatch(setCart(items));
   } catch (error) {
     console.error("Error setting cart:", error);
+  } finally {
+    dispatch(setLoading(false));
   }
 };
 
 export const clearCartUser = (userId) => async (dispatch) => {
   try {
+    dispatch(setLoading(true));
     if (userId) {
       const userRef = doc(db, "users", userId);
       const cartCollectionRef = collection(userRef, "cart");
@@ -191,5 +219,7 @@ export const clearCartUser = (userId) => async (dispatch) => {
     dispatch(clearCart());
   } catch (error) {
     console.error("Error clearing cart:", error);
+  } finally {
+    dispatch(setLoading(false));
   }
 };
