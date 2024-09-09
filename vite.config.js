@@ -4,6 +4,9 @@ import { fileURLToPath } from "node:url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    outDir: "dist" // Default build output directory
+  },
   plugins: [react()],
   resolve: {
     alias: [
