@@ -12,7 +12,6 @@ import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import { addToOrdersUser } from "@/features/checkoutSlice";
 import { useNavigate } from "react-router-dom";
-import { clearCartUser } from "@/features/cartSlice";
 
 // Breadcrumb paths for navigation
 const AppLayout = () => {
@@ -76,14 +75,13 @@ const AppLayout = () => {
     };
 
     dispatch(addToOrdersUser(userId, item));
+    toast.success(t("order_created_successfully"));
 
     setTimeout(() => {
       setLoading(false);
       reset();
-      dispatch(clearCartUser(userId));
-      navigate(`/order-received/${item.id}`, { replace: -1 });
+      // navigate(`/order-received/${item.id}`, { replace: -1 });
     }, 2000);
-    toast.success(t("order_created_successfully"));
   };
 
   // Handle form errors

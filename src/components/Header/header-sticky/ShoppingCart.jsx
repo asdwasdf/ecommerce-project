@@ -49,9 +49,7 @@ const ShoppingCart = () => {
                       </div>
                     )}
                     {cartItems.map((item) => (
-                      <li key={item.id}>
-                        <CartItem item={item} />
-                      </li>
+                      <CartItem item={item} key={item.id} />
                     ))}
                   </ul>
                   <div className={styles["dropdown-footer"]}>

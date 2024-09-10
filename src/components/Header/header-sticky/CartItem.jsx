@@ -28,13 +28,13 @@ const CartItem = ({ item }) => {
     }
   };
 
-  const handleRemove = (id) => {
+  const handleRemove = () => {
     dispatch(deleteToCartUser(userId, item.id));
     toast.success("Item removed from cart successfully");
   };
 
   return (
-    <li className={styles["cart-item"]} key={item.id}>
+    <li className={styles["cart-item"]}>
       <div className={styles["img-box"]}>
         <img src={`${item.img}-400x400.jpg`} alt="" />
       </div>
