@@ -52,7 +52,7 @@ export const PRODUCTS = [
   },
   {
     id: "wired_controller_xbox_series",
-    name: "Wired Controller for Xbox Series 1TB Gaming All-Digital Console, 4K",
+    name: "Wired Controller for Xbox Series 1TB Gaming All-Digital, 4K",
     original_price: 109.0,
     discounted_price: 78.89,
     discount: "28%",

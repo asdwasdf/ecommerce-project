@@ -162,6 +162,15 @@
   background: #000 !important;
 }
 
+.truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 2.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media only screen and (max-width: 1279px) {
   .product-categories {
     font-size: 13px;

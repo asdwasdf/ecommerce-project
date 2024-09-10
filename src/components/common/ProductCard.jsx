@@ -1,6 +1,5 @@
 import { useState } from "react";
 import StarRatings from "react-star-ratings";
-import LinesEllipsis from "react-lines-ellipsis";
 import styles from "@style/common/ProductCard.module.css";
 import ProductGroupButton from "./ProductGroupButton";
 import Button from "@/components/common/Button";
@@ -11,7 +10,6 @@ import { updateCountUser, addToCartUser } from "@/features/cartSlice";
 import { findIndex } from "@/utils/function";
 import { useTranslation } from "react-i18next";
 import { TailSpin } from "react-loader-spinner";
-import TextTruncate from "react-text-truncate";
 
 const ProductCard = ({
   id,
@@ -23,8 +21,7 @@ const ProductCard = ({
   original_price,
   discounted_price,
   hot,
-  className,
-  library = ""
+  className
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -107,12 +104,8 @@ const ProductCard = ({
           {className === "List" ? (
             <div className={styles["product-name"]}>{name}</div>
           ) : (
-            <Link to={`/shop/${id}`} className={styles["product-name"]}>
-              {library === "truncate" ? (
-                <TextTruncate line={2} element="p" truncateText="…" text={name} />
-              ) : (
-                <LinesEllipsis text={name} maxLine="2" ellipsis="..." trimRight basedOn="letters" />
-              )}
+            <Link to={`/shop/${id}`} className={`${styles["product-name"]} ${styles.truncate}`}>
+              {name}
             </Link>
           )}
           <div className={styles["product-stars"]}>
