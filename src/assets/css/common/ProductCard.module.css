@@ -193,7 +193,7 @@
 
 @media only screen and (max-width: 830px) {
   .product-name {
-    font-size: 1.4rem;
+    font-size: 14px;
   }
 }
 
@@ -218,7 +218,7 @@
 
 @media only screen and (max-width: 660px) {
   .product-name {
-    font-size: 1.7rem;
+    font-size: 15px;
   }
 
   .button {
