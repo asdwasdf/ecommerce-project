@@ -25,9 +25,9 @@ const AppRouter = () => {
         <Route path="cart" element={<Cart />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="order-received/:id" element={<OrderReceived />} />
-        <Route path="my-orders" element={<MyOrders />}>
-          <Route path="orders" element={<Orders />} />
-          <Route path="orders/:id" element={<OrdersDetail />} />
+        <Route path="orders" element={<MyOrders />}>
+          <Route index element={<Orders />} />
+          <Route path=":id" element={<OrdersDetail />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Route>

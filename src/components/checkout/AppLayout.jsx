@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import { addToOrdersUser } from "@/features/checkoutSlice";
 import { useNavigate } from "react-router-dom";
+import { clearCartUser } from "@/features/cartSlice";
 
 // Breadcrumb paths for navigation
 const AppLayout = () => {
@@ -33,6 +34,7 @@ const AppLayout = () => {
   // Redux selectors and dispatch
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, reset } = useForm();
 
   // Map cart items to the format needed for submission
@@ -74,10 +76,14 @@ const AppLayout = () => {
     };
 
     dispatch(addToOrdersUser(userId, item));
-    toast.success(t("order_created_successfully"));
 
-    reset();
-    navigate(`/order-received/${item.id}`, { replace: -1 });
+    setTimeout(() => {
+      setLoading(false);
+      reset();
+      dispatch(clearCartUser(userId));
+      navigate(`/order-received/${item.id}`, { replace: -1 });
+    }, 2000);
+    toast.success(t("order_created_successfully"));
   };
 
   // Handle form errors

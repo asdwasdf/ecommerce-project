@@ -1,12 +1,14 @@
 import { useTranslation } from "react-i18next";
 import styles from "@style/checkout/Payment.module.css";
+import { TailSpin } from "react-loader-spinner";
 
 const Payment = ({
   selectedPayment,
   setSelectedPayment,
   agreed,
   handleCheckboxChange,
-  handlePlaceOrder
+  handlePlaceOrder,
+  loading
 }) => {
   const { t } = useTranslation();
 
@@ -78,7 +80,22 @@ const Payment = ({
           </label>
         </div>
         <button type="submit" className={styles.button} onClick={handlePlaceOrder}>
-          {t("payment.placeOrder")}
+          {loading ? (
+            <div className="spinner-container">
+              <TailSpin
+                visible={true}
+                height="20"
+                width="20"
+                color="#000"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{}}
+                wrapperClass=""
+              />
+            </div>
+          ) : (
+            t("payment.placeOrder")
+          )}
         </button>
       </div>
     </div>

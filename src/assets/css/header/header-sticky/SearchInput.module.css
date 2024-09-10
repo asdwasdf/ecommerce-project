@@ -31,6 +31,7 @@
 
 .searchField button {
   transition: 200ms ease;
+  cursor: pointer;
   border: none;
   background-color: var(--ts-btn-bg) !important;
   padding: 1.2rem 3rem;

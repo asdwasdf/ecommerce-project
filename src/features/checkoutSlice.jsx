@@ -3,8 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { collection, doc, setDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 
-import { clearCartUser } from "@/features/cartSlice";
-
 const loadOrdersFromLocalStorage = () => {
   const orders = localStorage.getItem("orders");
   return orders ? JSON.parse(orders) : [];
@@ -41,8 +39,6 @@ export const addToOrdersUser = (userId, item) => async (dispatch) => {
       const itemDocRef = doc(ordersCollectionRef, String(item.id));
 
       await setDoc(itemDocRef, item);
-
-      dispatch(clearCartUser(userId));
     }
     dispatch(addToOrders(item));
   } catch (error) {
