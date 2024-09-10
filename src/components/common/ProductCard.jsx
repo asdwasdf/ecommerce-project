@@ -11,6 +11,7 @@ import { updateCountUser, addToCartUser } from "@/features/cartSlice";
 import { findIndex } from "@/utils/function";
 import { useTranslation } from "react-i18next";
 import { TailSpin } from "react-loader-spinner";
+import TextTruncate from "react-text-truncate";
 
 const ProductCard = ({
   id,
@@ -106,7 +107,7 @@ const ProductCard = ({
             <div className={styles["product-name"]}>{name}</div>
           ) : (
             <Link to={`/shop/${id}`} className={styles["product-name"]}>
-              <LinesEllipsis text={name} maxLine="2" ellipsis="..." trimRight basedOn="letters" />
+              <TextTruncate line={2} element="p" truncateText="…" text={name} />
             </Link>
           )}
           <div className={styles["product-stars"]}>
