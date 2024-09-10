@@ -4,10 +4,10 @@ import TableWishlist from "./TableWishlist";
 import { FaFacebookF, FaPinterestP, FaWhatsapp } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
 import { AiOutlineMail } from "react-icons/ai";
-import { useTranslation } from "react-i18next"; // Import useTranslation
+import { useTranslation } from "react-i18next";
 
 const AppLayout = () => {
-  const { t } = useTranslation(); // Sử dụng useTranslation hook
+  const { t } = useTranslation();
 
   const breadcrumb = [
     { name: t("wishlist.breadcrumbHome"), link: "/" },

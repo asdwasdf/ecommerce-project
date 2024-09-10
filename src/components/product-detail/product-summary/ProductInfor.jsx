@@ -16,6 +16,7 @@ import { useState } from "react";
 import { updateCountUser, addToCartUser } from "@/features/cartSlice";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+import { TailSpin } from "react-loader-spinner";
 
 const ProductInfor = ({
   id,
@@ -29,6 +30,8 @@ const ProductInfor = ({
 }) => {
   const { t } = useTranslation();
   const [count, setCount] = useState(1);
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleIncrement = () => {
     setCount(count + 1);
@@ -40,8 +43,6 @@ const ProductInfor = ({
     }
   };
 
-  const [open, setOpen] = useState(false);
-
   const handleClose = () => setOpen(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -51,7 +52,7 @@ const ProductInfor = ({
   const cartItems = useSelector((state) => state.cart.items);
   const userId = useSelector((state) => state.auth.userId);
 
-  const item = { id, img, name, original_price, discounted_price, discount };
+  const item = { id, img, name, original_price, discounted_price, discount, count: count };
 
   const handleToggleWishlist = () => {
     if (findIndex(wishlistItems, item.id) >= 0) {
@@ -62,13 +63,17 @@ const ProductInfor = ({
   };
 
   const handleAddCart = () => {
+    setLoading(true);
     if (findIndex(cartItems, id) < 0) {
-      const item = { id, name, img, original_price, discounted_price, count: count };
       dispatch(addToCartUser(userId, item));
-      toast.success(t("productDetail.addToCartSuccess"));
     } else {
       dispatch(updateCountUser(userId, item.id, count));
     }
+
+    setTimeout(() => {
+      setLoading(false);
+      toast.success(t("productDetail.addToCartSuccess"));
+    }, 500);
   };
 
   const handleOpenCompareProduct = () => {
@@ -127,37 +132,55 @@ const ProductInfor = ({
         />
         {discount !== "SOLD OUT" && (
           <button className={styles.button} onClick={handleAddCart}>
-            <span>{t("productDetail.addToCart")}</span>
+            {loading ? (
+              <div className="spinner-container">
+                <TailSpin
+                  visible={true}
+                  height="20"
+                  width="20"
+                  color="#000"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            ) : (
+              <span>{t("productDetail.addToCart")}</span>
+            )}
           </button>
         )}
 
         <div className={styles["single-product-buttons"]}>
-          {findIndex(wishlistItems, id) >= 0 ? (
-            <div
-              className={styles["button-in"]}
-              onClick={() => navigate("/wishlist", { replace: -1 })}>
-              <FaHeart />
-              <span>{t("productDetail.browseWishlist")}</span>
+          {loading ? (
+            <div className="spinner-container">
+              <TailSpin
+                visible={true}
+                height="20"
+                width="20"
+                color="#000"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{}}
+                wrapperClass=""
+              />
             </div>
           ) : (
-            <div className={styles["button-in"]} onClick={handleToggleWishlist}>
-              <CiHeart />
-              <span>{t("productDetail.addToWishlist")}</span>
-            </div>
+            <span>{t("productDetail.addToCart")}</span>
           )}
-          <div className={styles["button-in"]}>
+          <>
             {findIndex(compareProductsItems, id) >= 0 ? (
-              <>
-                <MdCheck className={styles.icon} onClick={() => setOpen(true)} />
+              <div className={styles["button-in"]} onClick={() => setOpen(true)}>
+                <MdCheck className={styles.icon} />
                 <span>{t("productDetail.added")}</span>
-              </>
+              </div>
             ) : (
-              <>
-                <PiStackSimpleThin className={styles.icon} onClick={handleOpenCompareProduct} />
+              <div className={styles["button-in"]} onClick={handleOpenCompareProduct}>
+                <PiStackSimpleThin className={styles.icon} />
                 <span>{t("productDetail.compare")}</span>
-              </>
+              </div>
             )}
-          </div>
+          </>
         </div>
 
         <div className={styles["meta-content"]}>

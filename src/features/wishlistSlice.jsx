@@ -9,7 +9,8 @@ const loadWishlistFromLocalStorage = () => {
 };
 
 const initialState = {
-  items: loadWishlistFromLocalStorage()
+  items: loadWishlistFromLocalStorage(),
+  loading: false
 };
 
 const wishlistSlice = createSlice({
@@ -31,17 +32,21 @@ const wishlistSlice = createSlice({
     clearWishlist: (state) => {
       state.items = [];
       localStorage.removeItem("wishlist"); // Remove from localStorage
+    },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
     }
   }
 });
 
-export const { addToWishlist, removeFromWishlist, setWishlist, clearWishlist } =
+export const { setLoading, addToWishlist, removeFromWishlist, setWishlist, clearWishlist } =
   wishlistSlice.actions;
 
 export default wishlistSlice.reducer;
 
 export const addToWishlistUser = (userId, item) => async (dispatch) => {
   try {
+    dispatch(setLoading(true));
     if (userId) {
       const userRef = doc(db, "users", userId);
       const wishlistCollectionRef = collection(userRef, "wishlist");
@@ -52,6 +57,8 @@ export const addToWishlistUser = (userId, item) => async (dispatch) => {
     dispatch(addToWishlist(item));
   } catch (error) {
     console.error(error);
+  } finally {
+    dispatch(setLoading(false));
   }
 };
 
@@ -59,6 +66,7 @@ export const deleteToWishlistUser =
   (userId = false, id) =>
   async (dispatch) => {
     try {
+      dispatch(setLoading(true));
       if (userId) {
         const userRef = doc(db, "users", userId);
         const wishlistCollectionRef = collection(userRef, "wishlist");
@@ -68,5 +76,7 @@ export const deleteToWishlistUser =
       dispatch(removeFromWishlist(id));
     } catch (error) {
       console.error(error);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
