@@ -8,7 +8,8 @@ import { findIndex } from "@/utils/function";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import LoadingComponent from "@/components/common/LoadingComponent";
+
+import { TailSpin } from "react-loader-spinner";
 
 const OrderReceived = () => {
   const { t } = useTranslation();
@@ -25,12 +26,8 @@ const OrderReceived = () => {
     setItem(foundItem);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1000);
   }, [id, ordersItems]);
-
-  if (loading) {
-    return <LoadingComponent />;
-  }
 
   if (!item && !loading) {
     return <PageNotFound />;
@@ -45,41 +42,57 @@ const OrderReceived = () => {
     <>
       <BreadcrumbsComponent paths={breadcrumb} />
       <div className={styles.box}>
-        <div className="container">
-          <div style={{ width: "100%" }}>
-            <div className={styles["checkout-title-container"]}>
-              <h2>{t("orderReceived.breadcrumb.checkout")}</h2>
-            </div>
-            <p className={styles["thankyou-order-received"]}>
-              {t("orderReceived.thankYouMessage")}
-            </p>
-            <ul className={styles["order-overview"]}>
-              <li>
-                {t("orderReceived.orderNumber")}: <strong>{item.id}</strong>
-              </li>
-
-              <li>
-                {t("orderReceived.date")}: <strong>{dayjs(item.day).format("MMM D, YYYY")}</strong>
-              </li>
-
-              <li>
-                {t("orderReceived.email")}: <strong>{item.email}</strong>
-              </li>
-
-              <li>
-                {t("orderReceived.total")}:
-                <strong>
-                  <span>${item.subtotal}</span>
-                </strong>
-              </li>
-
-              <li>
-                {t("orderReceived.paymentMethod")}: <strong>{item.selectedPayment}</strong>
-              </li>
-            </ul>
-            <OrderDetails item={item} />
+        {loading ? (
+          <div className="spinner-container">
+            <TailSpin
+              visible={true}
+              height="80"
+              width="80"
+              color="#000"
+              ariaLabel="tail-spin-loading"
+              radius="1"
+              wrapperStyle={{}}
+              wrapperClass=""
+            />
           </div>
-        </div>
+        ) : (
+          <div className="container">
+            <div style={{ width: "100%" }}>
+              <div className={styles["checkout-title-container"]}>
+                <h2>{t("orderReceived.breadcrumb.checkout")}</h2>
+              </div>
+              <p className={styles["thankyou-order-received"]}>
+                {t("orderReceived.thankYouMessage")}
+              </p>
+              <ul className={styles["order-overview"]}>
+                <li>
+                  {t("orderReceived.orderNumber")}: <strong>{item.id}</strong>
+                </li>
+
+                <li>
+                  {t("orderReceived.date")}:{" "}
+                  <strong>{dayjs(item.day).format("MMM D, YYYY")}</strong>
+                </li>
+
+                <li>
+                  {t("orderReceived.email")}: <strong>{item.email}</strong>
+                </li>
+
+                <li>
+                  {t("orderReceived.total")}:
+                  <strong>
+                    <span>${item.subtotal}</span>
+                  </strong>
+                </li>
+
+                <li>
+                  {t("orderReceived.paymentMethod")}: <strong>{item.selectedPayment}</strong>
+                </li>
+              </ul>
+              <OrderDetails item={item} />
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

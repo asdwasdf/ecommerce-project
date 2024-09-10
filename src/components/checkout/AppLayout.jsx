@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import { addToOrdersUser } from "@/features/checkoutSlice";
 import { useNavigate } from "react-router-dom";
+import { clearCartUser } from "@/features/cartSlice";
 
 // Breadcrumb paths for navigation
 const AppLayout = () => {
@@ -27,13 +28,15 @@ const AppLayout = () => {
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState({});
   const [shippingCost, setShippingCost] = useState(0);
+  const [isToastDisplayed, setIsToastDisplayed] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  let userId = useSelector((state) => state.auth.userId);
+  const userId = useSelector((state) => state.auth.userId);
 
   // Redux selectors and dispatch
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(false);
+
   const { register, handleSubmit, reset } = useForm();
 
   // Map cart items to the format needed for submission
@@ -63,11 +66,13 @@ const AppLayout = () => {
 
   // Handle form submission
   const onSubmit = (data) => {
-    if (!agreed) return; // Ensure agreement before proceeding
+    if (loading) return;
+    setLoading(true);
+
     const item = {
-      id: new Date().getTime(), // Unique ID for the order
+      id: new Date().getTime(),
       ...data,
-      day: dayjs().format("DD/MM/YYYY"), // Current date
+      day: dayjs().format("DD/MM/YYYY"),
       productItems,
       subtotal: totalPrice,
       shippingCost,
@@ -75,13 +80,18 @@ const AppLayout = () => {
     };
 
     dispatch(addToOrdersUser(userId, item));
-    toast.success(t("order_created_successfully"));
 
     setTimeout(() => {
       setLoading(false);
       reset();
-      // navigate(`/order-received/${item.id}`, { replace: -1 });
-    }, 2000);
+      navigate(`/order-received/${item.id}`, { replace: -1 });
+      dispatch(clearCartUser(userId));
+
+      if (!isToastDisplayed) {
+        toast.success(t("order_created_successfully"));
+        setIsToastDisplayed(true);
+      }
+    }, 1000);
   };
 
   // Handle form errors
@@ -91,7 +101,7 @@ const AppLayout = () => {
 
   if (cartItems.length === 0) {
     navigate("/cart");
-    return;
+    return null;
   }
 
   return (
@@ -114,6 +124,7 @@ const AppLayout = () => {
                 shippingCost={shippingCost}
                 setShippingCost={setShippingCost}>
                 <Payment
+                  loading={loading}
                   selectedPayment={selectedPayment}
                   setSelectedPayment={setSelectedPayment}
                   agreed={agreed}
