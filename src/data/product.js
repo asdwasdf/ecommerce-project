@@ -18,7 +18,7 @@ export const PRODUCTS = [
   },
   {
     id: "xbox_series_s_1tb_digital_4k",
-    name: "Xbox Series S - 1TB Gaming All-Digital Console, 4K",
+    name: "Xbox Series S - 1TB Gaming All Digital Console, 4K",
     original_price: 289.99,
     discounted_price: 279.99,
     discount: "3%",
