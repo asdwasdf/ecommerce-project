@@ -105,9 +105,9 @@ const ProductCard = ({
           {className === "List" ? (
             <div className={styles["product-name"]}>{name}</div>
           ) : (
-            <div className={styles["product-name"]}>
+            <Link to={`/shop/${id}`} className={styles["product-name"]}>
               <LinesEllipsis text={name} maxLine="2" ellipsis="..." trimRight basedOn="letters" />
-            </div>
+            </Link>
           )}
           <div className={styles["product-stars"]}>
             <StarRatings rating={starrate} starRatedColor="#ffd700" numberOfStars={5} />
