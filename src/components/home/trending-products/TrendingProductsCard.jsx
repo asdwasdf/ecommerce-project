@@ -15,6 +15,7 @@ import { updateCountUser, addToCartUser } from "@/features/cartSlice";
 import { findIndex } from "@/utils/function";
 import { useTranslation } from "react-i18next";
 import { TailSpin } from "react-loader-spinner";
+import useAddCart from "@/hooks/useAddCart";
 
 const TrendingProductsCard = ({
   id,
@@ -29,26 +30,9 @@ const TrendingProductsCard = ({
 }) => {
   const { t } = useTranslation();
 
-  const [openAddCart, setOpenAddCart] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.items);
-  const userId = useSelector((state) => state.auth.userId);
+  const item = { id, name, img: images_url[0], original_price, discounted_price, count: 1 };
 
-  const item = { id, name, img: images_url, original_price, discounted_price, count: 1 };
-
-  const handleOpenAddCart = () => {
-    setLoading(true);
-    if (findIndex(cartItems, id) < 0) {
-      dispatch(addToCartUser(userId, item));
-    } else {
-      dispatch(updateCountUser(userId, id));
-    }
-    setTimeout(() => {
-      setOpenAddCart(true);
-      setLoading(false);
-    }, 1000);
-  };
+  const { openAddCart, handleOpenAddCart, loading, setOpenAddCart } = useAddCart(item);
 
   const handleCloseAddCart = () => setOpenAddCart(false);
   const navigate = useNavigate();

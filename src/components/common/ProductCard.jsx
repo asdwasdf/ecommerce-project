@@ -5,11 +5,10 @@ import ProductGroupButton from "./ProductGroupButton";
 import Button from "@/components/common/Button";
 import { Link, useNavigate } from "react-router-dom";
 import AddToCartModal from "./AddToCartModal";
-import { useDispatch, useSelector } from "react-redux";
-import { updateCountUser, addToCartUser } from "@/features/cartSlice";
-import { findIndex } from "@/utils/function";
+
 import { useTranslation } from "react-i18next";
 import { TailSpin } from "react-loader-spinner";
+import useAddCart from "@/hooks/useAddCart";
 
 const ProductCard = ({
   id,
@@ -26,28 +25,10 @@ const ProductCard = ({
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
-  const [openAddCart, setOpenAddCart] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.items);
-  const userId = useSelector((state) => state.auth.userId);
 
   const item = { id, name, img: images_url[0], original_price, discounted_price, count: 1 };
 
-  const handleOpenAddCart = () => {
-    setLoading(true);
-
-    if (findIndex(cartItems, id) < 0) {
-      dispatch(addToCartUser(userId, item));
-    } else {
-      dispatch(updateCountUser(userId, item.id));
-    }
-
-    setTimeout(() => {
-      setOpenAddCart(true);
-      setLoading(false);
-    }, 1000);
-  };
+  const { openAddCart, handleOpenAddCart, loading, setOpenAddCart } = useAddCart(item);
 
   const handleCloseAddCart = () => setOpenAddCart(false);
 

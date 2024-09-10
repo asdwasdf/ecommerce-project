@@ -1,36 +1,26 @@
 import styles from "@style/wishlist/WishlistItemMobile.module.css";
 import { IoMdClose } from "react-icons/io";
 import { IoCheckmarkOutline, IoCloseSharp } from "react-icons/io5";
-import { useDispatch, useSelector } from "react-redux";
-import { removeFromWishlist } from "@/features/wishlistSlice";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { findIndex } from "@/utils/function";
-import { addToCart, updateCount } from "@/features/cartSlice";
+import { deleteToWishlistUser } from "@/features/wishlistSlice";
+import useAddCart from "@/hooks/useAddCart";
 import AddToCartModal from "@/components/common/AddToCartModal";
-import { useState } from "react";
-import { useTranslation } from "react-i18next"; // Import useTranslation
+import { useTranslation } from "react-i18next";
+import { TailSpin } from "react-loader-spinner";
 
 const WishlistItemMobile = ({ id, name, original_price, discounted_price, img, discount }) => {
-  const { t } = useTranslation(); // Sử dụng useTranslation hook
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
 
+  const item = { id, name, img, original_price, discounted_price, count: 1 };
+
+  const { openAddCart, loading, handleOpenAddCart, setOpenAddCart, userId } = useAddCart(item);
+
   const handleRemove = () => {
-    dispatch(removeFromWishlist(id));
-    toast.success(t("wishlist.successRemove")); // Sử dụng bản dịch
-  };
-
-  const [openAddCart, setOpenAddCart] = useState(false);
-
-  const cartItems = useSelector((state) => state.cart.items);
-  const handleOpenAddCart = () => {
-    if (findIndex(cartItems, id) < 0) {
-      const item = { id, name, img, original_price, discounted_price, count: 1 };
-      dispatch(addToCart(item));
-    } else {
-      dispatch(updateCount(id));
-    }
-    setOpenAddCart(true);
+    dispatch(deleteToWishlistUser(userId, id));
+    toast.success(t("wishlist.successRemove"));
   };
 
   const handleCloseAddCart = () => setOpenAddCart(false);
@@ -70,7 +60,24 @@ const WishlistItemMobile = ({ id, name, original_price, discounted_price, img, d
           </div>
           <div className={styles.button}>
             {discount !== "SOLD OUT" && (
-              <a onClick={() => handleOpenAddCart()}>{t("wishlist.addToCart")}</a>
+              <a onClick={() => handleOpenAddCart()}>
+                {loading ? (
+                  <div className="spinner-container">
+                    <TailSpin
+                      visible={true}
+                      height="20"
+                      width="20"
+                      color="#000"
+                      ariaLabel="tail-spin-loading"
+                      radius="1"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                    />
+                  </div>
+                ) : (
+                  t("productCard.addToCart")
+                )}
+              </a>
             )}
           </div>
           <div className={styles.remove} onClick={handleRemove}>

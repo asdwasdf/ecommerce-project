@@ -31,6 +31,7 @@ const ProductGroupButton = ({
   const item = { id, img, name, original_price, discounted_price, discount };
 
   const handleToggleWishlist = () => {
+    if (loading) return;
     if (findIndex(wishlistItems, item.id) >= 0) {
       dispatch(deleteToWishlistUser(userId, item.id));
     } else {

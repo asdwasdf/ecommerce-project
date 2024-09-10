@@ -2,13 +2,13 @@ import styles from "@style/wishlist/TableWishlist.module.css";
 import WishlistItem from "./WishlistItem";
 import WishlistItemMobile from "./WishlistItemMobile";
 import { useSelector } from "react-redux";
-import { useTranslation } from "react-i18next"; // Import useTranslation
+import { useTranslation } from "react-i18next";
+import { TailSpin } from "react-loader-spinner";
 
 const TableWishlist = () => {
-  const { t } = useTranslation(); // Sử dụng useTranslation hook
+  const { t } = useTranslation();
 
-  // Retrieve wishlist items from Redux store
-  const wishlistItems = useSelector((state) => state.wishlist.items);
+  const { items: wishlistItems, loading } = useSelector((state) => state.wishlist);
 
   return (
     <>
@@ -36,6 +36,22 @@ const TableWishlist = () => {
           </tr>
         </thead>
         <tbody className={styles["wishlist-items-wrapper"]}>
+          {loading && (
+            <tr>
+              <td>
+                <div className="spinner-overlay">
+                  <TailSpin
+                    visible={true}
+                    height="80"
+                    width="80"
+                    color="#fff"
+                    ariaLabel="tail-spin-loading"
+                    radius="1"
+                  />
+                </div>
+              </td>
+            </tr>
+          )}
           {/* Display message or wishlist items */}
           {wishlistItems.length === 0 ? (
             <tr className={styles.empty}>
@@ -51,6 +67,18 @@ const TableWishlist = () => {
 
       {/* Mobile List View */}
       <ul className={`${styles["wishlist-table"]} ${styles.mobile}`}>
+        {loading && (
+          <div className="spinner-overlay">
+            <TailSpin
+              visible={true}
+              height="80"
+              width="80"
+              color="#fff"
+              ariaLabel="tail-spin-loading"
+              radius="1"
+            />
+          </div>
+        )}
         {wishlistItems.length === 0 ? (
           <p className={styles["wishlist-empty"]}>{t("wishlist.noProducts")}</p>
         ) : (

@@ -10,6 +10,8 @@ import HeadphonesMenuDrop from "./HeadphonesMenuDrop";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { TailSpin } from "react-loader-spinner";
+import { Skeleton } from "@mui/material";
 
 const menuItems = [
   { name: "home", Component: HomeMenuDrop },
@@ -28,7 +30,7 @@ const HeaderBottom = () => {
 
   const getTotalItems = (items) => items.length;
 
-  const wishlistItems = useSelector((state) => state.wishlist.items);
+  const { items: wishlistItems, loading } = useSelector((state) => state.wishlist);
 
   return (
     <>
@@ -72,7 +74,13 @@ const HeaderBottom = () => {
               className={styles["icon-heart"]}
               onClick={() => navigate("wishlist", { replace: -1 })}
             />
-            <span className={styles["count-number"]}>{getTotalItems(wishlistItems)}</span>
+            <span className={styles["count-number"]}>
+              {loading ? (
+                <Skeleton variant="text" width={20} height={20} />
+              ) : (
+                getTotalItems(wishlistItems)
+              )}
+            </span>
           </a>
         </div>
         <div className={styles["today-deal"]}>

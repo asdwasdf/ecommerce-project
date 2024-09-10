@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { MdCheck } from "react-icons/md";
 import CompareProduct from "@/components/compare-product/CompareProduct";
 import { useState } from "react";
-import { updateCountUser, addToCartUser } from "@/features/cartSlice";
+import useAddCart from "@/hooks/useAddCart";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import { TailSpin } from "react-loader-spinner";
@@ -31,7 +31,6 @@ const ProductInfor = ({
   const { t } = useTranslation();
   const [count, setCount] = useState(1);
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleIncrement = () => {
     setCount(count + 1);
@@ -49,10 +48,10 @@ const ProductInfor = ({
 
   const wishlistItems = useSelector((state) => state.wishlist.items);
   const compareProductsItems = useSelector((state) => state.compareProduct.items);
-  const cartItems = useSelector((state) => state.cart.items);
-  const userId = useSelector((state) => state.auth.userId);
 
   const item = { id, img, name, original_price, discounted_price, discount, count: count };
+
+  const { loading, handleOpenAddCart, userId } = useAddCart(item, count);
 
   const handleToggleWishlist = () => {
     if (findIndex(wishlistItems, item.id) >= 0) {
@@ -60,20 +59,6 @@ const ProductInfor = ({
     } else {
       dispatch(addToWishlistUser(userId, item));
     }
-  };
-
-  const handleAddCart = () => {
-    setLoading(true);
-    if (findIndex(cartItems, id) < 0) {
-      dispatch(addToCartUser(userId, item));
-    } else {
-      dispatch(updateCountUser(userId, item.id, count));
-    }
-
-    setTimeout(() => {
-      setLoading(false);
-      toast.success(t("productDetail.addToCartSuccess"));
-    }, 500);
   };
 
   const handleOpenCompareProduct = () => {
@@ -130,8 +115,9 @@ const ProductInfor = ({
           handleDecrement={handleDecrement}
           handleIncrement={handleIncrement}
         />
+
         {discount !== "SOLD OUT" && (
-          <button className={styles.button} onClick={handleAddCart}>
+          <button className={styles.button} onClick={handleOpenAddCart}>
             {loading ? (
               <div className="spinner-container">
                 <TailSpin
@@ -152,21 +138,18 @@ const ProductInfor = ({
         )}
 
         <div className={styles["single-product-buttons"]}>
-          {loading ? (
-            <div className="spinner-container">
-              <TailSpin
-                visible={true}
-                height="20"
-                width="20"
-                color="#000"
-                ariaLabel="tail-spin-loading"
-                radius="1"
-                wrapperStyle={{}}
-                wrapperClass=""
-              />
+          {findIndex(wishlistItems, id) >= 0 ? (
+            <div
+              className={styles["button-in"]}
+              onClick={() => navigate("/wishlist", { replace: -1 })}>
+              <FaHeart />
+              <span>{t("productDetail.browseWishlist")}</span>
             </div>
           ) : (
-            <span>{t("productDetail.addToCart")}</span>
+            <div className={styles["button-in"]} onClick={handleToggleWishlist}>
+              <CiHeart />
+              <span>{t("productDetail.addToWishlist")}</span>
+            </div>
           )}
           <>
             {findIndex(compareProductsItems, id) >= 0 ? (

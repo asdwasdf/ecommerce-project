@@ -249,3 +249,59 @@ export const conditionOptions = [
   { name: "Remanufactured", count: 4 },
   { name: "Restored", count: 3 }
 ];
+
+export const products = [
+  {
+    id: "xbox_series_s_1tb_digital_4k",
+    name: "Xbox Series S - 1TB Gaming All-Digital Console, 4K",
+    original_price: 289.99,
+    discounted_price: 279.99,
+    discount: "3%",
+    category: "Xbox Series",
+    starrate: 4.7,
+    hot: true,
+    color: "White",
+    images_url: [
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/54",
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/29",
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/53",
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/40"
+    ],
+    description: "Xbox Series S 1TB console, 1 Xbox Wireless Controller, High Speed HDMI cable."
+  },
+  {
+    id: "samsung_galaxy_s23_ultra_512gb",
+    name: "Samsung Galaxy S23 Ultra, Factory Unlocked, 512GB",
+    original_price: 949.99,
+    discounted_price: 699.99,
+    discount: "26%",
+    category: "Samsung Galaxy",
+    starrate: 4.8,
+    hot: false,
+    color: "Phantom Black",
+    images_url: [
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/119",
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/121",
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/120",
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/116"
+    ],
+    description: "Fast charging 18W, 50% in 30 min USB Power Delivery 2.0nQi wireless charging"
+  },
+  {
+    id: "bluetooth_speaker_10w_voice_assistant",
+    name: "Portable Bluetooth Speaker with Voice Assistant, 10W",
+    original_price: 69.0,
+    discounted_price: 65.55,
+    discount: "5%",
+    category: "Bluetooth Speakers",
+    starrate: 4.2,
+    hot: false,
+    color: "Blue",
+    images_url: [
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/37",
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/30",
+      "https://ecomall-be87.kxcdn.com/ecomall/wp-content/uploads/2023/03/38"
+    ],
+    description: "Bluetooth with voice confirmation, 10 hours lighting time, built-in microphone"
+  }
+];

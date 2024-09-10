@@ -4,14 +4,17 @@ import styles from "@style/compare-product/CompareProduct.module.css";
 import { IoMdClose } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCompare } from "@/features/compareProductSlice";
-import { updateCountUser, addToCartUser } from "@/features/cartSlice";
-import { findIndex } from "@/utils/function";
+
 import AddToCartModal from "@/components/common/AddToCartModal";
 import { useState } from "react";
+import { TailSpin } from "react-loader-spinner";
+
+import useAddToCart from "@/hooks/useAddToCart";
 
 const CompareProduct = ({ open, handleClose }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+
   const compareProductsItems = useSelector((state) => state.compareProduct.items);
 
   const handleRemoveCompareProduct = (id) => {
@@ -19,29 +22,7 @@ const CompareProduct = ({ open, handleClose }) => {
   };
 
   const [openAddCart, setOpenAddCart] = useState(false);
-  let productIndex;
-  const cartItems = useSelector((state) => state.cart.items);
-
-  let userId;
-  userId = useSelector((state) => state.auth.userId);
-
-  const item = {
-    id: compareProductsItems.at(productIndex)?.id,
-    name: compareProductsItems.at(productIndex)?.name,
-    img: compareProductsItems.at(productIndex)?.img,
-    original_price: compareProductsItems.at(productIndex)?.original_price,
-    discounted_price: compareProductsItems.at(productIndex)?.discounted_price,
-    count: 1
-  };
-
-  const handleOpenAddCart = () => {
-    if (findIndex(cartItems, item.id) < 0) {
-      dispatch(addToCartUser(userId, item));
-    } else {
-      dispatch(updateCountUser(userId, item.id));
-    }
-    setOpenAddCart(true);
-  };
+  const { handleOpenAddCart, currentProductId, loading } = useAddToCart(setOpenAddCart);
 
   const handleCloseAddCart = () => setOpenAddCart(false);
 
@@ -110,12 +91,29 @@ const CompareProduct = ({ open, handleClose }) => {
                       </tr>
                       <tr className={styles["add-to-cart"]}>
                         <th></th>
-                        {compareProductsItems.map((item) => (
+                        {compareProductsItems.map((item, index) => (
                           <td key={item.id}>
                             <div>
-                              <a onClick={() => handleOpenAddCart(item.id)}>
-                                {t("compareProduct.addToCart")}
-                              </a>
+                              {item.discount !== "SOLD OUT" && (
+                                <a onClick={() => handleOpenAddCart(item.id)}>
+                                  {loading[item.id] ? (
+                                    <div className="spinner-container">
+                                      <TailSpin
+                                        visible={true}
+                                        height="20"
+                                        width="20"
+                                        color="#000"
+                                        ariaLabel="tail-spin-loading"
+                                        radius="1"
+                                        wrapperStyle={{}}
+                                        wrapperClass=""
+                                      />
+                                    </div>
+                                  ) : (
+                                    t("productCard.addToCart")
+                                  )}
+                                </a>
+                              )}
                             </div>
                           </td>
                         ))}
@@ -176,15 +174,22 @@ const CompareProduct = ({ open, handleClose }) => {
           </div>
         </div>
       </Modal>
-      <AddToCartModal
-        id={compareProductsItems.at(productIndex)?.id}
-        name={compareProductsItems.at(productIndex)?.name}
-        img={compareProductsItems.at(productIndex)?.img}
-        original_price={compareProductsItems.at(productIndex)?.original_price}
-        discounted_price={compareProductsItems.at(productIndex)?.discounted_price}
-        open={openAddCart}
-        handleClose={handleCloseAddCart}
-      />
+      {currentProductId && (
+        <AddToCartModal
+          id={currentProductId}
+          name={compareProductsItems.find((product) => product.id === currentProductId)?.name}
+          img={compareProductsItems.find((product) => product.id === currentProductId)?.img}
+          original_price={
+            compareProductsItems.find((product) => product.id === currentProductId)?.original_price
+          }
+          discounted_price={
+            compareProductsItems.find((product) => product.id === currentProductId)
+              ?.discounted_price
+          }
+          open={openAddCart}
+          handleClose={handleCloseAddCart}
+        />
+      )}
     </>
   );
 };
