@@ -57,16 +57,17 @@ const AppLayout = () => {
 
   // Handle order placement with validation
   const handlePlaceOrder = () => {
-    if (!agreed) {
+    if (agreed) {
+      handleSubmit(onSubmit, onError)();
+    } else {
       toast.error(t("please_accept_terms"));
-      return;
+      return null;
     }
-    handleSubmit(onSubmit, onError)();
   };
 
   // Handle form submission
   const onSubmit = (data) => {
-    if (loading) return;
+    if (loading || !agreed) return;
     setLoading(true);
 
     const item = {
