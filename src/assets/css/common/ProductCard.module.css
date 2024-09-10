@@ -198,10 +198,6 @@
 }
 
 @media only screen and (max-width: 776px) {
-  .product-name {
-    font-size: 15px;
-  }
-
   .product-price span:first-child {
     font-size: 16px;
   }
