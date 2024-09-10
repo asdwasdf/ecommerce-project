@@ -23,7 +23,8 @@ const ProductCard = ({
   original_price,
   discounted_price,
   hot,
-  className
+  className,
+  library = ""
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -107,7 +108,11 @@ const ProductCard = ({
             <div className={styles["product-name"]}>{name}</div>
           ) : (
             <Link to={`/shop/${id}`} className={styles["product-name"]}>
-              <TextTruncate line={2} element="p" truncateText="…" text={name} />
+              {library === "truncate" ? (
+                <TextTruncate line={2} element="p" truncateText="…" text={name} />
+              ) : (
+                <LinesEllipsis text={name} maxLine="2" ellipsis="..." trimRight basedOn="letters" />
+              )}
             </Link>
           )}
           <div className={styles["product-stars"]}>

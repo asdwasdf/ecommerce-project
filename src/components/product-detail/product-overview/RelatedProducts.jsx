@@ -34,7 +34,7 @@ const RelatedProducts = ({ products, title }) => {
             className={`mySwiper product-related`}>
             {products.map((item, index) => (
               <SwiperSlide key={index}>
-                <ProductCard {...item} />
+                <ProductCard {...item} library="truncate" />
               </SwiperSlide>
             ))}
           </Swiper>

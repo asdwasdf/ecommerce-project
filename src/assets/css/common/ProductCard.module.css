@@ -66,7 +66,7 @@
 .product-name {
   cursor: pointer;
   font-weight: 600;
-  font-size: 14.5px;
+  font-size: 15px;
   line-height: 1.4;
 }
 
@@ -193,11 +193,15 @@
 
 @media only screen and (max-width: 830px) {
   .product-name {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }
 
 @media only screen and (max-width: 776px) {
+  .product-name {
+    font-size: 15px;
+  }
+
   .product-price span:first-child {
     font-size: 16px;
   }
@@ -214,7 +218,7 @@
 
 @media only screen and (max-width: 660px) {
   .product-name {
-    font-size: 15px;
+    font-size: 1.7rem;
   }
 
   .button {
