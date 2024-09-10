@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { deleteToCartUser } from "@/features/cartSlice";
 import { toast } from "react-toastify";
 import styles from "@style/shopping-cart/ShoppingCart.module.css";
@@ -8,11 +8,13 @@ import CounterSmall from "@/components/common/CounterSmall";
 
 const CartItem = ({ item, updateItemCount }) => {
   const dispatch = useDispatch();
-  const [count, setCount] = useState(item.count);
+  const [count, setCount] = useState(0);
 
-  let userId;
-  userId = useSelector((state) => state.auth.userId);
+  const userId = useSelector((state) => state.auth.userId);
 
+  useEffect(() => {
+    setCount(item.count);
+  }, [item.count]);
   const handleIncrement = () => {
     const newCount = count + 1;
     setCount(newCount);
