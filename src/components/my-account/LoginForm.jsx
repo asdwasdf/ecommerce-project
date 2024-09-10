@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import styles from "@style/my-account/LoginForm.module.css";
 import InputField from "@/components/common/InputField";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { loginUser } from "@/features/authSlice";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -18,8 +18,6 @@ const LoginForm = () => {
   const form = useForm({
     mode: "onSubmit"
   });
-
-  // const { loading } = useSelector((state) => state.auth);
 
   const { register, handleSubmit, reset } = form;
 
@@ -104,8 +102,6 @@ const LoginForm = () => {
                       color="#fff"
                       ariaLabel="tail-spin-loading"
                       radius="1"
-                      wrapperStyle={{}}
-                      wrapperClass=""
                     />
                   ) : (
                     t("loginForm.signIn")

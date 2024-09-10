@@ -12,11 +12,11 @@ import InputField from "@/components/common/InputField";
 import { clearWishlist } from "@/features/wishlistSlice";
 import { clearCart } from "@/features/cartSlice";
 import { clearOrders } from "@/features/checkoutSlice";
-import { useTranslation } from "react-i18next"; // Import i18n
+import { useTranslation } from "react-i18next";
 import { TailSpin } from "react-loader-spinner";
 
 const LoginHeader = () => {
-  const { t } = useTranslation(); // Sử dụng i18n
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 

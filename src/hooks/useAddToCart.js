@@ -21,8 +21,10 @@ const useAddToCart = (setOpenAddCart, hasImgArray = false) => {
     if (!item) return;
 
     const { id, name, original_price, discounted_price } = item;
-
+    console.log(item);
     if (findIndex(cartItems, id) < 0) {
+      const img = hasImgArray ? item.img : item.images_url[0];
+      console.log(img);
       dispatch(
         addToCartUser(userId, {
           id,
@@ -30,7 +32,7 @@ const useAddToCart = (setOpenAddCart, hasImgArray = false) => {
           original_price,
           discounted_price,
           count: 1,
-          img: hasImgArray ? item.img[0] : item.img
+          img
         })
       );
     } else {

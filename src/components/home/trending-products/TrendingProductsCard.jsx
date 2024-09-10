@@ -9,10 +9,7 @@ import AddToCartModal from "@/components/common/AddToCartModal";
 
 import LinesEllipsis from "react-lines-ellipsis";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { updateCountUser, addToCartUser } from "@/features/cartSlice";
 
-import { findIndex } from "@/utils/function";
 import { useTranslation } from "react-i18next";
 import { TailSpin } from "react-loader-spinner";
 import useAddCart from "@/hooks/useAddCart";
@@ -30,7 +27,7 @@ const TrendingProductsCard = ({
 }) => {
   const { t } = useTranslation();
 
-  const item = { id, name, img: images_url[0], original_price, discounted_price, count: 1 };
+  const item = { id, name, img: images_url, original_price, discounted_price, count: 1 };
 
   const { openAddCart, handleOpenAddCart, loading, setOpenAddCart } = useAddCart(item);
 

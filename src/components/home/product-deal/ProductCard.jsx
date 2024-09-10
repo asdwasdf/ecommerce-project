@@ -19,6 +19,7 @@ import { useState } from "react";
 const ProductCard = () => {
   const { t } = useTranslation();
   const [openAddCart, setOpenAddCart] = useState(false);
+
   const { handleOpenAddCart, currentProductId, loading } = useAddToCart(setOpenAddCart);
 
   const navigate = useNavigate();
