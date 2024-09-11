@@ -26,7 +26,7 @@ const AppLayout = () => {
   ];
 
   const navigate = useNavigate();
-  const [selectedPayment, setSelectedPayment] = useState(t("check_payments"));
+  const [selectedPayment, setSelectedPayment] = useState("Cash on delivery");
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState({});
   const [shippingCost, setShippingCost] = useState(0);
@@ -71,9 +71,10 @@ const AppLayout = () => {
 
     setLoading(true);
 
-    await handleStripe(cardElement, stripe, setErrors, totalPrice);
+    if (selectedPayment === "Check payments")
+      await handleStripe(cardElement, stripe, setErrors, totalPrice);
 
-    if (errors?.errorStripe) {
+    if (errors?.errorStripe && selectedPayment === "Check payments") {
       setLoading(false);
       return;
     }

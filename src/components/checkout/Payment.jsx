@@ -18,7 +18,7 @@ const Payment = ({
       <ul className={styles.payment_methods}>
         <li>
           <input
-            id="payment_method_cod"
+            id="payment_method_cheque"
             type="radio"
             name="payment"
             value="Cash on delivery"
@@ -34,7 +34,7 @@ const Payment = ({
         </li>
         <li>
           <input
-            id="payment_method_cheque"
+            id="payment_method_cod"
             type="radio"
             name="payment"
             value="Check payments"
