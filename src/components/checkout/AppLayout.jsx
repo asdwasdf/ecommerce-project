@@ -13,37 +13,25 @@ import { useTranslation } from "react-i18next";
 import { addToOrdersUser } from "@/features/checkoutSlice";
 import { useNavigate } from "react-router-dom";
 import { clearCartUser } from "@/features/cartSlice";
-import PaymentSripe from "./PaymentStripe";
+import PaymentStripe from "./PaymentStripe";
 import { useStripe } from "@stripe/react-stripe-js";
 
-// Breadcrumb paths for navigation
 const AppLayout = () => {
   const { t } = useTranslation();
-
-  const breadcrumb = [
-    { name: t("orderReceived.breadcrumb.home"), link: "/" },
-    { name: t("orderReceived.breadcrumb.checkout"), link: "" }
-  ];
-
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const stripe = useStripe();
+
   const [selectedPayment, setSelectedPayment] = useState("Cash on delivery");
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState({});
   const [shippingCost, setShippingCost] = useState(0);
   const [isToastDisplayed, setIsToastDisplayed] = useState(false);
   const [cardElement, setCardElement] = useState(null);
-  const stripe = useStripe();
-
-  const handleCardElementReady = (card) => {
-    setCardElement(card);
-  };
   const [loading, setLoading] = useState(false);
 
   const userId = useSelector((state) => state.auth.userId);
-
-  // Redux selectors and dispatch
   const cartItems = useSelector((state) => state.cart.items);
-  const dispatch = useDispatch();
 
   const { register, handleSubmit, reset } = useForm();
 
@@ -58,12 +46,14 @@ const AppLayout = () => {
   // Calculate total price from cart items
   const totalPrice = calculateTotalPrice(cartItems);
 
-  // Handle checkbox change to set agreement status
+  const handleCardElementReady = (card) => {
+    setCardElement(card);
+  };
+
   const handleCheckboxChange = (event) => {
     setAgreed(event.target.checked);
   };
 
-  // Handle order placement with validation
   const handlePlaceOrder = async (e) => {
     e.preventDefault();
 
@@ -87,9 +77,9 @@ const AppLayout = () => {
     handleSubmit(onSubmit, onError)();
   };
 
-  // Handle form submission
   const onSubmit = (data) => {
     if (loading || !agreed) return;
+
     setLoading(true);
 
     const item = {
@@ -107,7 +97,7 @@ const AppLayout = () => {
     setTimeout(() => {
       setLoading(false);
       reset();
-      navigate(`/order-received/${item.id}`, { replace: -1 });
+      navigate(`/order-received/${item.id}`, { replace: true });
       dispatch(clearCartUser(userId));
 
       if (!isToastDisplayed) {
@@ -117,14 +107,18 @@ const AppLayout = () => {
     }, 1000);
   };
 
-  // Handle form errors
-  const onError = async (error) => {
+  const onError = (error) => {
     setErrors(error);
   };
 
   useEffect(() => {
     if (cartItems.length === 0) navigate("/cart");
   }, [navigate, cartItems]);
+
+  const breadcrumb = [
+    { name: t("orderReceived.breadcrumb.home"), link: "/" },
+    { name: t("orderReceived.breadcrumb.checkout"), link: "" }
+  ];
 
   return (
     <>
@@ -135,10 +129,7 @@ const AppLayout = () => {
             <div className={styles["checkout-title-container"]}>
               <h2>{t("checkout")}</h2>
             </div>
-            <form
-              onSubmit={handleSubmit(onSubmit, onError)}
-              className={styles["main-content"]}
-              noValidate>
+            <form onSubmit={handlePlaceOrder} className={styles["main-content"]} noValidate>
               <BillingsDetail register={register} errors={errors} />
               <OrderReview
                 cartItems={productItems}
@@ -150,9 +141,8 @@ const AppLayout = () => {
                   selectedPayment={selectedPayment}
                   setSelectedPayment={setSelectedPayment}
                   agreed={agreed}
-                  handleCheckboxChange={handleCheckboxChange}
-                  handlePlaceOrder={handlePlaceOrder}>
-                  <PaymentSripe onCardElementReady={handleCardElementReady} errors={errors} />
+                  handleCheckboxChange={handleCheckboxChange}>
+                  <PaymentStripe onCardElementReady={handleCardElementReady} errors={errors} />
                 </Payment>
               </OrderReview>
             </form>

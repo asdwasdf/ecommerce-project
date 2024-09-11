@@ -4,7 +4,6 @@ import { initReactI18next } from "react-i18next";
 import en from "../en.json";
 import vi from "../vi.json";
 
-// Import các file chứa từ điển
 const resources = {
   en: {
     translation: en

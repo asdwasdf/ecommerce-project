@@ -60,7 +60,7 @@ const CartItem = ({ item, updateItemCount }) => {
         />
       </td>
       <td className={styles["product-subtotal"]}>
-        <span>${item.discounted_price * count}</span>
+        <span>${(item.discounted_price * count).toFixed(2)}</span>
       </td>
     </tr>
   );

@@ -4,7 +4,7 @@ import { Drawer } from "@mui/material";
 import { IoIosMenu } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { PiHeadsetLight } from "react-icons/pi";
-import { useTranslation } from "react-i18next"; // Import i18n
+import { useTranslation } from "react-i18next";
 
 import LogoPng from "@img/logo.png";
 import styles from "@style/header/header-sticky/HeaderSticky.module.css";
@@ -29,7 +29,7 @@ const HeaderSticky = () => {
   const [openGroupHeader, setOpenGroupHeader] = useState(false);
   const [searchItem, setSearchItem] = useState("");
 
-  const { t } = useTranslation(); // Sử dụng i18n
+  const { t } = useTranslation();
 
   const handleInputChange = (value) => {
     setSearchItem(value);
