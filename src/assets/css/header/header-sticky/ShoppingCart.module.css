@@ -286,6 +286,9 @@
   .cart > div {
     display: none;
   }
+  .cart-form {
+    display: none !important;
+  }
 }
 @media only screen and (max-width: 1279px) {
   .ts-header .header-middle .header-right {

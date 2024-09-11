@@ -85,9 +85,12 @@ const ProductCard = ({
           {className === "List" ? (
             <div className={styles["product-name"]}>{name}</div>
           ) : (
-            <Link to={`/shop/${id}`} className={`${styles["product-name"]} ${styles.truncate}`}>
+            <a
+              href="#"
+              className={`${styles["product-name"]} ${styles.truncate}`}
+              onClick={() => navigate(`/shop/${id}`)}>
               {name}
-            </Link>
+            </a>
           )}
           <div className={styles["product-stars"]}>
             <StarRatings rating={starrate} starRatedColor="#ffd700" numberOfStars={5} />
@@ -117,7 +120,9 @@ const ProductCard = ({
                 )}
               </Button>
             ) : (
-              <Button onClick={() => navigate(`/shop/${id}`)}>{t("productCard.readMore")}</Button>
+              <Button onClick={() => navigate(`/shop/${id}`)}>
+                <a href="#">{t("productCard.readMore")}</a>
+              </Button>
             )}
             <div className={styles["short-description"]}>
               <ul>

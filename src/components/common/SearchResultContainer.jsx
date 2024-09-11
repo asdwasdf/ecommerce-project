@@ -15,14 +15,14 @@ const SearchResultContainer = ({ query, className, handleInputChange }) => {
   const [loading, setLoading] = useState(true);
 
   const handleSearch = () => {
-    const newUrl = `/shop?search=${encodeURIComponent(query)}`;
-    window.location.href = newUrl;
+    handleInputChange("");
+    navigate(`/shop?search=${encodeURIComponent(query)}`);
   };
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, [query, loading]);
 
   return (
@@ -52,14 +52,15 @@ const SearchResultContainer = ({ query, className, handleInputChange }) => {
                         <img src={`${item.images_url[0]}-400x400.jpg`} alt={item.name} />
                       </div>
                       <div className={styles.meta}>
-                        <p
+                        <a
+                          href="#"
                           className={styles.title}
                           onClick={() => {
                             handleInputChange("");
                             navigate(`/shop/${item.id}`, { replace: -1 });
                           }}>
                           <HighlightedText text={item.name} highlight={query} />
-                        </p>
+                        </a>
                         <div className={styles["product-price"]}>
                           <span>${item.discounted_price}</span>
                           {item.original_price > 0 && <span>${item.original_price}</span>}
@@ -76,7 +77,7 @@ const SearchResultContainer = ({ query, className, handleInputChange }) => {
                   ))}
                 </ul>
                 <div className={styles["view-all-wrapper"]} onClick={handleSearch}>
-                  <a>{t("searchResult.viewAll", { count: products.length })}</a>
+                  <a href="#">{t("searchResult.viewAll", { count: products.length })}</a>
                 </div>
               </>
             ) : (

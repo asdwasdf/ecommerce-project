@@ -10,7 +10,6 @@ import HeadphonesMenuDrop from "./HeadphonesMenuDrop";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { TailSpin } from "react-loader-spinner";
 import { Skeleton } from "@mui/material";
 
 const menuItems = [
@@ -47,9 +46,8 @@ const HeaderBottom = () => {
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}
                     onClick={() => navigate("shop", { replace: -1 })}>
-                    <a>
-                      {t(`headerBottom.${item.name}`)}
-                      {"  "}
+                    <a href="#">
+                      {t(`headerBottom.${item.name}`)}{" "}
                       <SlArrowDown className={styles["menu-drop-icon"]} />
                     </a>
                     {hoveredIndex === index && (
@@ -69,7 +67,7 @@ const HeaderBottom = () => {
       </div>
       <div className={styles["header-right"]}>
         <div className={`${styles["my-wishlist-wrapper"]} relative`}>
-          <a>
+          <a href="#">
             <CiHeart
               className={styles["icon-heart"]}
               onClick={() => navigate("wishlist", { replace: -1 })}

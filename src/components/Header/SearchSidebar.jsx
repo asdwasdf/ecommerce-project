@@ -11,7 +11,12 @@ const SearchSidebar = ({ toggleSearchSidebar, children, query, handleInputChange
         <IoIosClose />
       </div>
       <div>
-        <form>{children}</form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}>
+          {children}
+        </form>
       </div>
       {query.length >= 3 && (
         <SearchResultContainer

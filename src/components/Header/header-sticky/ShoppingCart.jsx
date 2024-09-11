@@ -16,14 +16,14 @@ const ShoppingCart = () => {
 
   return (
     <div className={styles.group}>
-      <div className={styles.cart} onClick={() => navigate("/cart", { replace: -1 })}>
+      <a href="#" className={styles.cart} onClick={() => navigate("/cart", { replace: -1 })}>
         <PiShoppingCartLight className={styles.icon} />
         <span className={styles["cart-number"]}>{cartItems.length}</span>
         <div>
           <span className={styles.label}>{t("shoppingCart.myCart")}</span>
           <span className={styles.number}>${calculateTotalPrice(cartItems).toFixed(2)}</span>
         </div>
-      </div>
+      </a>
       <div className={styles["cart-form"]}>
         <div className={styles["form-content"]}>
           {cartItems.length === 0 ? (

@@ -14,6 +14,7 @@ import { clearCart } from "@/features/cartSlice";
 import { clearOrders } from "@/features/checkoutSlice";
 import { useTranslation } from "react-i18next";
 import { TailSpin } from "react-loader-spinner";
+import TitleLogin from "./TitleLogin";
 
 const LoginHeader = () => {
   const { t } = useTranslation();
@@ -25,7 +26,7 @@ const LoginHeader = () => {
   });
   const { register, handleSubmit, reset } = form;
   const [errors, setErrors] = useState({});
-  const { userInfo, isLoggedIn } = useSelector((state) => state.auth);
+  const { isLoggedIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -80,13 +81,7 @@ const LoginHeader = () => {
     <div className={styles.group}>
       <div className={styles.login} onClick={() => !isLoggedIn && navigate("my-account")}>
         <CiUser className={styles.icon} />
-        <div>
-          <span className={styles.label}>{t("loginHeader.my_account")}</span>
-          <span
-            className={
-              styles.number
-            }>{`${isLoggedIn ? userInfo.username : t("loginHeader.login")}`}</span>
-        </div>
+        <TitleLogin />
       </div>
 
       <div className={`${styles.accountForm} ${isLoggedIn ? "" : styles.loginHidden}`}>
@@ -97,7 +92,7 @@ const LoginHeader = () => {
                 <a className="my-account">{t("loginHeader.my_account")}</a>
               </li>
               <li>
-                <a className="orders" onClick={() => navigate("/orders", { replace: -1 })}>
+                <a href="#" className="orders" onClick={() => navigate("/orders", { replace: -1 })}>
                   {t("loginHeader.my_orders")}
                 </a>
               </li>
@@ -105,7 +100,9 @@ const LoginHeader = () => {
                 <a className="change-password">{t("loginHeader.change_password")}</a>
               </li>
               <li onClick={handleLogout}>
-                <a className="log-out">{t("loginHeader.logout")}</a>
+                <a href="#" className="log-out">
+                  {t("loginHeader.logout")}
+                </a>
               </li>
             </ul>
           </div>

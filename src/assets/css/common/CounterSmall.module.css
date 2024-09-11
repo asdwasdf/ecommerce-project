@@ -13,9 +13,7 @@
   cursor: pointer;
   border: none;
   background-color: transparent;
-  height: 23px;
-  font-size: 12px;
-  /* line-height: 48px; */
+  font-size: 20px;
 }
 
 .counter-value {
@@ -35,8 +33,9 @@
 
 @media only screen and (max-width: 991px) {
   .counter-container {
+    margin-left: auto;
     padding: 0 10px;
-    /* width: 110px; */
+    width: 110px !important;
   }
 }
 

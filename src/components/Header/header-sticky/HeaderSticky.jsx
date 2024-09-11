@@ -156,7 +156,11 @@ const HeaderSticky = () => {
           query={searchItem}
           handleInputChange={handleInputChange}>
           <FormSelect />
-          <SearchInput searchItem={searchItem} handleInputChange={handleInputChange} />
+          <SearchInput
+            searchItem={searchItem}
+            handleInputChange={handleInputChange}
+            setOpenSearchSidebar={setOpenSearchSidebar}
+          />
         </SearchSidebar>
       </Drawer>
 

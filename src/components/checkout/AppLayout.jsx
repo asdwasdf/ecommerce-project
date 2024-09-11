@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import BreadcrumbsComponent from "@/components/BreadcrumbsComponent";
@@ -6,13 +6,15 @@ import styles from "@style/checkout/Checkout.module.css";
 import BillingsDetail from "./BillingsDetail";
 import OrderReview from "./OrderReview";
 import Payment from "./Payment";
-import { calculateTotalPrice } from "@/utils/function";
+import { calculateTotalPrice, handleStripe } from "@/utils/function";
 import dayjs from "dayjs";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import { addToOrdersUser } from "@/features/checkoutSlice";
 import { useNavigate } from "react-router-dom";
 import { clearCartUser } from "@/features/cartSlice";
+import PaymentSripe from "./PaymentStripe";
+import { useStripe } from "@stripe/react-stripe-js";
 
 // Breadcrumb paths for navigation
 const AppLayout = () => {
@@ -29,6 +31,12 @@ const AppLayout = () => {
   const [errors, setErrors] = useState({});
   const [shippingCost, setShippingCost] = useState(0);
   const [isToastDisplayed, setIsToastDisplayed] = useState(false);
+  const [cardElement, setCardElement] = useState(null);
+  const stripe = useStripe();
+
+  const handleCardElementReady = (card) => {
+    setCardElement(card);
+  };
   const [loading, setLoading] = useState(false);
 
   const userId = useSelector((state) => state.auth.userId);
@@ -56,13 +64,27 @@ const AppLayout = () => {
   };
 
   // Handle order placement with validation
-  const handlePlaceOrder = () => {
-    if (agreed) {
-      handleSubmit(onSubmit, onError)();
-    } else {
-      toast.error(t("please_accept_terms"));
-      return null;
+  const handlePlaceOrder = async (e) => {
+    e.preventDefault();
+
+    if (loading) return;
+
+    setLoading(true);
+
+    await handleStripe(cardElement, stripe, setErrors, totalPrice);
+
+    if (errors?.errorStripe) {
+      setLoading(false);
+      return;
     }
+
+    if (!agreed) {
+      toast.error(t("please_accept_terms"));
+      setLoading(false);
+      return;
+    }
+
+    handleSubmit(onSubmit, onError)();
   };
 
   // Handle form submission
@@ -96,14 +118,13 @@ const AppLayout = () => {
   };
 
   // Handle form errors
-  const onError = (error) => {
+  const onError = async (error) => {
     setErrors(error);
   };
 
-  if (cartItems.length === 0) {
-    navigate("/cart");
-    return null;
-  }
+  useEffect(() => {
+    if (cartItems.length === 0) navigate("/cart");
+  }, [navigate, cartItems]);
 
   return (
     <>
@@ -130,8 +151,9 @@ const AppLayout = () => {
                   setSelectedPayment={setSelectedPayment}
                   agreed={agreed}
                   handleCheckboxChange={handleCheckboxChange}
-                  handlePlaceOrder={handlePlaceOrder}
-                />
+                  handlePlaceOrder={handlePlaceOrder}>
+                  <PaymentSripe onCardElementReady={handleCardElementReady} errors={errors} />
+                </Payment>
               </OrderReview>
             </form>
           </div>

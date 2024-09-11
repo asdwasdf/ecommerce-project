@@ -155,3 +155,54 @@ export const syncOrders = async (db, user, dispatch) => {
     console.error("Error syncing orders:", error);
   }
 };
+
+export const handleStripe = async (cardElement, stripe, setErrors, totalPrice) => {
+  try {
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: "card",
+      card: cardElement
+    });
+
+    if (error) {
+      setErrors((errors) => ({ ...errors, errorStripe: error.message }));
+      return;
+    }
+
+    // Create PaymentIntent on the server (For demo purposes)
+    const response = await fetch("https://api.stripe.com/v1/payment_intents", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Bearer sk_test_51PkKfbRwVyIWtO1HTdTllVDs2cO79SoZF4n20dgpgdvV48INeAXvOjjSnA00ggU8dSLgTnsRfQO027qRbxlAYev400rcL40diY`
+      },
+      body: new URLSearchParams({
+        amount: Math.round(totalPrice * 100),
+        currency: "USD",
+        payment_method: paymentMethod.id,
+        confirmation_method: "manual",
+        confirm: "true",
+        return_url: `${window.location.origin}/payment-success`
+      })
+    });
+
+    const paymentIntent = await response.json();
+
+    if (paymentIntent.error) {
+      setErrors((errors) => ({ ...errors, errorStripe: paymentIntent.error.message }));
+      return;
+    }
+
+    if (paymentIntent.status === "requires_action") {
+      const { error: confirmError } = await stripe.confirmCardPayment(paymentIntent.client_secret);
+
+      if (confirmError) {
+        setErrors((errors) => ({ ...errors, errorStripe: confirmError.message }));
+        return;
+      }
+    }
+
+    setErrors((errors) => ({ ...errors, errorStripe: null }));
+  } catch (error) {
+    setErrors((errors) => ({ ...errors, errorStripe: error.message }));
+  }
+};

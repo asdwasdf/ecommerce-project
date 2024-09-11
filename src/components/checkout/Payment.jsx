@@ -8,29 +8,14 @@ const Payment = ({
   agreed,
   handleCheckboxChange,
   handlePlaceOrder,
-  loading
+  loading,
+  children
 }) => {
   const { t } = useTranslation();
 
   return (
     <div className={styles.box}>
       <ul className={styles.payment_methods}>
-        <li>
-          <input
-            id="payment_method_cheque"
-            type="radio"
-            name="payment"
-            value="Check payments"
-            checked={selectedPayment === "Check payments"}
-            onChange={() => setSelectedPayment("Check payments")}
-          />
-          <label htmlFor="payment_method_cheque">{t("payment.checkPayments")}</label>
-          {selectedPayment === "Check payments" && (
-            <div className={styles.payment_box}>
-              <p>{t("payment.checkPaymentsDescription")}</p>
-            </div>
-          )}
-        </li>
         <li>
           <input
             id="payment_method_cod"
@@ -40,11 +25,25 @@ const Payment = ({
             checked={selectedPayment === "Cash on delivery"}
             onChange={() => setSelectedPayment("Cash on delivery")}
           />
-          <label htmlFor="payment_method_cod">{t("payment.cashOnDelivery")}</label>
+          <label htmlFor="payment_method_cheque">{t("payment.cashOnDelivery")}</label>
           {selectedPayment === "Cash on delivery" && (
             <div className={styles.payment_box}>
-              <p>{t("payment.cashOnDeliveryDescription")}</p>
+              <p>{t("payment.checkPaymentsDescription")}</p>
             </div>
+          )}
+        </li>
+        <li>
+          <input
+            id="payment_method_cheque"
+            type="radio"
+            name="payment"
+            value="Check payments"
+            checked={selectedPayment === "Check payments"}
+            onChange={() => setSelectedPayment("Check payments")}
+          />
+          <label htmlFor="payment_method_cod">{t("payment.checkPayments")}</label>
+          {selectedPayment === "Check payments" && (
+            <div className={styles.payment_box}>{children}</div>
           )}
         </li>
         <li>

@@ -25,8 +25,11 @@ const AddToCartModal = ({ id, name, img, original_price, discounted_price, open,
             <div className={styles["product-meta"]}>
               <h3
                 className={styles["product-name"]}
-                onClick={() => navigate(`/shop/${id}`, { replace: -1 })}>
-                {name}
+                onClick={() => {
+                  handleClose();
+                  navigate(`/shop/${id}`);
+                }}>
+                <a href="#">{name}</a>
               </h3>
               <div className={styles["product-price"]}>
                 <span>${discounted_price}</span>
@@ -35,14 +38,15 @@ const AddToCartModal = ({ id, name, img, original_price, discounted_price, open,
             </div>
           </div>
           <div className={styles.action}>
-            <button
+            <a
+              href="#"
               className={`${styles.button} ${styles["empty-cart-button"]}`}
               onClick={() => navigate("/cart")}>
               {t("addToCartModal.viewCart")}
-            </button>
-            <button className={styles.button} onClick={() => navigate("/checkout")}>
+            </a>
+            <a href="#" className={styles.button} onClick={() => navigate("/checkout")}>
               {t("addToCartModal.checkOut")}
-            </button>
+            </a>
           </div>
         </div>
       </div>
