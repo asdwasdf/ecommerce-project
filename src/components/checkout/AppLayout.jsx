@@ -71,10 +71,9 @@ const AppLayout = () => {
 
     setLoading(true);
 
-    if (selectedPayment === "Check payments")
-      await handleStripe(cardElement, stripe, setErrors, totalPrice);
+    await handleStripe(cardElement, stripe, setErrors, totalPrice);
 
-    if (errors?.errorStripe && selectedPayment === "Check payments") {
+    if (errors?.errorStripe) {
       setLoading(false);
       return;
     }
