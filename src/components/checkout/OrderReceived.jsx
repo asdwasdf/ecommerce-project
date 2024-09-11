@@ -29,9 +29,7 @@ const OrderReceived = () => {
     }, 1000);
   }, [id, ordersItems]);
 
-  if (!item && !loading) {
-    return <PageNotFound />;
-  }
+  if (!item && !loading) return <PageNotFound />;
 
   const breadcrumb = [
     { name: t("orderReceived.breadcrumb.home"), link: "/" },

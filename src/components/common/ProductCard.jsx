@@ -3,7 +3,7 @@ import StarRatings from "react-star-ratings";
 import styles from "@style/common/ProductCard.module.css";
 import ProductGroupButton from "./ProductGroupButton";
 import Button from "@/components/common/Button";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AddToCartModal from "./AddToCartModal";
 
 import { useTranslation } from "react-i18next";
@@ -83,7 +83,9 @@ const ProductCard = ({
             <p>{category}</p>
           </div>
           {className === "List" ? (
-            <div className={styles["product-name"]}>{name}</div>
+            <a className={styles["product-name"]} onClick={() => navigate(`/shop/${id}`)}>
+              {name}
+            </a>
           ) : (
             <a
               href="#"

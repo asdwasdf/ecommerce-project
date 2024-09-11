@@ -28,7 +28,7 @@ const Payment = ({
           <label htmlFor="payment_method_cheque">{t("payment.cashOnDelivery")}</label>
           {selectedPayment === "Cash on delivery" && (
             <div className={styles.payment_box}>
-              <p>{t("payment.checkPaymentsDescription")}</p>
+              <p>{t("payment.cashOnDeliveryDescription")}</p>
             </div>
           )}
         </li>

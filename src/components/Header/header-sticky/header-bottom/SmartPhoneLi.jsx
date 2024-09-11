@@ -9,7 +9,7 @@ const SmartPhoneLi = () => {
     t("smartPhoneLi.laptopsAndDesktops"),
     t("smartPhoneLi.tablets"),
     t("smartPhoneLi.monitors"),
-    t("smartPhoneLi.laptops"),
+    t("laptops"),
     t("smartPhoneLi.accessories"),
     t("smartPhoneLi.drones")
   ];
@@ -26,12 +26,12 @@ const SmartPhoneLi = () => {
   const menu3 = [
     t("smartPhoneLi.camera"),
     t("smartPhoneLi.accessories"),
-    t("smartPhoneLi.cameraAndLenses"),
+    "Camera and lenses",
     t("smartPhoneLi.drones")
   ];
 
   const menu4 = [
-    t("smartPhoneLi.television"),
+    t("television"),
     t("smartPhoneLi.55InchTvs"),
     t("smartPhoneLi.65InchTvs"),
     t("smartPhoneLi.oledTvs")

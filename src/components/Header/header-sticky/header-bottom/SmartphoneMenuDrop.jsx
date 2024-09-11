@@ -15,7 +15,7 @@ const SmartphoneMenuDrop = () => {
         t("smartphoneMenuDrop.laptopsAndDesktops"),
         t("smartphoneMenuDrop.tablets"),
         t("smartphoneMenuDrop.monitors"),
-        t("smartphoneMenuDrop.laptops"),
+        t("laptops"),
         t("smartphoneMenuDrop.accessories"),
         t("smartphoneMenuDrop.computerComponent"),
         t("smartphoneMenuDrop.pcGaming")
