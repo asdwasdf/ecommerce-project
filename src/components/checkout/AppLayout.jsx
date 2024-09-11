@@ -14,6 +14,7 @@ import { addToOrdersUser } from "@/features/checkoutSlice";
 import { useNavigate } from "react-router-dom";
 import { clearCartUser } from "@/features/cartSlice";
 import PaymentStripe from "./PaymentStripe";
+import { useStripe } from "@stripe/react-stripe-js";
 
 const AppLayout = () => {
   const { t } = useTranslation();
@@ -26,6 +27,7 @@ const AppLayout = () => {
   const [shippingCost, setShippingCost] = useState(0);
   const [isToastDisplayed, setIsToastDisplayed] = useState(false);
   const [cardElement, setCardElement] = useState(null);
+  const stripe = useStripe();
   const [loading, setLoading] = useState(false);
 
   const userId = useSelector((state) => state.auth.userId);
@@ -52,14 +54,30 @@ const AppLayout = () => {
     setAgreed(event.target.checked);
   };
 
-  const handlePlaceOrder = (e) => {
+  const handlePlaceOrder = async (e) => {
     e.preventDefault();
 
-    if (agreed) {
-      handleSubmit(onSubmit, onError)();
+    if (loading) return;
+
+    setLoading(true);
+    let error;
+
+    if (selectedPayment === "Check payments")
+      error = await handleStripe(cardElement, stripe, totalPrice);
+
+    if (error) {
+      setLoading(false);
+      setErrors((prevError) => ({ ...prevError, errorStripe: error }));
       return;
     }
-    toast.error(t("please_accept_terms"));
+
+    if (!agreed) {
+      toast.error(t("please_accept_terms"));
+      setLoading(false);
+      return;
+    }
+
+    handleSubmit(onSubmit, onError)();
   };
 
   const onSubmit = (data) => {

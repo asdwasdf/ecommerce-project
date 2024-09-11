@@ -156,7 +156,7 @@ export const syncOrders = async (db, user, dispatch) => {
   }
 };
 
-export const handleStripe = async (cardElement, stripe, setErrors, totalPrice) => {
+export const handleStripe = async (cardElement, stripe, totalPrice) => {
   try {
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
@@ -164,11 +164,9 @@ export const handleStripe = async (cardElement, stripe, setErrors, totalPrice) =
     });
 
     if (error) {
-      setErrors((errors) => ({ ...errors, errorStripe: error.message }));
-      return;
+      return error.message;
     }
 
-    // Create PaymentIntent on the server (For demo purposes)
     const response = await fetch("https://api.stripe.com/v1/payment_intents", {
       method: "POST",
       headers: {
@@ -188,21 +186,19 @@ export const handleStripe = async (cardElement, stripe, setErrors, totalPrice) =
     const paymentIntent = await response.json();
 
     if (paymentIntent.error) {
-      setErrors((errors) => ({ ...errors, errorStripe: paymentIntent.error.message }));
-      return;
+      return paymentIntent.error.message;
     }
 
     if (paymentIntent.status === "requires_action") {
       const { error: confirmError } = await stripe.confirmCardPayment(paymentIntent.client_secret);
 
       if (confirmError) {
-        setErrors((errors) => ({ ...errors, errorStripe: confirmError.message }));
-        return;
+        return confirmError.message;
       }
     }
 
-    setErrors((errors) => ({ ...errors, errorStripe: null }));
+    return null;
   } catch (error) {
-    setErrors((errors) => ({ ...errors, errorStripe: error.message }));
+    return error.message;
   }
 };
