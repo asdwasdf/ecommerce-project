@@ -14,13 +14,11 @@ import { addToOrdersUser } from "@/features/checkoutSlice";
 import { useNavigate } from "react-router-dom";
 import { clearCartUser } from "@/features/cartSlice";
 import PaymentStripe from "./PaymentStripe";
-import { useStripe } from "@stripe/react-stripe-js";
 
 const AppLayout = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const stripe = useStripe();
 
   const [selectedPayment, setSelectedPayment] = useState("Cash on delivery");
   const [agreed, setAgreed] = useState(false);
@@ -54,27 +52,14 @@ const AppLayout = () => {
     setAgreed(event.target.checked);
   };
 
-  const handlePlaceOrder = async (e) => {
+  const handlePlaceOrder = (e) => {
     e.preventDefault();
 
-    if (loading) return;
-
-    setLoading(true);
-
-    await handleStripe(cardElement, stripe, setErrors, totalPrice);
-
-    if (errors?.errorStripe) {
-      setLoading(false);
+    if (agreed) {
+      handleSubmit(onSubmit, onError)();
       return;
     }
-
-    if (!agreed) {
-      toast.error(t("please_accept_terms"));
-      setLoading(false);
-      return;
-    }
-
-    handleSubmit(onSubmit, onError)();
+    toast.error(t("please_accept_terms"));
   };
 
   const onSubmit = (data) => {
