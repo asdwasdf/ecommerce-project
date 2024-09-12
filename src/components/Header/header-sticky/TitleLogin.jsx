@@ -1,5 +1,4 @@
 import styles from "@style/header/header-sticky/LoginHeader.module.css";
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { TailSpin } from "react-loader-spinner";
 import { useSelector } from "react-redux";
@@ -7,22 +6,12 @@ import { useSelector } from "react-redux";
 const TitleLogin = () => {
   const { t } = useTranslation();
 
-  const { userInfo, isLoggedIn } = useSelector((state) => state.auth);
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const { userInfo, isLoggedIn, isLoading } = useSelector((state) => state.auth);
 
   return (
     <div>
       <span className={styles.label}>{t("loginHeader.my_account")}</span>
-      {loading && isLoggedIn ? (
+      {isLoading && isLoggedIn ? (
         <TailSpin
           visible={true}
           height="20"

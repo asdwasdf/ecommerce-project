@@ -18,7 +18,7 @@ import SearchResultContainer from "@/components/common/SearchResultContainer";
 import SearchSidebar from "../SearchSidebar";
 import GroupHeaderButton from "../menu-mobile/GroupHeaderButton";
 import { useDispatch } from "react-redux";
-import { loginSuccess } from "@/features/authSlice";
+import { loginSuccess, setLoading } from "@/features/authSlice";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 
@@ -41,9 +41,16 @@ const HeaderSticky = () => {
     const userId = localStorage.getItem("userId");
     if (userId) {
       const fetchUser = async () => {
-        const userDoc = await getDoc(doc(db, "users", userId));
-        if (userDoc.exists()) {
-          dispatch(loginSuccess({ id: userId, userInfo: userDoc.data() }));
+        try {
+          dispatch(setLoading(true));
+          const userDoc = await getDoc(doc(db, "users", userId));
+          if (userDoc.exists()) {
+            dispatch(loginSuccess({ id: userId, userInfo: userDoc.data() }));
+          }
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        } finally {
+          dispatch(setLoading(false));
         }
       };
       fetchUser();

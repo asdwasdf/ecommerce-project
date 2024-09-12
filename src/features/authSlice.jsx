@@ -14,7 +14,8 @@ const loadUserIdFromLocalStorage = () => {
 const initialState = {
   isLoggedIn: loadUserIdFromLocalStorage() ? true : false,
   userId: loadUserIdFromLocalStorage(),
-  userInfo: {}
+  userInfo: {},
+  isLoading: false
 };
 
 const authSlice = createSlice({
@@ -35,14 +36,18 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
       state.userId = action.payload.id;
       state.userInfo = action.payload.userInfo;
+    },
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
     }
   }
 });
 
-export const { loginSuccess, logout, registerSuccess } = authSlice.actions;
+export const { setLoading, loginSuccess, logout, registerSuccess } = authSlice.actions;
 
 export const loginUser = (email, password) => async (dispatch) => {
   try {
+    dispatch(setLoading(true));
     const q = query(
       collection(db, "users"),
       where("email", "==", email),
@@ -64,6 +69,8 @@ export const loginUser = (email, password) => async (dispatch) => {
     }
   } catch (error) {
     console.error("Error logging in: ", error);
+  } finally {
+    dispatch(setLoading(false));
   }
 };
 
