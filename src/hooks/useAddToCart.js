@@ -2,9 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCartUser, updateCountUser } from "@/features/cartSlice";
 import { findIndex } from "@/utils/function";
-import { products } from "@/utils/constants";
 
-const useAddToCart = (setOpenAddCart, hasImgArray = false) => {
+const useAddToCart = (setOpenAddCart, hasImgArray = false, products) => {
   const [loading, setLoading] = useState({});
   const [currentProductId, setCurrentProductId] = useState(null);
   const dispatch = useDispatch();

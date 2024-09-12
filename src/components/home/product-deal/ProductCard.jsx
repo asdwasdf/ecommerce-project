@@ -20,7 +20,11 @@ const ProductCard = () => {
   const { t } = useTranslation();
   const [openAddCart, setOpenAddCart] = useState(false);
 
-  const { handleOpenAddCart, currentProductId, loading } = useAddToCart(setOpenAddCart);
+  const { handleOpenAddCart, currentProductId, loading } = useAddToCart(
+    setOpenAddCart,
+    undefined,
+    products
+  );
 
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);

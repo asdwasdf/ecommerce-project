@@ -22,7 +22,11 @@ const CompareProduct = ({ open, handleClose }) => {
   };
 
   const [openAddCart, setOpenAddCart] = useState(false);
-  const { handleOpenAddCart, currentProductId, loading } = useAddToCart(setOpenAddCart);
+  const { handleOpenAddCart, currentProductId, loading } = useAddToCart(
+    setOpenAddCart,
+    true,
+    compareProductsItems
+  );
 
   const handleCloseAddCart = () => setOpenAddCart(false);
 
